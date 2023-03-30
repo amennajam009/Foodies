@@ -7,7 +7,7 @@ import { MainModuleComponent } from './main-module.component';
 const routes: Routes = [{ path: '', component: MainModuleComponent ,
 children:[
   {path:'' , component:HomeComponent},
-  {path:'header' , component:HeaderComponent},
+  // {path:'header' , component:HeaderComponent},
   {path:'home' , component:HomeComponent},
 
 ]
