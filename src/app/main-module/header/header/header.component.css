@@ -1,0 +1,16 @@
+.navbar-brand {
+    margin-left: 50px;
+  }
+
+  .contact{
+    margin-right: 50px;
+  }
+
+  div ul li a {
+    font-size: 20px;
+  }
+  
+ #text:hover {
+    color: #1BA6ED;
+  }
+  
