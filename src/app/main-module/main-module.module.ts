@@ -5,13 +5,21 @@ import { MainModuleRoutingModule } from './main-module-routing.module';
 import { MainModuleComponent } from './main-module.component';
 import { HomeComponent } from './home/home/home.component';
 import { HeaderComponent } from './header/header/header.component';
+import { ShopComponent } from './shop/shop/shop.component';
+import { AboutUsComponent } from './About-Us/about-us/about-us.component';
+import { ContactComponent } from './contact/contact/contact.component';
+import { ReviewComponent } from './Review/review/review.component';
 
 
 @NgModule({
   declarations: [
     MainModuleComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShopComponent,
+    AboutUsComponent,
+    ContactComponent,
+    ReviewComponent
   ],
   imports: [
     CommonModule,
