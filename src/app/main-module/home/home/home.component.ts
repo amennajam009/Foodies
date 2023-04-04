@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/shared/service/general.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  Url='http://localhost:2525/'
-  constructor() { }
+  
+  data: any=[];
+  AllFourCards:any=[];
+
+  constructor(private _General:GeneralService) { }
 
   ngOnInit(): void {
+
+    this._General.GetFourCardApi().subscribe((res:any)=>{
+      res.Result;
+    })
   }
+
+
 
 }
