@@ -66,7 +66,7 @@
         <p class="mb-0">{{data.descriptionone}}</p>
     </div>
 </div>
-<div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s" >
+<div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s" *ngFor="let data of AllFourCards" >
     <div class="feature-item border h-100 p-5">
         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
             <!-- <img class="img-fluid" src="img/icon/icon-2.png" alt="Icon"> -->
@@ -75,7 +75,7 @@
         <p class="mb-0">{{data.descriptionTwo}}</p>
     </div>
 </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s" *ngFor="let data of AllFourCards">
                 <div class="feature-item border h-100 p-5">
                     <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                         <!-- <img class="img-fluid" src="img/icon/icon-3.png" alt="Icon"> -->
@@ -84,7 +84,7 @@
                     <p class="mb-0">{{data.descriptionThree}}</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s" *ngFor="let data of AllFourCards">
                 <div class="feature-item border h-100 p-5">
                     <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                         <!-- <img class="img-fluid" src="img/icon/icon-4.png" alt="Icon"> -->
