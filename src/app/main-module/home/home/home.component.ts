@@ -14,10 +14,9 @@ export class HomeComponent implements OnInit {
   constructor(private _General:GeneralService) { }
 
   ngOnInit(): void {
-
     this._General.GetFourCardApi().subscribe((res:any)=>{
-      res.Result;
-    })
+      this.AllFourCards = res.Result; // Assign the received data to your component variable
+    });
   }
 
 
