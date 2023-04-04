@@ -1,6 +1,8 @@
 import { Component, OnInit ,ViewChild,ElementRef } from '@angular/core';
 import { FormBuilder,FormGroup,FormControl,ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { GeneralService } from 'src/app/shared/service/general.service';
+
 
 @Component({
   selector: 'app-general-setting',
@@ -11,7 +13,7 @@ export class GeneralSettingComponent implements OnInit {
   
   fourcards:FormGroup | any;
 
-  constructor(private _FormBuilder:FormBuilder) { }
+  constructor(private _FormBuilder:FormBuilder , private _General:GeneralService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +29,10 @@ export class GeneralSettingComponent implements OnInit {
 
 
   Submitmyform(){
-
+    let FormValue = this.fourcards.value;
+    this._General.FourCardApi(FormValue).subscribe((resfrombackend)=>{
+      resfrombackend;
+    })
   }
   // let  MultipartFormData=new FormData();
   
