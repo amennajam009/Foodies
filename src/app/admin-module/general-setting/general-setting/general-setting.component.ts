@@ -18,6 +18,9 @@ export class GeneralSettingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+  
   myFormModel(){
     this.fourcards=this._FormBuilder.group({
       Headingone: new FormControl (''),
