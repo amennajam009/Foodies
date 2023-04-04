@@ -41,6 +41,7 @@ export class GeneralSettingComponent implements OnInit {
     let FormValue = this.fourcards.value;
     this._General.FourCardApi(FormValue).subscribe((resfrombackend)=>{
       resfrombackend;
+      this.fourcards.reset();
     })
   }
   // let  MultipartFormData=new FormData();
