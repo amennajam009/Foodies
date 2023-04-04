@@ -1,1 +1,54 @@
-<p>general-setting works!</p>
+<h2 class="ms-5">Upload Hero Image</h2>
+<form>
+    <label for="myfile" class="mt-5">Select a file:</label>
+    <input type="file" id="myfile" name="myfile" multiple  #fileSelect>
+    <button type="submit">Submit</button>
+  </form>
+
+  <hr>
+
+  <h3>Four Cards</h3>
+<form [formGroup]="fourcards" (ngSubmit)="Submitmyform()">
+  <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-0 feature-row">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="feature-item border h-100 p-5">
+                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                        <!-- <img class="img-fluid" src="img/icon/icon-1.png" alt="Icon"> -->
+                    </div>
+                    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="ProductName">
+                    <p class="mb-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="feature-item border h-100 p-5">
+                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                        <!-- <img class="img-fluid" src="img/icon/icon-2.png" alt="Icon"> -->
+                    </div>
+                     <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading">
+                    <p class="mb-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="feature-item border h-100 p-5">
+                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                        <!-- <img class="img-fluid" src="img/icon/icon-3.png" alt="Icon"> -->
+                    </div>
+                    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading">
+                    <p class="mb-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="feature-item border h-100 p-5">
+                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                        <!-- <img class="img-fluid" src="img/icon/icon-4.png" alt="Icon"> -->
+                    </div>
+                    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading">
+                    <p class="mb-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
