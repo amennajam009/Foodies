@@ -13,14 +13,16 @@ export class GeneralSettingComponent implements OnInit {
   
   fourcards:FormGroup | any;
 
-  constructor(private _FormBuilder:FormBuilder , private _General:GeneralService) { }
+  constructor(private _FormBuilder:FormBuilder , private _General:GeneralService) { 
+    this.myFormModel()
+  }
 
   ngOnInit(): void {
   }
 
 
 
-  
+
   myFormModel(){
     this.fourcards=this._FormBuilder.group({
       Headingone: new FormControl (''),
