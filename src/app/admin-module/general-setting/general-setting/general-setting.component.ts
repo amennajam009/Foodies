@@ -10,8 +10,10 @@ import { GeneralService } from 'src/app/shared/service/general.service';
   styleUrls: ['./general-setting.component.css']
 })
 export class GeneralSettingComponent implements OnInit {
-  
+  Url='http://localhost:7070/'
+  newImageArray:any=[]
   fourcards:FormGroup | any;
+  @ViewChild('fileSelect') fileSelect:ElementRef|any
 
   constructor(private _FormBuilder:FormBuilder , private _General:GeneralService) { 
     this.myFormModel()
@@ -43,15 +45,44 @@ export class GeneralSettingComponent implements OnInit {
       resfrombackend;
       this.fourcards.reset();
     })
-  }
-  // let  MultipartFormData=new FormData();
+
+
+   
+    let  MultipartFormData=new FormData();
+    MultipartFormData.append('Headingone',this.fourcards.get('Headingone').value);
+    MultipartFormData.append(' descriptionone', this.fourcards.get(' descriptionone').value);
+    MultipartFormData.append('HeadingTwo', this.fourcards.get('HeadingTwo').value);
+    MultipartFormData.append('descriptionTwo', this.fourcards.get('descriptionTwo').value);
+    // MultipartFormData.append('Category', this.formproduct.get('Category').value);
+    MultipartFormData.append('HeadingThree', this.fourcards.get('HeadingThree').value);
+    MultipartFormData.append('descriptionThree', this.fourcards.get('descriptionThree').value);
+    // MultipartFormData.append('ProductMaterial', this.formproduct.get('ProductMaterial').value);
+    MultipartFormData.append('HeadingFour', this.fourcards.get('HeadingFour').value);
+    MultipartFormData.append('descriptionFour', this.fourcards.get('descriptionFour').value);
+    
+    this.newImageArray.forEach((imagedata:any)=>{
+  MultipartFormData.append('images',imagedata);
+    
+    })
+
+
+
+
+    
+    this._General.FourCardApi(MultipartFormData).subscribe((res:any)=>{
+      res;
+   
+      this.fourcards.reset()
+      
+      this.fileSelect.nativeElement.value=null
+      this.newImageArray=[]
+    
+    
+    })
   
-    
-  // this.newImageArray.forEach((imagedata:any)=>{
-  // MultipartFormData.append('images',imagedata);
-    
-  //   })
+  }
 
  
+   
 
 }
