@@ -107,18 +107,50 @@ export class GeneralSettingComponent implements OnInit {
     }
   }
 
+  // SubmitHeroImage(){
+  //   let MultipartFormHero = new FormData();
+    
+  //   this.heroImageArray.array.forEach((heroimage:any) => {
+  //     MultipartFormHero.append('images',heroimage);
+  //   });
+    
+  //   this._General.HeroImageApi(MultipartFormHero).subscribe((res:any)=>{
+  //     res;
+  //     this.fileSelect.nativeElement.value = null;
+  //     this.heroImageArray= [];
+  //   })
+  // }
+   
+
+
+
   SubmitHeroImage() {
-    if (this.heroImageArray && this.heroImageArray.array) {
-      let MultipartFormHero = new FormData();
-      this.heroImageArray.array.forEach((heroimage: any) => {
-        MultipartFormHero.append('images', heroimage);
-      });
-      this._General.HeroImageApi(MultipartFormHero).subscribe((res: any) => {
-        res;
-        this.fileSelect.nativeElement.value = null;
-        this.newImageArray= [];
-      });
+    // Get the file input elements
+    const fileInput1 = <HTMLInputElement>document.getElementById('myfile1');
+    const fileInput2 = <HTMLInputElement>document.getElementById('myfile2');
+  
+    // Create a new FormData object
+    const formData = new FormData();
+  
+    // Append the files to the FormData object
+    if (fileInput1.files) {
+      for (let i = 0; i < fileInput1.files.length; i++) {
+        formData.append('images', fileInput1.files[i]);
+      }
     }
+    if (fileInput2.files) {
+      for (let i = 0; i < fileInput2.files.length; i++) {
+        formData.append('images', fileInput2.files[i]);
+      }
+    }
+  
+    // Call the HeroImageApi() method
+    this._General.HeroImageApi(formData).subscribe((res: any) => {
+      console.log(res);
+      // Clear the file input fields
+      fileInput1.value = '';
+      fileInput2.value = '';
+    });
   }
   
   
@@ -126,7 +158,5 @@ export class GeneralSettingComponent implements OnInit {
   
   
   
-  
-   
  
 }
