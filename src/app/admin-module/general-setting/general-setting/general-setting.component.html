@@ -1,7 +1,11 @@
 <h2 class="ms-5">Upload Hero Image</h2>
-<form>
+<form  (ngSubmit)="SubmitHeroImage()">
     <label for="myfile" class="mt-5">Select a file:</label>
-    <input type="file" id="myfile" name="myfile" multiple  #fileSelect>
+    <input type="file" id="myfile" name="myfile" multiple  (change)="HeroImages($event)"  #fileSelect>
+    
+
+    <label for="myfile" class="mt-5">Select a file:</label>
+    <input type="file" id="myfile" name="myfile" multiple  (change)="HeroImages($event)"  #fileSelect>
     <button type="submit">Submit</button>
   </form>
 

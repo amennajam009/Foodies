@@ -9,6 +9,12 @@ export class GeneralService {
 
   constructor(private HttpClient:HttpClient) { }
 
+
+
+  HeroImageApi(payLoad:any){
+     return this.HttpClient.post('http://localhost:7070/Generalsetting/HeroImageApi',payLoad);
+  }
+
   FourCardApi(payLoad:any){
        return this.HttpClient.post('http://localhost:7070/Generalsetting/FourCardsApi',payLoad);
   }

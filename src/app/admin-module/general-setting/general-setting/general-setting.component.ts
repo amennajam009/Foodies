@@ -10,9 +10,10 @@ import { GeneralService } from 'src/app/shared/service/general.service';
   styleUrls: ['./general-setting.component.css']
 })
 export class GeneralSettingComponent implements OnInit {
-
+ 
   fourcards:FormGroup | any;
   newImageArray:any=[]
+  heroImageArray:any=[]
   @ViewChild('fileSelect') fileSelect:ElementRef|any;
   
 
@@ -41,6 +42,7 @@ export class GeneralSettingComponent implements OnInit {
 
 
 
+
  
   getImages(event: any){
     let fileLength=event.target.files.length;
@@ -54,6 +56,8 @@ export class GeneralSettingComponent implements OnInit {
       
     }
   }
+
+ 
 
   Submitmyform() {
     let FormValue = this.fourcards.value;
@@ -90,7 +94,39 @@ export class GeneralSettingComponent implements OnInit {
   });
   }
 
- 
-   
+  HeroImages(event:any){
+    let fileLength=event.target.files.length;
+    if(event.target.files.length<=5){
+      [...event.target.files].forEach(element => this.heroImageArray.push(element) );
+    }
+    else{
+      this.heroImageArray=[]
+      this.fileSelect.nativeElement.value=null
+      
+      
+    }
+  }
 
+  SubmitHeroImage() {
+    if (this.heroImageArray && this.heroImageArray.array) {
+      let MultipartFormHero = new FormData();
+      this.heroImageArray.array.forEach((heroimage: any) => {
+        MultipartFormHero.append('images', heroimage);
+      });
+      this._General.HeroImageApi(MultipartFormHero).subscribe((res: any) => {
+        res;
+        this.fileSelect.nativeElement.value = null;
+        this.newImageArray= [];
+      });
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+   
+ 
 }

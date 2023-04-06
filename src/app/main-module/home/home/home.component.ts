@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     this._General.GetFourCardApi().subscribe((res:any)=>{
       this.AllFourCards = res.Result; // Assign the received data to your component variable
     });
+    
   }
 
 
