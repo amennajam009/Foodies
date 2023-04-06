@@ -41,7 +41,7 @@ export class GeneralSettingComponent implements OnInit {
 
 
 
-
+ 
   getImages(event:any){
     let fileLength=event.target.files.length;
     if(event.target.files.length<=5){
