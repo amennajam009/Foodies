@@ -20,7 +20,7 @@
                     <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="Headingone" required>
                     <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="descriptionone"></textarea>
                     <label for="myfile" class="mt-3">Select a file:</label>
-                    <input type="file" id="myfile" name="myfile" multiple  #fileSelect>
+                    <input type="file" id="myfile" name="myfile" multiple (change)="getImages($event)" #fileSelect>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
@@ -31,7 +31,7 @@
                      <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="HeadingTwo" required>
                      <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="descriptionTwo"></textarea>
                      <label for="myfile" class="mt-3">Select a file:</label>
-                     <input type="file" id="myfile" name="myfile" multiple  #fileSelect>
+                     <input type="file" id="myfile" name="myfile" multiple (change)="getImages($event)"  #fileSelect>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
@@ -42,7 +42,7 @@
                     <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="HeadingThree" required>
                     <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="descriptionThree"></textarea>
                     <label for="myfile" class="mt-3">Select a file:</label>
-                    <input type="file" id="myfile" name="myfile" multiple  #fileSelect>
+                    <input type="file" id="myfile" name="myfile" multiple (change)="getImages($event)"  #fileSelect>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
@@ -53,7 +53,7 @@
                     <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="HeadingFour" required>
                     <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="descriptionFour"></textarea>
                     <label for="myfile" class="mt-3">Select a file:</label>
-                    <input type="file" id="myfile" name="myfile" multiple  #fileSelect>
+                    <input type="file" id="myfile" name="myfile" multiple (change)="getImages($event)"  #fileSelect>
                 </div>
             </div>
         </div>

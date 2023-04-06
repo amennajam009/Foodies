@@ -40,6 +40,21 @@ export class GeneralSettingComponent implements OnInit {
   }
 
 
+
+
+  getImages(event:any){
+    let fileLength=event.target.files.length;
+    if(event.target.files.length<=5){
+      [...event.target.files].forEach(element => this.newImageArray.push(element) );
+    }
+    else{
+      this.newImageArray=[]
+      this.fileSelect.nativeElement.value=null
+      
+      
+    }
+  }
+
   Submitmyform() {
     let FormValue = this.fourcards.value;
   
