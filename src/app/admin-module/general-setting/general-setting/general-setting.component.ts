@@ -42,7 +42,7 @@ export class GeneralSettingComponent implements OnInit {
 
 
  
-  getImages(event:any){
+  getImages(event: any){
     let fileLength=event.target.files.length;
     if(event.target.files.length<=5){
       [...event.target.files].forEach(element => this.newImageArray.push(element) );

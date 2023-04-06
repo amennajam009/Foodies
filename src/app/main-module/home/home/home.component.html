@@ -70,7 +70,7 @@
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s" *ngFor="let data of AllFourCards" >
     <div class="feature-item border h-100 p-5">
         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-            <img class="img-fluid rounded-circle"  alt="Icon" [src]="Url+data.ImageDetail[0].ImageUrl" style="width: 64px; height: 64px;" >
+            <img class="img-fluid rounded-circle"  alt="Icon" [src]="Url+data.ImageDetail[1].ImageUrl" style="width: 64px; height: 64px;" >
         </div>
         <h5 class="mb-3">{{data.HeadingTwo}}</h5>
         <p class="mb-0">{{data.descriptionTwo}}</p>
@@ -79,7 +79,7 @@
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s" *ngFor="let data of AllFourCards">
                 <div class="feature-item border h-100 p-5">
                     <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-                        <img class="img-fluid rounded-circle" [src]="Url+data.ImageDetail[0].ImageUrl" alt="Icon" style="width: 64px; height: 64px;">
+                        <img class="img-fluid rounded-circle" [src]="Url+data.ImageDetail[2].ImageUrl" alt="Icon" style="width: 64px; height: 64px;">
                     </div>
                     <h5 class="mb-3">{{data.HeadingThree}}</h5>
                     <p class="mb-0">{{data.descriptionThree}}</p>
@@ -88,7 +88,7 @@
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s" *ngFor="let data of AllFourCards">
                 <div class="feature-item border h-100 p-5">
                     <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-                        <img class="img-fluid rounded-circle" [src]="Url+data.ImageDetail[0].ImageUrl" alt="Icon" style="width: 64px; height: 64px;">
+                        <img class="img-fluid rounded-circle" [src]="Url+data.ImageDetail[3].ImageUrl" alt="Icon" style="width: 64px; height: 64px;">
                     </div>
                     <h5 class="mb-3">{{data.HeadingFour}}</h5>
                     <p class="mb-0">{{data.descriptionFour}}</p>
