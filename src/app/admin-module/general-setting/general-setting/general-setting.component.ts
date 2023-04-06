@@ -77,7 +77,17 @@ export class GeneralSettingComponent implements OnInit {
       this.fourcards.reset();
       this.fileSelect.nativeElement.value = null;
       this.newImageArray = [];
+     // Manually clear the image array
+     this.newImageArray.length = 0;
     });
+
+
+
+      // reset file input fields
+  const fileInputs = document.querySelectorAll('input[type=file]');
+  fileInputs.forEach((input: any) => {
+    input.value = '';
+  });
   }
 
  
