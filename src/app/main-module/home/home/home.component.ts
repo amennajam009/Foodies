@@ -12,13 +12,18 @@ export class HomeComponent implements OnInit {
   AllFourCards:any=[];
   HeroImage:any=[]
   Url='http://localhost:7070/'
+
   constructor(private _General:GeneralService) { }
 
   ngOnInit(): void {
     this._General.GetFourCardApi().subscribe((res:any)=>{
-      this.AllFourCards = res.Result; // Assign the received data to your component variable
+      this.AllFourCards = res.Result;
+      this.HeroImage = res.HeroImage; // Assign the received data to your component variable
     });
+
+   
   }
+
 
 
 }

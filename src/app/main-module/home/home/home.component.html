@@ -4,7 +4,7 @@
     <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner" >
             <div class="carousel-item active" *ngFor="let data of HeroImage" >
-                <img class="w-100" [src]="Url+data.ImageDetail[0].ImageUrl" alt="Image" height="1099px">
+                <img class="w-100" [src]="Url + data.ImageDetail[0].ImageUrl" alt="Image" height="1099px">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-start">
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="carousel-item" *ngFor="let data of HeroImage">
-                <img class="w-100" [src]="Url+data.ImageDetail[1].ImageUrl" alt="Image" height="1099px">
+                <img class="w-100" [src]="Url + data.ImageDetail[1].ImageUrl" alt="Image" height="1099px">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-end">
