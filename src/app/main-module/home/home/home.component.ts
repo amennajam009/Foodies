@@ -11,7 +11,8 @@ export class HomeComponent implements OnInit {
   data: any=[];
   AllFourCards:any=[];
   HeroImage:any=[]
-  Url='http://localhost:7070/'
+  Url='http://localhost:7070/';
+
 
   constructor(private _General:GeneralService) { }
 
