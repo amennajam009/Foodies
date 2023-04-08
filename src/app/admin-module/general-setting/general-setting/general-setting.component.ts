@@ -138,18 +138,18 @@ export class GeneralSettingComponent implements OnInit {
         formData.append('images', fileInput1.files[i]);
       }
     }
-    if (fileInput2.files) {
-      for (let i = 0; i < fileInput2.files.length; i++) {
-        formData.append('images', fileInput2.files[i]);
-      }
-    }
+    // if (fileInput2.files) {
+    //   for (let i = 0; i < fileInput2.files.length; i++) {
+    //     formData.append('images', fileInput2.files[i]);
+    //   }
+    // }
   
     // Call the HeroImageApi() method
     this._General.HeroImageApi(formData).subscribe((res: any) => {
       console.log(res);
       // Clear the file input fields
       fileInput1.value = '';
-      fileInput2.value = '';
+      // fileInput2.value = '';
     });
   }
   
