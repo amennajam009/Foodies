@@ -22,4 +22,7 @@ export class GeneralService {
   GetFourCardApi(){
     return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeadingDescriptionFourCards');
   }
+  GetHeroImage(){
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeroImage')
+  }
 }

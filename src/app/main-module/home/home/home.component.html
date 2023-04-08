@@ -1,9 +1,9 @@
 <!-- hero Image -->
 <div class="container-fluid px-0 mb-5"  >
     <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner" *ngFor="let data of AllFourCards" >
+        <div class="carousel-inner" *ngFor="let data of HeroImage" >
             <div   >
-                <img class="w-100" [src]="Url+data.ImageDetail[2].ImageUrl" alt="Image" height="1099px">
+                <img class="w-100" [src]="Url+data.imageDetail[0].imageUrl" alt="Image" height="1099px">
                 <!-- <img class="w-100" [src]="Url + data.ImageDetail[0].ImageUrl" alt="Image" height="1099px"> -->
                 <div class="carousel-caption">
                     <div class="container">
@@ -22,8 +22,8 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item"  *ngFor="let data of AllFourCards" >
-                <img class="w-100" [src]="Url+data.ImageDetail[3].ImageUrl"  alt="Image" height="1099px">
+            <div class="carousel-item"  *ngFor="let data of HeroImage" >
+                <img class="w-100" [src]="Url+data.imageDetail[1].imageUrl"  alt="Image" height="1099px">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-end">
