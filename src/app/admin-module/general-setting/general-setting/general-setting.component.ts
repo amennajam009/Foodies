@@ -14,6 +14,7 @@ export class GeneralSettingComponent implements OnInit {
   fourcards:FormGroup | any;
   newImageArray:any=[]
   heroImageArray:any=[]
+
   @ViewChild('fileSelect') fileSelect:ElementRef|any;
   
 
@@ -106,6 +107,8 @@ export class GeneralSettingComponent implements OnInit {
       
     }
   }
+ 
+
 
   // SubmitHeroImage(){
   //   let MultipartFormHero = new FormData();
