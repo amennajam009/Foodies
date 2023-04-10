@@ -82,13 +82,13 @@
 </div>
 
 
-<div class="container" >
-    <div class="row">
+<div class="container">
+    <div class="row" *ngFor="let data of TwoCards">
       <div class="col-md-6">
-        <img src="../../../../assets/pic/banner1.jfif" class="img-fluid">
+        <img [src]="Url+data.imageDetail[0].imageUrl" class="img-fluid">
       </div>
       <div class="col-md-6">
-        <img src="../../../../assets/pic/banner2.jfif" class="img-fluid">
+        <img [src]="Url+data.imageDetail[1].imageUrl" class="img-fluid">
       </div>
     </div>
   </div>

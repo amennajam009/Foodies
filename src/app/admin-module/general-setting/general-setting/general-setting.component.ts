@@ -14,6 +14,7 @@ export class GeneralSettingComponent implements OnInit {
   fourcards:FormGroup | any;
   newImageArray:any=[]
   heroImageArray:any=[]
+  TwoCardsArray:any=[]
   
   @ViewChild('fileSelect') fileSelect:ElementRef|any;
   
@@ -133,10 +134,10 @@ export class GeneralSettingComponent implements OnInit {
   TwoImages(event:any){
     let fileLength=event.target.files.length;
     if(event.target.files.length<=5){
-      [...event.target.files].forEach(element => this.heroImageArray.push(element) );
+      [...event.target.files].forEach(element => this.TwoCardsArray.push(element) );
     }
     else{
-      this.heroImageArray=[]
+      this.TwoCardsArray=[]
       this.fileSelect.nativeElement.value=null
       
       
