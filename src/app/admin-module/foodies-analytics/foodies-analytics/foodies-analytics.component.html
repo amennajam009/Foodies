@@ -12,7 +12,7 @@
     <tbody>
       <tr *ngFor="let data of Bannerimage ; let i=index">
         <th class="text-center">{{i+1}}</th>
-        <td class="text-center"><img [src]="Url+data.imageDetail[0].imageUrl" class="img rounded-circle" style="width: 60px;"></td>
+        <td class="text-center"><img [src]="Url+data.imageDetail[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
         <td class="text-center"><i class="fa-solid fa-eye text-info"></i></td>
