@@ -33,4 +33,7 @@ export class GeneralService {
     return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeletHeroImage/${_id}`)
 
   }
+  GetFourcardsById(_id:any){
+     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFourCardsById/${_id}`)
+  }
 }
