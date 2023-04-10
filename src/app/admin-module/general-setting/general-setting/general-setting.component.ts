@@ -110,23 +110,6 @@ export class GeneralSettingComponent implements OnInit {
  
 
 
-  // SubmitHeroImage(){
-  //   let MultipartFormHero = new FormData();
-    
-  //   this.heroImageArray.array.forEach((heroimage:any) => {
-  //     MultipartFormHero.append('images',heroimage);
-  //   });
-    
-  //   this._General.HeroImageApi(MultipartFormHero).subscribe((res:any)=>{
-  //     res;
-  //     this.fileSelect.nativeElement.value = null;
-  //     this.heroImageArray= [];
-  //   })
-  // }
-   
-
-
-
   SubmitHeroImage() {
     // Get the file input elements
     const fileInput1 = <HTMLInputElement>document.getElementById('myfile1');
@@ -147,7 +130,19 @@ export class GeneralSettingComponent implements OnInit {
     });
   }
   
-  
+  TwoImages(event:any){
+    let fileLength=event.target.files.length;
+    if(event.target.files.length<=5){
+      [...event.target.files].forEach(element => this.heroImageArray.push(element) );
+    }
+    else{
+      this.heroImageArray=[]
+      this.fileSelect.nativeElement.value=null
+      
+      
+    }
+  }
+
   submitTwoImages(){
     const myfile4 = <HTMLInputElement>document.getElementById('myfile4');
     const formData = new FormData();

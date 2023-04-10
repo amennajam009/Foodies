@@ -43,4 +43,7 @@ export class GeneralService {
   TwoCardsApi(payLoad:any){
     return this.HttpClient.post('http://localhost:7070/Generalsetting/TwoImagesApi',payLoad)
   }
+  GetTwoImage(){
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetTwocardsApi')
+  }
 }
