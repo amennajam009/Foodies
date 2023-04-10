@@ -40,4 +40,7 @@ export class GeneralService {
     return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDelFourCards/${_id}`)
 
   }
+  TwoCardsApi(payLoad:any){
+    return this.HttpClient.post('http://localhost:7070/Generalsetting/TwoImagesApi',payLoad)
+  }
 }

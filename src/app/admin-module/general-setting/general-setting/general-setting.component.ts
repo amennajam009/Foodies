@@ -130,8 +130,7 @@ export class GeneralSettingComponent implements OnInit {
   SubmitHeroImage() {
     // Get the file input elements
     const fileInput1 = <HTMLInputElement>document.getElementById('myfile1');
-    const fileInput2 = <HTMLInputElement>document.getElementById('myfile2');
-  
+
     // Create a new FormData object
     const formData = new FormData();
   
@@ -141,25 +140,27 @@ export class GeneralSettingComponent implements OnInit {
         formData.append('images', fileInput1.files[i]);
       }
     }
-    // if (fileInput2.files) {
-    //   for (let i = 0; i < fileInput2.files.length; i++) {
-    //     formData.append('images', fileInput2.files[i]);
-    //   }
-    // }
-  
-    // Call the HeroImageApi() method
     this._General.HeroImageApi(formData).subscribe((res: any) => {
       console.log(res);
       // Clear the file input fields
       fileInput1.value = '';
-      // fileInput2.value = '';
     });
   }
   
   
+  submitTwoImages(){
+    const myfile4 = <HTMLInputElement>document.getElementById('myfile4');
+    const formData = new FormData();
+    if(myfile4.files){
+      for(let i=0; i< myfile4.files.length; i++){
+        formData.append('images', myfile4.files[i]);
+      }
+    }
+    this._General.TwoCardsApi(formData).subscribe((res:any)=>{
+      console.log(res);
+      myfile4.value=''
+    })
   
-  
-  
-  
+  }
  
 }
