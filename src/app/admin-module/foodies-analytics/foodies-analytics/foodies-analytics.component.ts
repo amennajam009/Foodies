@@ -20,6 +20,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
 
     this._General.GetFourCardApi().subscribe((res:any)=>{
       this.FourCards=res.Result;
+      console.log(this.FourCards)
     })  
     })
   }

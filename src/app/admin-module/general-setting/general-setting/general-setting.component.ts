@@ -10,7 +10,7 @@ import { GeneralService } from 'src/app/shared/service/general.service';
   styleUrls: ['./general-setting.component.css']
 })
 export class GeneralSettingComponent implements OnInit {
- 
+  cardImage:any
   fourcards:FormGroup | any;
   newImageArray:any=[]
   heroImageArray:any=[]
@@ -31,19 +31,19 @@ export class GeneralSettingComponent implements OnInit {
 
   myFormModel(){
     this.fourcards=this._FormBuilder.group({
-      Headingone: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      descriptionone: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      HeadingTwo: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      descriptionTwo: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      HeadingThree: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      descriptionThree: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      HeadingFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      descriptionFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)])
+      cardName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      cardDescriptionFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      // HeadingTwo: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      // descriptionTwo: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      // HeadingThree: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      // descriptionThree: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      // HeadingFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      // descriptionFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)])
     })
   }
 
 
-
+ 
 
  
   getImages(event: any){
@@ -59,20 +59,21 @@ export class GeneralSettingComponent implements OnInit {
     }
   }
 
- 
+  getCardImage(event:any){
+    this.cardImage = event.target.files[0]; 
+  }
 
   Submitmyform() {
-    let FormValue = this.fourcards.value;
   
     let MultipartFormData = new FormData();
-    MultipartFormData.append('Headingone', this.fourcards.get('Headingone').value);
-    MultipartFormData.append('descriptionone', this.fourcards.get('descriptionone').value);
-    MultipartFormData.append('HeadingTwo', this.fourcards.get('HeadingTwo').value);
-    MultipartFormData.append('descriptionTwo', this.fourcards.get('descriptionTwo').value);
-    MultipartFormData.append('HeadingThree', this.fourcards.get('HeadingThree').value);
-    MultipartFormData.append('descriptionThree', this.fourcards.get('descriptionThree').value);
-    MultipartFormData.append('HeadingFour', this.fourcards.get('HeadingFour').value);
-    MultipartFormData.append('descriptionFour', this.fourcards.get('descriptionFour').value);
+    MultipartFormData.append('cardName', this.fourcards.get('cardName').value);
+    MultipartFormData.append('cardDescriptionFour', this.fourcards.get('cardDescriptionFour').value);
+    MultipartFormData.append('card-image', this.cardImage);
+    // MultipartFormData.append('descriptionTwo', this.fourcards.get('descriptionTwo').value);
+    // MultipartFormData.append('HeadingThree', this.fourcards.get('HeadingThree').value);
+    // MultipartFormData.append('descriptionThree', this.fourcards.get('descriptionThree').value);
+    // MultipartFormData.append('HeadingFour', this.fourcards.get('HeadingFour').value);
+    // MultipartFormData.append('descriptionFour', this.fourcards.get('descriptionFour').value);
   
     this.newImageArray.forEach((imagedata: any) => {
       MultipartFormData.append('images', imagedata);
@@ -131,6 +132,7 @@ export class GeneralSettingComponent implements OnInit {
     });
   }
   
+
   TwoImages(event:any){
     let fileLength=event.target.files.length;
     if(event.target.files.length<=5){
@@ -138,9 +140,7 @@ export class GeneralSettingComponent implements OnInit {
     }
     else{
       this.TwoCardsArray=[]
-      this.fileSelect.nativeElement.value=null
-      
-      
+      this.fileSelect.nativeElement.value=null    
     }
   }
 
