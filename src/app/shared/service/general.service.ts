@@ -36,4 +36,8 @@ export class GeneralService {
   GetFourcardsById(_id:any){
      return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFourCardsById/${_id}`)
   }
+  HardDeletFourCardById(_id:any){
+    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDelFourCards/${_id}`)
+
+  }
 }

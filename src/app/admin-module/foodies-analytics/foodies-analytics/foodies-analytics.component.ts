@@ -48,4 +48,13 @@ GetFourCardsByItId(_id:any){
   })
 }
 
+HardDeletFourCards(_id:any){
+  this.MakeMyIdPublic=_id;
+  this._General.HardDeletFourCardById(_id).subscribe((res:any)=>{
+      this.FourCards=res.Result;
+      this.FourCards=[]
+  })
+}
+
+
 }
