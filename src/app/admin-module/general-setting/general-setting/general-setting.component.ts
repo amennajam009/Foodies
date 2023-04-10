@@ -14,7 +14,7 @@ export class GeneralSettingComponent implements OnInit {
   fourcards:FormGroup | any;
   newImageArray:any=[]
   heroImageArray:any=[]
-
+  
   @ViewChild('fileSelect') fileSelect:ElementRef|any;
   
 
