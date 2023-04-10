@@ -30,18 +30,18 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Banner</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Banner Image</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="container">
             <div class="row">
               <div class="col" *ngFor="let data of particularproductData?.imageDetail">
-                <img [src]="Url+data.imageUrl" class="img fluid w-40 h-40" >
+                <img [src]="Url+data.imageUrl" class="img fluid w-40 h-40 mt-5 ms-5" >
               </div>
             </div>
           </div>
-          <div class="container">
+          <!-- <div class="container">
             <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
@@ -61,7 +61,7 @@
               </div>
               
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
