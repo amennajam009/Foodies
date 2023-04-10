@@ -4,11 +4,13 @@ import { AdminModuleComponent } from './admin-module.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { GeneralSettingComponent } from './general-setting/general-setting/general-setting.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FoodiesAnalyticsComponent } from './foodies-analytics/foodies-analytics/foodies-analytics.component';
 
 const routes: Routes = [{ path: '', component: AdminModuleComponent,
 children:[
   {path:'dashboard',component:DashboardComponent},
-  {path:'general-setting',component:GeneralSettingComponent}
+  {path:'general-setting',component:GeneralSettingComponent},
+  {path:'foodies-analytics',component:FoodiesAnalyticsComponent}
 ] }];
 
 @NgModule({

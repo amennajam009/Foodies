@@ -596,3 +596,20 @@
 .copyright a:hover {
     color: var(--primary) !important;
 }
+
+
+.fourcardheading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+    /* Targets screens smaller than 768 pixels */
+    .fourcardheading h3 {
+      font-size: 18px;
+    }
+  }
