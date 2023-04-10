@@ -15,8 +15,8 @@
         <td class="text-center"><img [src]="Url+data.imageDetail[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
-        <td class="text-center"><i class="fa-solid fa-eye text-info"></i></td>
-        <td class="text-center"><i class="fa fa-pencil" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="GetHeroImagebyId(data._id)" ></i></td>
+        <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="GetHeroImagebyId(data._id)"></i></td>
+        <!-- <td class="text-center"><i class="fa fa-pencil" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="GetHeroImagebyId(data._id)" ></i></td> -->
         <!-- <td class="text-center"><button class="btn btn-outline-danger" (click)="deleteparticularDataById(data._id)"> Soft delete</button></td>
         <td class="text-center"><button class="btn btn-outline-danger" (click)="HardDeleteDataById(data._id)">Hard Delete</button></td> -->
       </tr>
@@ -36,12 +36,12 @@
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <!-- <div class="col" *ngFor="let data of GetHeroImagebyId?.ImageDetail">
-                <img [src]="Url+data.ImageUrl" class="img fluid w-40 h-40" >
-              </div> -->
+              <div class="col" *ngFor="let data of Bannerimage?.imageDetail">
+                <img [src]="Url+data.imageUrl" class="img fluid w-40 h-40" >
+              </div>
             </div>
           </div>
-          <!-- < class="container">
+          <div class="container">
             <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
@@ -52,16 +52,16 @@
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                   <div class="accordion-body">
                     <ol class="list-group list-group-numbered">
-                      <li class="list-group-item">{{particularproductData?.ProductName}}</li>
-                      <li class="list-group-item">{{particularproductData?.ProductPrice}}</li>
-                      <li class="list-group-item">{{particularproductData?.status}}</li>
+                      <li class="list-group-item"></li>
+                      <li class="list-group-item"></li>
+                      <li class="list-group-item"></li>
                     </ol>
                   </div>
                 </div>
               </div>
               
             </div>
-          </> -->
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
