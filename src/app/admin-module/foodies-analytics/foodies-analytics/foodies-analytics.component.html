@@ -36,8 +36,8 @@
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <div class="col" *ngFor="let data of GetHeroImagebyId">
-                <img [src]="Url+data.imageDetail[0].imageUrl" class="img fluid w-40 h-40" >
+              <div class="col" *ngFor="let data of particularproductData?.imageDetail">
+                <img [src]="Url+data.imageUrl" class="img fluid w-40 h-40" >
               </div>
             </div>
           </div>
