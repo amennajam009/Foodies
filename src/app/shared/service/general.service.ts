@@ -25,4 +25,7 @@ export class GeneralService {
   GetHeroImage(){
     return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeroImage')
   }
+  GetHeroImageById(_id:any){
+    return this.HttpClient.get(`http://localhost:7070/Generalsetting/HeroImageGetById/${_id}`)
+  }
 }
