@@ -28,4 +28,9 @@ export class GeneralService {
   GetHeroImageById(_id:any){
     return this.HttpClient.get(`http://localhost:7070/Generalsetting/HeroImageGetById/${_id}`)
   }
+
+  DeleteHeroImageById(_id:any){
+    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeletHeroImage/${_id}`)
+
+  }
 }

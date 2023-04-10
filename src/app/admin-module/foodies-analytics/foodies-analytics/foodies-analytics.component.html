@@ -16,9 +16,10 @@
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
         <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="GetHeroImagebyId(data._id)"></i></td>
-        <!-- <td class="text-center"><i class="fa fa-pencil" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="GetHeroImagebyId(data._id)" ></i></td> -->
-        <!-- <td class="text-center"><button class="btn btn-outline-danger" (click)="deleteparticularDataById(data._id)"> Soft delete</button></td>
-        <td class="text-center"><button class="btn btn-outline-danger" (click)="HardDeleteDataById(data._id)">Hard Delete</button></td> -->
+        <!-- <td class="text-center"><i class="fa fa-pencil" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="GetHeroImagebyId(data._id)" ></i></td>
+        <td class="text-center"><button class="btn btn-outline-danger" (click)="deleteparticularDataById(data._id)"> Soft delete</button></td> -->
+        <td></td>
+        <td class="text-center"><button class="btn btn-outline-danger"  (click)="HardDeleteHeroImage(data._id)">Hard Delete</button></td>
       </tr>
     </tbody>
   </table>
