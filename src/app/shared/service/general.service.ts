@@ -37,7 +37,7 @@ export class GeneralService {
      return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFourCardsById/${_id}`)
   }
   HardDeletFourCardById(_id:any){
-    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDelFourCards/${_id}`)
+    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddelete/${_id}`)
 
   }
   TwoCardsApi(payLoad:any){
