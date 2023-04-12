@@ -8,7 +8,7 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 })
 export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
-  FourCards:any={}
+  FourCards:any=[];
   particularproductData:any = {}
   MakeMyIdPublic :any;
   Url='http://localhost:7070/'
