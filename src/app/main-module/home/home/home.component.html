@@ -83,9 +83,9 @@
 
 
 <div class="container">
-    <div class="row" *ngFor="let data of TwoCards">
-      <div class="col-md-6">
-        <img [src]="Url+data.imageDetail.imageUrl" class="img-fluid">
+    <div class="row" >
+      <div class="col-md-6" *ngFor="let data of TwoCards">
+        <img [src]="Url+data.imageDetail[0].imageUrl" class="img-fluid">
       </div>
       <!-- <div class="col-md-6">
         <img [src]="Url+data.imageDetail[1].imageUrl" class="img-fluid">
