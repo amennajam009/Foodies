@@ -10,6 +10,7 @@ import { GeneralService } from 'src/app/shared/service/general.service';
   styleUrls: ['./general-setting.component.css']
 })
 export class GeneralSettingComponent implements OnInit {
+  twoImages:any
   cardImage:any
   fourcards:FormGroup | any;
   newImageArray:any=[]
@@ -69,15 +70,10 @@ export class GeneralSettingComponent implements OnInit {
     MultipartFormData.append('cardName', this.fourcards.get('cardName').value);
     MultipartFormData.append('cardDescriptionFour', this.fourcards.get('cardDescriptionFour').value);
     MultipartFormData.append('card-image', this.cardImage);
-    // MultipartFormData.append('descriptionTwo', this.fourcards.get('descriptionTwo').value);
-    // MultipartFormData.append('HeadingThree', this.fourcards.get('HeadingThree').value);
-    // MultipartFormData.append('descriptionThree', this.fourcards.get('descriptionThree').value);
-    // MultipartFormData.append('HeadingFour', this.fourcards.get('HeadingFour').value);
-    // MultipartFormData.append('descriptionFour', this.fourcards.get('descriptionFour').value);
   
-    this.newImageArray.forEach((imagedata: any) => {
-      MultipartFormData.append('images', imagedata);
-    });
+    // this.newImageArray.forEach((imagedata: any) => {
+    //   MultipartFormData.append('images', imagedata);
+    // });
   
     this._General.FourCardApi(MultipartFormData).subscribe((res: any) => {
       res;
@@ -134,29 +130,43 @@ export class GeneralSettingComponent implements OnInit {
   
 
   TwoImages(event:any){
-    let fileLength=event.target.files.length;
-    if(event.target.files.length<=5){
-      [...event.target.files].forEach(element => this.TwoCardsArray.push(element) );
-    }
-    else{
-      this.TwoCardsArray=[]
-      this.fileSelect.nativeElement.value=null    
-    }
+    this.twoImages = event.target.files[0]; 
   }
-
-  submitTwoImages(){
-    const myfile4 = <HTMLInputElement>document.getElementById('myfile4');
-    const formData = new FormData();
-    if(myfile4.files){
-      for(let i=0; i< myfile4.files.length; i++){
-        formData.append('images', myfile4.files[i]);
-      }
-    }
-    this._General.TwoCardsApi(formData).subscribe((res:any)=>{
-      console.log(res);
-      myfile4.value=''
-    })
   
-  }
+  submitTwoImages(){
+    let MultipartFormData = new FormData();
+    // MultipartFormData.append('cardName', this.fourcards.get('cardName').value);
+    // MultipartFormData.append('cardDescriptionFour', this.fourcards.get('cardDescriptionFour').value);
+    MultipartFormData.append('two-images', this.cardImage);
+  
+    // this.newImageArray.forEach((imagedata: any) => {
+    //   MultipartFormData.append('images', imagedata);
+    // });
+  
+    this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
+      res;
+      this.twoImages.reset();
+      this.fileSelect.nativeElement.value = null;
+      this.newImageArray = [];
+     // Manually clear the image array
+     this.newImageArray.length = 0;
+    })
  
+
+  // submitTwoImages(){
+  //   const myfile4 = <HTMLInputElement>document.getElementById('myfile4');
+  //   const formData = new FormData();
+  //   if(myfile4.files){
+  //     for(let i=0; i< myfile4.files.length; i++){
+  //       formData.append('images', myfile4.files[i]);
+  //     }
+  //   }
+  //   this._General.TwoCardsApi(formData).subscribe((res:any)=>{
+  //     console.log(res);
+  //     myfile4.value=''
+  //   })
+  
+  // }
+ 
+}
 }
