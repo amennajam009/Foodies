@@ -137,7 +137,7 @@ export class GeneralSettingComponent implements OnInit {
     let MultipartFormData = new FormData();
     // MultipartFormData.append('cardName', this.fourcards.get('cardName').value);
     // MultipartFormData.append('cardDescriptionFour', this.fourcards.get('cardDescriptionFour').value);
-    MultipartFormData.append('two-images', this.cardImage);
+    MultipartFormData.append('images', this.twoImages);
   
     // this.newImageArray.forEach((imagedata: any) => {
     //   MultipartFormData.append('images', imagedata);
