@@ -9,12 +9,15 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
   FourCards:any=[];
+  particularproductcard:any={}
   particularproductData:any = {}
   MakeMyIdPublic :any;
+  // ProductArray:any = []
   Url='http://localhost:7070/'
   constructor(private _General:GeneralService) { }
 
   ngOnInit(): void {
+    // this.PopulateProductArray();
     this._General.GetHeroImage().subscribe((res:any)=>{
       this.Bannerimage=res.Result;
 
@@ -25,6 +28,15 @@ export class FoodiesAnalyticsComponent implements OnInit {
     })
   }
   
+  // PopulateProductArray(){
+  //   this._General.GetFourCardApi().subscribe((Responsefrombackend:any)=>{
+  //     Responsefrombackend.Result.forEach((element:any) => {
+  //      if(element.Status !==1){
+  //        this.ProductArray.push(element);
+  //      }
+  //     });
+  //    })
+  //  }
 GetHeroImagebyId(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.GetHeroImageById(_id).subscribe((res:any)=>{
@@ -45,8 +57,8 @@ HardDeleteHeroImage(_id:any){
 GetFourCardsByItId(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.GetFourcardsById(_id).subscribe((res:any)=>{
-    this.FourCards=res.Result  
-    this.FourCards=[]
+  this.FourCards=[]
+  this.particularproductcard=res.Result;
   })
 }
 
@@ -54,7 +66,7 @@ HardDeletFourCards(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeletFourCardById(_id).subscribe((res:any)=>{
       this.FourCards=res.Result;
-      this.FourCards=[]
+      // this.FourCards=[]
   })
 }
 
