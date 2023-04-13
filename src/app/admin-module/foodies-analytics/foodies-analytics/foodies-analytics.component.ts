@@ -9,14 +9,18 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
   FourCards:any=[];
-  particularproductcard:any={}
+  imageDetailsArray: any[] = [];
   particularproductData:any = {}
+  particularproductcard:any=[]
   MakeMyIdPublic :any;
+  // imageDetailsArray: any[] = [];
+ 
   // ProductArray:any = []
   Url='http://localhost:7070/'
   constructor(private _General:GeneralService) { }
 
   ngOnInit(): void {
+
     // this.PopulateProductArray();
     this._General.GetHeroImage().subscribe((res:any)=>{
       this.Bannerimage=res.Result;
