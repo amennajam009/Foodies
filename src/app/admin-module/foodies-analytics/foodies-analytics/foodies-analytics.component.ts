@@ -46,6 +46,7 @@ GetFourCardsByItId(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.GetFourcardsById(_id).subscribe((res:any)=>{
     this.FourCards=res.Result  
+    this.FourCards=[]
   })
 }
 
