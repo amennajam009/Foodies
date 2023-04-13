@@ -73,23 +73,23 @@
 
 <h3>Two Cards</h3>
 <h4 class="text-center">Upload Two Image</h4>
-<div class="d-flex justify-content-center">
-<form  (ngSubmit)="submitTwoImages()" >
+
+<form  (ngSubmit)="submitTwoImages()">
 <div class="container">
     <div class="row">
       <div class="col-md-6">
         <div class="card border mt-5">
           <div class="card-body ">
-            <h5 class="card-title">Image-First</h5>
+            <h5 class="card-title">Image-First/Image-Second</h5>
             <div class="form-group">
               <label for="input1">Upload First Image</label><br>
               <input type="file" id="myfile4" name="myfile4" multiple (change)="TwoImages($event)"  #fileSelect class="mt-3">
+              <button type="submit" class="btn btn-primary mt-4 mb-4">Submit</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary mt-4">Submit</button>
 </form>
-</div>
+
