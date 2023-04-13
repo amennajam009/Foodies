@@ -98,9 +98,8 @@
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <div class="col" *ngFor="let data of particularproductcard?.imageDetails" >
-                <img [src]="Url+data.imageUrl" class="img fluid w-40 h-40 mt-5 ms-5" >
-               
+              <div class="col" *ngFor="let data of particularproductcard?.imageDetails">
+                <img [src]="Url+data.imageUrl" class="img fluid w-40 h-40 mt-5 ms-5"> 
               </div>
               <h5 class="modal-title" id="exampleModalLabel">{{particularproductcard?.cardName}}</h5>
               <p>{{particularproductcard?.cardDescriptionFour}}</p>
