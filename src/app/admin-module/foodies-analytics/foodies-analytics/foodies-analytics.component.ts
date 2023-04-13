@@ -9,7 +9,6 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
   FourCards:any=[];
-  imageDetailsArray: any[] = [];
   particularproductData:any = {}
   particularproductcard:any=[]
   MakeMyIdPublic :any;
@@ -23,24 +22,14 @@ export class FoodiesAnalyticsComponent implements OnInit {
 
     // this.PopulateProductArray();
     this._General.GetHeroImage().subscribe((res:any)=>{
-      this.Bannerimage=res.Result;
-
+    this.Bannerimage=res.Result;
     this._General.GetFourCardApi().subscribe((res:any)=>{
       this.FourCards=res.Result;
       console.log(this.FourCards)
     })  
     })
   }
-  
-  // PopulateProductArray(){
-  //   this._General.GetFourCardApi().subscribe((Responsefrombackend:any)=>{
-  //     Responsefrombackend.Result.forEach((element:any) => {
-  //      if(element.Status !==1){
-  //        this.ProductArray.push(element);
-  //      }
-  //     });
-  //    })
-  //  }
+
 GetHeroImagebyId(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.GetHeroImageById(_id).subscribe((res:any)=>{
