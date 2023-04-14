@@ -10,6 +10,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
   TwoCards:any=[];
   FourCards:any=[];
+  particularproducttwo:any={}
   particularproductData:any = {}
   particularproductcard:any=[]
   MakeMyIdPublic :any;
@@ -70,8 +71,17 @@ HardDeletFourCards(_id:any){
 GetTwoCardsById(_id:any){
   this.MakeMyIdPublic=_id;
  this._General.GetTwoCardById(_id).subscribe((res:any)=>{
-   this.TwoCards=res.Result;
+  this.particularproducttwo=res.Result;
+   this.TwoCards=[]
  })
+}
+
+
+HardDeleteTwoCards(_id:any){
+  this.MakeMyIdPublic=_id;
+  this._General.HardDeleteTwoCardById(_id).subscribe((res:any)=>{
+    this.TwoCards=res.Result;
+  })
 }
 
 }

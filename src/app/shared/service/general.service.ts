@@ -49,4 +49,7 @@ export class GeneralService {
   GetTwoCardById(_id:any){
     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetTwocardsById/${_id}`) 
   }
+  HardDeleteTwoCardById(_id:any){
+   return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeleteTwoimage/${_id}`)
+  }
 }
