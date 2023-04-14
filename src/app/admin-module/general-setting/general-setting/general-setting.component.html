@@ -45,3 +45,13 @@
   </div>
 </form>
 <!-- Two-Cards -->
+
+<hr>
+
+<h3>Frequently Asked Questions</h3>
+<form [formGroup]="fourcards" (ngSubmit)="Submitmyform()">
+    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="cardName" required>
+    <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="cardDescriptionFour" required>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
