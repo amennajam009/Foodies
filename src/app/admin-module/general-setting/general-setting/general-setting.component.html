@@ -74,7 +74,7 @@
 <h3>Two Cards</h3>
 <h4 class="text-center">Upload Two Image</h4>
 
-<form  (ngSubmit)="submitTwoImages()">
+<form  #twoImagesForm="ngForm" (ngSubmit)="submitTwoImages(); twoImagesForm.reset()">
 <div class="container">
     <div class="row">
       <div class="col-md-6">
