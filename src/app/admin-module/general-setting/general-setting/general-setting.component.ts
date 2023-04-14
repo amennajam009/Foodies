@@ -137,31 +137,29 @@ export class GeneralSettingComponent implements OnInit {
     let MultipartFormData = new FormData();
     MultipartFormData.append('images', this.twoImages);
   
-  
     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
-      res;
       this.twoImages.reset();
       this.fileSelect.nativeElement.value = null;
       this.TwoCardsArray = [];
-     // Manually clear the image array
-     this.TwoCardsArray.length = 0;
-    })
+      // Manually clear the image array
+      this.TwoCardsArray.length = 0;
+    });
+  }
+
+
+//   submitTwoImages(){
+//     let MultipartFormData = new FormData();
+//     MultipartFormData.append('images', this.twoImages);
+  
+//     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
+//       this.fileSelect.nativeElement.value = null;
+//       this.TwoCardsArray = [];
+//       // Manually clear the image array
+//       this.TwoCardsArray.length = 0;
+//     });
+// }
  
 
-  // submitTwoImages(){
-  //   const myfile4 = <HTMLInputElement>document.getElementById('myfile4');
-  //   const formData = new FormData();
-  //   if(myfile4.files){
-  //     for(let i=0; i< myfile4.files.length; i++){
-  //       formData.append('images', myfile4.files[i]);
-  //     }
-  //   }
-  //   this._General.TwoCardsApi(formData).subscribe((res:any)=>{
-  //     console.log(res);
-  //     myfile4.value=''
-  //   })
-  
-  // }
  
 }
-}
+
