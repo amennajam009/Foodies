@@ -135,21 +135,16 @@ export class GeneralSettingComponent implements OnInit {
   
   submitTwoImages(){
     let MultipartFormData = new FormData();
-    // MultipartFormData.append('cardName', this.fourcards.get('cardName').value);
-    // MultipartFormData.append('cardDescriptionFour', this.fourcards.get('cardDescriptionFour').value);
     MultipartFormData.append('images', this.twoImages);
   
-    // this.newImageArray.forEach((imagedata: any) => {
-    //   MultipartFormData.append('images', imagedata);
-    // });
   
     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
       res;
       this.twoImages.reset();
       this.fileSelect.nativeElement.value = null;
-      this.newImageArray = [];
+      this.TwoCardsArray = [];
      // Manually clear the image array
-     this.newImageArray.length = 0;
+     this.TwoCardsArray.length = 0;
     })
  
 
