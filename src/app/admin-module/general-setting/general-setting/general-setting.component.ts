@@ -140,9 +140,9 @@ export class GeneralSettingComponent implements OnInit {
     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
       this.twoImages.reset();
       this.fileSelect.nativeElement.value = null;
-      this.TwoCardsArray = [];
+      this.twoImages= [];
       // Manually clear the image array
-      this.TwoCardsArray.length = 0;
+      this.twoImages.length = 0;
     });
   }
 
