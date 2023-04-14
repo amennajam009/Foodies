@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   // AnotherImageUrl: any = [];
   Url='http://localhost:7070/';
   HeroImage:any=[];
-  TwoCards:any=[]
+  TwoCards:any=[];
+  GetFreq:any=[]
 
   constructor(private _General:GeneralService) { }
 
@@ -35,6 +36,10 @@ export class HomeComponent implements OnInit {
     this._General.GetTwoImage().subscribe((res:any)=>{
       this.TwoCards=res.Result;
     });
+
+    this._General.GetFrequentlyAskedQue().subscribe((res:any)=>{
+      this.GetFreq = res.Result;
+    })
     
   }
 }

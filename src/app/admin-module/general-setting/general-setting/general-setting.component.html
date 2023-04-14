@@ -49,9 +49,9 @@
 <hr>
 
 <h3>Frequently Asked Questions</h3>
-<form [formGroup]="fourcards" (ngSubmit)="Submitmyform()">
-    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="cardName" required>
-    <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="cardDescriptionFour" required>
+<form [formGroup]="FrequentlyQue" (ngSubmit)="Submitfreqform()">
+    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="headingQue" required>
+    <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="AnswerQue" required>
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 

@@ -13,6 +13,7 @@ export class GeneralSettingComponent implements OnInit {
   twoImages:any
   cardImage:any
   fourcards:FormGroup | any;
+  FrequentlyQue:FormGroup | any;
   newImageArray:any=[]
   heroImageArray:any=[]
   TwoCardsArray:any=[]
@@ -21,7 +22,8 @@ export class GeneralSettingComponent implements OnInit {
   
 
   constructor(private _FormBuilder:FormBuilder , private _General:GeneralService) { 
-    this.myFormModel()
+    this.myFormModel();
+    this.mySecondForm();
   }
 
   ngOnInit(): void {
@@ -159,8 +161,19 @@ export class GeneralSettingComponent implements OnInit {
 //     });
 // }
  
+mySecondForm(){
+  this.FrequentlyQue = this._FormBuilder.group({
+    headingQue: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    AnswerQue: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+  })
+}
 
-
+Submitfreqform(){
+  const payload = this.FrequentlyQue.value;
+  this._General.FrequentlyAskedQueAPI(payload).subscribe((res:any)=>{
+     console.log(res);
+  })
+}
  
 }
 

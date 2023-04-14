@@ -52,4 +52,11 @@ export class GeneralService {
   HardDeleteTwoCardById(_id:any){
    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeleteTwoimage/${_id}`)
   }
+
+  FrequentlyAskedQueAPI(payLoad:any){
+   return this.HttpClient.post('http://localhost:7070/Generalsetting/FrequentlyAskedQestions',payLoad);
+  }
+  GetFrequentlyAskedQue(){
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetFrequentlyAskedQestions')
+  }
 }
