@@ -8,6 +8,7 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 })
 export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
+  TwoCards:any=[];
   FourCards:any=[];
   particularproductData:any = {}
   particularproductcard:any=[]
@@ -27,6 +28,9 @@ export class FoodiesAnalyticsComponent implements OnInit {
       this.FourCards=res.Result;
       console.log(this.FourCards)
     })  
+    })
+    this._General.GetTwoImage().subscribe((res:any)=>{
+      this.TwoCards=res.Result;
     })
   }
 
@@ -63,5 +67,11 @@ HardDeletFourCards(_id:any){
   })
 }
 
+GetTwoCardsById(_id:any){
+  this.MakeMyIdPublic=_id;
+ this._General.GetTwoCardById(_id).subscribe((res:any)=>{
+   this.TwoCards=res.Result;
+ })
+}
 
 }

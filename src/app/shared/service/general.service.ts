@@ -46,4 +46,7 @@ export class GeneralService {
   GetTwoImage(){
     return this.HttpClient.get('http://localhost:7070/Generalsetting/GetTwocardsApi')
   }
+  GetTwoCardById(_id:any){
+    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetTwocardsById/${_id}`) 
+  }
 }
