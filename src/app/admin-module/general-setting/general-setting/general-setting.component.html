@@ -48,8 +48,8 @@
 
 <hr>
 
-<h3>Frequently Asked Questions</h3>
-<form [formGroup]="FrequentlyQue" (ngSubmit)="Submitfreqform()">
+<h3 class="mt-5">Frequently Asked Questions</h3>
+<form [formGroup]="FrequentlyQue" (ngSubmit)="Submitfreqform()" class="mt-5">
     <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="headingQue" required>
     <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="AnswerQue" required>
     <button class="btn btn-primary" type="submit">Submit</button>
