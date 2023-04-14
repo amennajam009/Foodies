@@ -71,8 +71,7 @@ HardDeletFourCards(_id:any){
 GetTwoCardsById(_id:any){
   this.MakeMyIdPublic=_id;
  this._General.GetTwoCardById(_id).subscribe((res:any)=>{
-  this.particularproducttwo=res.Result;
-   this.TwoCards=[]
+   this.TwoCards=res.Result;
  })
 }
 
