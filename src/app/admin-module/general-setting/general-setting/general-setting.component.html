@@ -1,3 +1,4 @@
+<!-- upload hero image -->
 <h2 class="ms-5 mt-3">Upload Hero Image</h2>
 <div class="d-flex justify-content-center align-items-center">
     <form (ngSubmit)="SubmitHeroImage()" class="text-center">
@@ -6,74 +7,25 @@
       <button type="submit" class="btn btn-primary mt-4">Submit</button>
     </form>
   </div>
-
+<!-- uplaod hero image -->
   <hr>
 
+
+  <!-- FourCards -->
   <h3>Four Cards</h3>
 <form [formGroup]="fourcards" (ngSubmit)="Submitmyform()">
-  <!-- <div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-0 feature-row">
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                <div class="feature-item border h-100 p-5">
-                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-                       
-                    </div>
-                    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="cardName" required>
-                    <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="cardDescriptionFour"></textarea>
-                    <input type="file" id="myfile1" name="myfile1" multiple (change)="getImages($event)" #fileSelect1 class="mt-3">
-                ok 
-                </div> 
-            </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                <div class="feature-item border h-100 p-5">
-                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-                    
-                    </div>
-                     <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="cardName" required>
-                     <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="cardDescriptionFour"></textarea>     
-                     <input type="file" id="myfile2" name="myfile2" multiple (change)="getImages($event)"  #fileSelect2 class="mt-3">
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                <div class="feature-item border h-100 p-5">
-                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-               
-                    </div>
-                    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="HeadingThree" required>
-                    <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="descriptionThree"></textarea>
-                    <input type="file" id="myfile3" name="myfile3" multiple (change)="getImages($event)"  #fileSelect3 class="mt-3">
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                <div class="feature-item border h-100 p-5">
-                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-          
-                    </div>
-                    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="HeadingFour" required>
-                    <textarea class="mb-0 form-control" placeholder="Enter your text" formControlName="descriptionFour"></textarea>
-                    <input type="file" id="myfile4" name="myfile4" multiple (change)="getImages($event)"  #fileSelect class="mt-3">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="text-center"> -->
-
     <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="cardName" required>
-   
-    <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="cardDescriptionFour" required>
+    <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="cardDescriptionFour" required>
     <input type="file" id="myfile4" name="myfile4"  (change)="getCardImage($event)"  #fileSelect class="mt-3">
     <button class="btn btn-primary" type="submit">Submit</button>
-  <!-- </div> -->
 </form>
-
+<!-- Fourcards -->
 <hr>
 
 
+<!-- Two-Cards -->
 <h3>Two Cards</h3>
 <h4 class="text-center">Upload Two Image</h4>
-
 <form  #twoImagesForm="ngForm" (ngSubmit)="submitTwoImages(); twoImagesForm.reset()">
 <div class="container">
     <div class="row">
@@ -92,4 +44,4 @@
     </div>
   </div>
 </form>
-
+<!-- Two-Cards -->
