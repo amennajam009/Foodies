@@ -59,4 +59,10 @@ export class GeneralService {
   GetFrequentlyAskedQue(){
     return this.HttpClient.get('http://localhost:7070/Generalsetting/GetFrequentlyAskedQestions')
   }
+  GetFrequentlyAskedQueById(_id:any){
+    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFrequeById/${_id}`)
+  }
+  HardDeletFrequentlyAskedQueById(_id:any){
+    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeletFrequentlyAskedQue/${_id}`)
+  }
 }

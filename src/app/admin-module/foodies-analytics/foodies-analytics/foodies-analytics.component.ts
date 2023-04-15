@@ -12,8 +12,11 @@ export class FoodiesAnalyticsComponent implements OnInit {
   FourCards:any=[];
   particularproducttwo:any={}
   particularproductData:any = {}
+  particularproductque:any={}
   particularproductcard:any=[]
   MakeMyIdPublic :any;
+  frequentlyque:any=[];
+  
   // imageDetailsArray: any[] = [];
  
   // ProductArray:any = []
@@ -32,6 +35,10 @@ export class FoodiesAnalyticsComponent implements OnInit {
     })
     this._General.GetTwoImage().subscribe((res:any)=>{
       this.TwoCards=res.Result;
+    })
+
+    this._General.GetFrequentlyAskedQue().subscribe((res:any)=>{
+      this.frequentlyque=res.Result;
     })
   }
 
@@ -80,6 +87,20 @@ HardDeleteTwoCards(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeleteTwoCardById(_id).subscribe((res:any)=>{
     this.TwoCards=res.Result;
+  })
+}
+
+GetFreqquentlyQuestions(_id:any){
+ this.MakeMyIdPublic=_id;
+ this._General.GetFrequentlyAskedQueById(_id).subscribe((res:any)=>{
+   this.frequentlyque=res.Result;
+ })
+}
+
+HardDeletFrequentlyQuestion(_id:any){
+  this.MakeMyIdPublic=_id;
+  this._General.HardDeletFrequentlyAskedQueById(_id).subscribe((res:any)=>{
+    this.frequentlyque=res.Result;
   })
 }
 
