@@ -9,6 +9,7 @@ import { ShopComponent } from './shop/shop/shop.component';
 import { AboutUsComponent } from './About-Us/about-us/about-us.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { ReviewComponent } from './Review/review/review.component';
+import { FooterComponent } from './footer/footer/footer.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ReviewComponent } from './Review/review/review.component';
     ShopComponent,
     AboutUsComponent,
     ContactComponent,
-    ReviewComponent
+    ReviewComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

@@ -15,7 +15,8 @@ children:[
   {path:'shop' , component:ShopComponent},
   {path:'About-us', component:AboutUsComponent},
   {path:'contact' , component:ContactComponent},
-  {path:'Review' , component:ReviewComponent}
+  {path:'Review' , component:ReviewComponent},
+
 
 ]
 
