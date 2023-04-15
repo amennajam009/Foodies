@@ -686,13 +686,18 @@
   .showBox {
     position: relative;
     margin-top: -30px;
-    color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
   }
   .showBox p {
     position:absolute;
-    margin-left: 7%;
+    /* margin-left: 7%; */
     font-size: 23px;
    margin-top: 48px;
+   font-size: 28px;
    
    
   }
@@ -702,7 +707,7 @@
   .delay {
     opacity: 0;
     animation: show 3s 1.5s infinite;
-    color:red;
+    color:#FFB000;
   }
   @-webkit-keyframes show {
     0% {opacity: 0;}
