@@ -30,7 +30,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
     this.Bannerimage=res.Result;
     this._General.GetFourCardApi().subscribe((res:any)=>{
       this.FourCards=res.Result;
-      console.log(this.FourCards)
+      // console.log(this.FourCards)
     })  
     })
     this._General.GetTwoImage().subscribe((res:any)=>{
@@ -62,9 +62,7 @@ HardDeleteHeroImage(_id:any){
 GetFourCardsByItId(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.GetFourcardsById(_id).subscribe((res:any)=>{
-  // this.FourCards=[]
-  this.FourCards=res.Result;
-  // this.particularproductcard();
+  this.particularproductcard=res.Result;
   })
 }
 
@@ -94,7 +92,7 @@ HardDeleteTwoCards(_id:any){
 GetFreqquentlyQuestions(_id:any){
  this.MakeMyIdPublic=_id;
  this._General.GetFrequentlyAskedQueById(_id).subscribe((res:any)=>{
-   this.frequentlyque=res.Result;
+this.particularproductque=res.Result;
  })
 }
 
