@@ -70,7 +70,7 @@ HardDeletFourCards(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeletFourCardById(_id).subscribe((res:any)=>{
       this.FourCards=res.Result;
-      // this.FourCards=[]
+      this.FourCards=[]
   })
 }
 
@@ -100,6 +100,7 @@ HardDeletFrequentlyQuestion(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeletFrequentlyAskedQueById(_id).subscribe((res:any)=>{
     this.frequentlyque=res.Result;
+    this.frequentlyque=[]
   })
 }
 
