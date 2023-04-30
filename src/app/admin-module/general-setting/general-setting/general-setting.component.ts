@@ -56,18 +56,14 @@ export class GeneralSettingComponent implements OnInit {
     }
     else{
       this.newImageArray=[]
-      this.fileSelect.nativeElement.value=null
-      
-      
+      this.fileSelect.nativeElement.value=null 
     }
   }
-
   getCardImage(event:any){
     this.cardImage = event.target.files[0]; 
   }
 
   Submitmyform() {
-  
     let MultipartFormData = new FormData();
     MultipartFormData.append('cardName', this.fourcards.get('cardName').value);
     MultipartFormData.append('cardDescriptionFour', this.fourcards.get('cardDescriptionFour').value);
