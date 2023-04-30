@@ -40,7 +40,8 @@ Submitmyfoodform(){
     
     this._menuService.StarterFoodCardApi(MultipartFormData).subscribe((res:any) => {
     res;
-
+    this.foodcards.reset();
+    this.fileSelect.nativeElement.value = null;
     });
    
 }
