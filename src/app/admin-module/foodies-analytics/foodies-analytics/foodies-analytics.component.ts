@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralService } from 'src/app/shared/service/general.service';
+import { MenuService } from 'src/app/shared/service/menu.service';
 
 @Component({
   selector: 'app-foodies-analytics',
@@ -16,12 +17,13 @@ export class FoodiesAnalyticsComponent implements OnInit {
   particularproductcard:any=[]
   MakeMyIdPublic :any;
   frequentlyque:any=[];
+  starterCard:any=[]
   
   // imageDetailsArray: any[] = [];
  
   // ProductArray:any = []
   Url='http://localhost:7070/'
-  constructor(private _General:GeneralService) { }
+  constructor(private _General:GeneralService , private _menuService:MenuService) { }
 
   ngOnInit(): void {
 
@@ -39,6 +41,10 @@ export class FoodiesAnalyticsComponent implements OnInit {
 
     this._General.GetFrequentlyAskedQue().subscribe((res:any)=>{
       this.frequentlyque=res.Result;
+    })
+
+    this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
+      this.starterCard=res.Result;
     })
   }
 

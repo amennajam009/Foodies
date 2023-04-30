@@ -10,7 +10,10 @@ export class MenuService {
 
 
   StarterFoodCardApi(payLoad:any){
-  return  this._HttpClient.post('http://localhost:7070/menu/starterApi',payLoad)
+  return  this._HttpClient.post('http://localhost:7070/menu/starterApi',payLoad);
+  }
+  GetAllDataStarterFoodCardApi(){
+    return this._HttpClient.get('http://localhost:7070/menu/GetAllDataOfstarterApi');
   }
   
 }

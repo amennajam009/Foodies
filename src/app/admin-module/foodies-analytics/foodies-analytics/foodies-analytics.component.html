@@ -253,6 +253,66 @@
                </tbody>
              </table> -->
      <!-- two-model -->
+
+<hr>
+     <h1 class="text-center mt-4">Menu-Analytics !</h1>
+     <h4 class="text-center mt-4">Starters-<span style="color:#FFB000 ;">Menu</span>-Analytics</h4>
+     <table class="table table-striped table-hover table-sm mt-5">
+      <thead>
+        <tr>
+          <th class="text-center">#</th>
+          <th class="text-center">Image</th>
+          <th class="text-center">FoodName</th>
+          <th class="text-center">FoodDes</th>
+          <th class="text-center">FoodPrice</th>
+          <th class="text-center">Status</th>
+          <th class="text-center">status summary</th>
+          <th class="text-center" colspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of starterCard ; let i=index">
+          <th class="text-center">{{i+1}}</th>
+          <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+          <td class="text-center">{{data.FoodName}}</td>
+          <td class="text-center">{{data.FoodDescription}}</td>
+          <td class="text-center">{{data.FoodPrice}}</td>
+          <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
+          <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
+          <!-- <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="GetFourCardsByItId(data._id)"></i></td> -->
+          <td></td>
+          <!-- <td class="text-center"><button class="btn btn-outline-danger"  (click)="HardDeletFourCards(data._id)">Hard Delete</button></td> -->
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- FoodCard Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabe1" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">{{particularproductcard?.cardName}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col" *ngFor="let data of particularproductcard?.imageDetails">
+                  <img [src]="Url+data.imageUrl" class="img fluid w-40 h-40 mt-5 ms-5"> 
+                </div>
+                <h5 class="modal-title" id="exampleModalLabel">{{particularproductcard?.cardName}}</h5>
+                <p>{{particularproductcard?.cardDescriptionFour}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FourCard Modal  -->
     
 
   
