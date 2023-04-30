@@ -15,5 +15,7 @@ export class MenuService {
   GetAllDataStarterFoodCardApi(){
     return this._HttpClient.get('http://localhost:7070/menu/GetAllDataOfstarterApi');
   }
-  
+  GetDataOfStarterFoodCardApiById(_id:any){
+    return this._HttpClient.get(`http://localhost:7070/menu/GetDataOfstarterApiById/:_id${_id}`)
+  }
 }
