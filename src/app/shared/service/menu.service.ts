@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class MenuService {
 
-  constructor() { }
+  constructor(private _HttpClient:HttpClient) { }
+
+
+  StarterFoodCardApi(payLoad:any){
+  return  this._HttpClient.post('http://localhost:7070/menu/starterApi',payLoad)
+  }
+  
 }
