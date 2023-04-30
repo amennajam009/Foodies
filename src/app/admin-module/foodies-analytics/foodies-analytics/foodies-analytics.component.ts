@@ -13,6 +13,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   FourCards:any=[];
   particularproducttwo:any={}
   particularproductData:any = {}
+  particularproductstartCard:any = {}
   particularproductque:any={}
   particularproductcard:any=[]
   MakeMyIdPublic :any;
