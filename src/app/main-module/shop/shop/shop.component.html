@@ -63,18 +63,18 @@
   
               <div class="row gy-5">
   
-                <div class="col-lg-4 menu-item">
-                  <a href="../../../../assets/pic/menu-item-1.png" class="glightbox"><img src="../../../../assets/pic/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                  <h4>Magnam Tiste</h4>
+                <div class="col-lg-4 menu-item" *ngFor="let data of AllstarterCards">
+                  <a  class="glightbox"><img [src]="Url+data.imageDetails.imageUrl" class="menu-img img-fluid" alt=""></a>
+                  <h4>{{data.FoodName}}</h4>
                   <p class="ingredients">
-                    Lorem, deren, trataro, filede, nerada
+                    {{data.FoodDescription}}
                   </p>
                   <p class="price">
-                    $5.95
+                  {{data.price}}
                   </p>
                 </div><!-- Menu Item -->
   
-                <div class="col-lg-4 menu-item">
+                <div class="col-lg-4 menu-item" *ngFor="let data of AllstarterCards">
                   <a href="../../../../assets/pic/menu-item-2.png" class="glightbox"><img src="../../../../assets/pic/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
                   <h4>Aut Luia</h4>
                   <p class="ingredients">

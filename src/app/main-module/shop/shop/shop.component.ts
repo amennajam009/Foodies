@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/shared/service/menu.service';
 
 @Component({
   selector: 'app-shop',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
 
-  constructor() { }
+  data: any=[];
+  AllstarterCards:any=[];
+  Url='http://localhost:7070/';
+  constructor(private _menuService:MenuService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.StarterFoodCards();
   }
 
+
+  public StarterFoodCards(){
+    this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
+      this.AllstarterCards=res.Result;
+    })
+  }
 }
