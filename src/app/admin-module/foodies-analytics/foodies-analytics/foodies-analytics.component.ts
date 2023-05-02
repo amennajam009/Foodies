@@ -122,7 +122,7 @@ this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
 })
 }
 
-
+//populateProductArray To Clear correctly my analytics
 PopulateProductArray(){
   this._General.GetFourCardApi().subscribe((Responsefrombackend:any)=>{
     Responsefrombackend.Result.forEach((element:any) => {
