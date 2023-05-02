@@ -14,7 +14,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   particularproducttwo:any={};
   particularproductData:any = {};
   particularproductque:any={};
-  particularproducrstarter:any={};
+  particularproducrstarter:any = {};
   particularproductcard:any=[];
   MakeMyIdPublic :any;
   frequentlyque:any=[];
