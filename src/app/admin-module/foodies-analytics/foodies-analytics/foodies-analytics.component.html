@@ -279,7 +279,7 @@
           <td class="text-center">{{data.FoodPrice}}</td>
           <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
           <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
-          <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal4" (click)="StarterById(data._id)" ></i></td>
+          <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal6" (click)="StarterById(data._id)" ></i></td>
           <td></td>
           <!-- <td class="text-center"><button class="btn btn-outline-danger"  (click)="HardDeletFourCards(data._id)">Hard Delete</button></td> -->
         </tr>
@@ -287,28 +287,29 @@
     </table>
   
     <!-- FoodCard Modal -->
-    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
       <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel4">{{particularproductstart?.FoodName}}</h5>
+          <div class="modal-header  text-white">
+            <h5 class="modal-title" id="exampleModalLabel6">{{ particularproductsta?.FoodName}}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="container">
               <div class="row">
-                <div class="col" *ngFor="let data of   particularproductstart">
-                  <h1 class="mt-5">Frequently-Queston</h1>
-                  <h5 class="modal-title mt-5" id="exampleModalLabel4"><span style="color: blue;">Question:</span>&nbsp;&nbsp;{{particularproductstart?.FoodName}}</h5>
-                  <p class="modal-title mt-3" id="exampleModalLabel4"><span style="color: blue;"><b>Answer:</b></span>&nbsp;&nbsp;{{particularproductstart?.FoodDescription}}</p>
-                  <p class="modal-title mt-3" id="exampleModalLabel4"><span style="color: blue;"><b>Answer:</b></span>&nbsp;&nbsp;{{particularproductstart?.FoodPrice}}</p>
+                <div class="col" *ngFor="let data of   particularproductsta">
+          
+     
                 </div>
+          <h1 class="mt-5">Frequently-Queston</h1>
+          <h5 class="modal-title mt-5" id="exampleModalLabel6"><span style="color: blue;">Question:</span>&nbsp;&nbsp;{{ particularproductsta?.FoodName}}</h5>
+          <p class="modal-title mt-3" id="exampleModalLabel6"><span style="color: blue;"><b>Answer:</b></span>&nbsp;&nbsp;{{ particularproductsta?.FoodDescription}}</p>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>

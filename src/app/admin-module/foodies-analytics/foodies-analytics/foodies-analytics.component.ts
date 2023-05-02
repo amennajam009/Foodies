@@ -15,8 +15,8 @@ export class FoodiesAnalyticsComponent implements OnInit {
   particularproducttwo:any={};
   particularproductData:any = {};
   particularproductque:any={};
+  particularproductsta:any={}
   particularproductcard:any={};
-  particularproductstart:any={};
   MakeMyIdPublic :any;
   frequentlyque:any=[];
  
@@ -112,8 +112,9 @@ HardDeletFrequentlyQuestion(_id:any){
 }
 
 StarterById(_id:any){
+this.MakeMyIdPublic=_id;  
 this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
-  this.particularproductstart=res.Result;
+  this. particularproductsta=res.Result;
 })
 }
 
