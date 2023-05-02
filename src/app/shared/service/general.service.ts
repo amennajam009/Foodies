@@ -65,4 +65,6 @@ export class GeneralService {
   HardDeletFrequentlyAskedQueById(_id:any){
     return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeletFrequentlyAskedQue/${_id}`)
   }
+
+  
 }
