@@ -11,11 +11,11 @@ export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
   TwoCards:any=[];
   FourCards:any=[];
-  particularproducttwo:any={}
-  particularproductData:any = {}
-  particularproductque:any={}
-  particularproducrstarter:any={}
-  particularproductcard:any=[]
+  particularproducttwo:any={};
+  particularproductData:any = {};
+  particularproductque:any={};
+  particularproducrstarter:any={};
+  particularproductcard:any=[];
   MakeMyIdPublic :any;
   frequentlyque:any=[];
   starterCard:any=[];
