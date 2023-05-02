@@ -14,13 +14,13 @@ export class ShopComponent implements OnInit {
   constructor(private _menuService:MenuService) { }
 
   ngOnInit(): void { 
-    this.StarterFoodCards();
+  this.GetFoodCardApi();
   }
 
-
-  public StarterFoodCards(){
-    this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
-      this.AllstarterCards=res.Result;
-    })
-  }
+public GetFoodCardApi(){
+  this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
+    this.AllstarterCards=res.Result;
+  })
+}
+ 
 }
