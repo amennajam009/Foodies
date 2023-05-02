@@ -140,7 +140,7 @@ PopulateProductArray(){
   this._General.GetFrequentlyAskedQue().subscribe((res:any)=>{
     res.Result.forEach((element:any) => {
       if(element.softDeleteStatus !==1){
-        this.FourCards.push(element);
+        this.frequentlyque.push(element);
       }
     });
   })
