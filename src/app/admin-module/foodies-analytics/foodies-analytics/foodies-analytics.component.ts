@@ -95,6 +95,7 @@ HardDeleteTwoCards(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeleteTwoCardById(_id).subscribe((res:any)=>{
     this.TwoCards=res.Result;
+    this.PopulateProductArray();
   })
 }
 
