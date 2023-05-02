@@ -28,7 +28,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   constructor(private _General:GeneralService , private _menuService:MenuService) { }
 
   ngOnInit(): void {
-    
+    this.PopulateProductArray();
     this._General.GetHeroImage().subscribe((res:any)=>{
     this.Bannerimage=res.Result;
     this._General.GetFourCardApi().subscribe((res:any)=>{
@@ -79,6 +79,7 @@ HardDeletFourCards(_id:any){
   this._General.HardDeletFourCardById(_id).subscribe((res:any)=>{
       this.FourCards=res.Result;
       this.FourCards=[]
+      this.PopulateProductArray();
   })
 }
 
@@ -116,9 +117,20 @@ StarterById(_id:any){
 this.MakeMyIdPublic=_id;  
 this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
   this.particularproductsta=res.Result;
+ 
 })
 }
 
+
+PopulateProductArray(){
+  this._General.GetFourCardApi().subscribe((Responsefrombackend:any)=>{
+    Responsefrombackend.Result.forEach((element:any) => {
+     if(element.softDeleteStatus !==1){
+       this.FourCards.push(element);
+     }
+    });
+   })
+ }
 }
 
 
