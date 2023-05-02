@@ -28,6 +28,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   constructor(private _General:GeneralService , private _menuService:MenuService) { }
 
   ngOnInit(): void {
+    
     this._General.GetHeroImage().subscribe((res:any)=>{
     this.Bannerimage=res.Result;
     this._General.GetFourCardApi().subscribe((res:any)=>{
@@ -114,7 +115,7 @@ HardDeletFrequentlyQuestion(_id:any){
 StarterById(_id:any){
 this.MakeMyIdPublic=_id;  
 this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
-  this.particularproductsta=[res.Result];
+  this.particularproductsta=res.Result;
 })
 }
 
