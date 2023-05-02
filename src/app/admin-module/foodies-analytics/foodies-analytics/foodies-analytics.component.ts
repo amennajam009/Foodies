@@ -11,14 +11,15 @@ export class FoodiesAnalyticsComponent implements OnInit {
   Bannerimage:any=[];
   TwoCards:any=[];
   FourCards:any=[];
+  StarterCards:any=[];
   particularproducttwo:any={};
   particularproductData:any = {};
   particularproductque:any={};
-  particularproducrstarter:any = {};
-  particularproductcard:any=[];
+  particularproductcard:any={};
+  particularproductstart:any={};
   MakeMyIdPublic :any;
   frequentlyque:any=[];
-  starterCard:any=[];
+ 
   
   // imageDetailsArray: any[] = [];
  
@@ -27,8 +28,6 @@ export class FoodiesAnalyticsComponent implements OnInit {
   constructor(private _General:GeneralService , private _menuService:MenuService) { }
 
   ngOnInit(): void {
-
-    // this.PopulateProductArray();
     this._General.GetHeroImage().subscribe((res:any)=>{
     this.Bannerimage=res.Result;
     this._General.GetFourCardApi().subscribe((res:any)=>{
@@ -43,11 +42,12 @@ export class FoodiesAnalyticsComponent implements OnInit {
     this._General.GetFrequentlyAskedQue().subscribe((res:any)=>{
       this.frequentlyque=res.Result;
     })
-
     this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
-      this.starterCard=res.Result;
+      this.StarterCards=res.Result;
     })
   }
+
+
 
 GetHeroImagebyId(_id:any){
   this.MakeMyIdPublic=_id;
@@ -110,11 +110,10 @@ HardDeletFrequentlyQuestion(_id:any){
     this.frequentlyque=[]
   })
 }
-// menu-Page
-GetStarterCardById(_id:any){
-this.MakeMyIdPublic=_id;
+
+StarterById(_id:any){
 this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
-this.particularproducrstarter=res.Result;
+  this.particularproductstart=res.Result;
 })
 }
 
