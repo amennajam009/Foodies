@@ -13,12 +13,12 @@ export class FoodiesAnalyticsComponent implements OnInit {
   FourCards:any=[];
   particularproducttwo:any={}
   particularproductData:any = {}
-  particularproductstartCard:any = {}
   particularproductque:any={}
+  particularproducrstarter:any={}
   particularproductcard:any=[]
   MakeMyIdPublic :any;
   frequentlyque:any=[];
-  starterCard:any=[]
+  starterCard:any=[];
   
   // imageDetailsArray: any[] = [];
  
@@ -114,7 +114,7 @@ HardDeletFrequentlyQuestion(_id:any){
 GetStarterCardById(_id:any){
 this.MakeMyIdPublic=_id;
 this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
- this.particularproductstartCard=res.Result;
+this.particularproducrstarter=res.Result;
 })
 }
 
