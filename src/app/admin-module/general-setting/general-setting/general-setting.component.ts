@@ -167,7 +167,8 @@ mySecondForm(){
 Submitfreqform(){
   const payload = this.FrequentlyQue.value;
   this._General.FrequentlyAskedQueAPI(payload).subscribe((res:any)=>{
-     console.log(res);
+    res;
+    this.FrequentlyQue.reset();
   })
 }
  
