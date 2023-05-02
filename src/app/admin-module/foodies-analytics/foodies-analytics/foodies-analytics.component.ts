@@ -114,7 +114,7 @@ HardDeletFrequentlyQuestion(_id:any){
 StarterById(_id:any){
 this.MakeMyIdPublic=_id;  
 this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
-  this.particularproductsta=res.Result;
+  this.particularproductsta=[res.Result];
 })
 }
 
