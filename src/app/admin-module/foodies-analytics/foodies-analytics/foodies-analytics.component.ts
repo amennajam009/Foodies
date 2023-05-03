@@ -28,6 +28,8 @@ export class FoodiesAnalyticsComponent implements OnInit {
   constructor(private _General:GeneralService , private _menuService:MenuService) { }
 
   ngOnInit(): void {
+    //populate-Array to remove data 
+    this.PopulateStarterArray();
     this.PopulateQuestionArray();
     this.PopulateProductArray();
     this._General.GetHeroImage().subscribe((res:any)=>{
@@ -125,6 +127,16 @@ this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
 })
 }
 
+HardDeleteStarterById(_id:any){
+  this.MakeMyIdPublic=_id;
+  this._menuService.HardDeleteStarterFoodCardById(_id).subscribe((res:any)=>{
+   res.Result;
+   this.StarterCards=[]
+
+  })
+}
+
+
 //populateProductArray To Clear correctly my analytics
 PopulateProductArray(){
   this._General.GetFourCardApi().subscribe((Responsefrombackend:any)=>{
@@ -146,6 +158,16 @@ PopulateProductArray(){
   })
  }
 
+
+ PopulateStarterArray(){
+  this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
+    res.Result.array.forEach((element:any) => {
+      if(element.softDeleteStatus !==1){
+        this.StarterCards.push(element)
+      }
+    });
+  })
+ }
 }
 
 
