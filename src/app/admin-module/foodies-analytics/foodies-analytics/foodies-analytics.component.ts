@@ -162,7 +162,7 @@ PopulateProductArray(){
 
  PopulateStarterArray(){
   this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
-    res.Result.array.forEach((element:any) => {
+    res.Result.forEach((element:any) => {
       if(element.softDeleteStatus !==1){
         this.StarterCards.push(element)
       }
