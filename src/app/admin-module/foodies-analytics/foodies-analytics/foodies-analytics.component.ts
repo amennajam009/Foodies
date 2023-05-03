@@ -132,6 +132,7 @@ HardDeleteStarterById(_id:any){
   this._menuService.HardDeleteStarterFoodCardById(_id).subscribe((res:any)=>{
    res.Result;
    this.StarterCards=[]
+   this.PopulateStarterArray();
 
   })
 }
