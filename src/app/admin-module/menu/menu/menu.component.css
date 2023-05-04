@@ -6,12 +6,16 @@
   }
   
   .card {
+    background-image: url('../../../../assets/pic/cardi2.png');
     max-width: 400px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     /* padding: 1rem; */
   }
+h3{
+    color: white;
+}
 
   
   

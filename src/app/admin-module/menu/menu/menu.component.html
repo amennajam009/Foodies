@@ -12,12 +12,12 @@
     </div>
   
     <div class="card p-3">
-      <h3>StarterFood-Cards</h3>
-      <form [formGroup]="foodcards" (ngSubmit)="Submitmyfoodform()">
+      <h3>BreakFastFood-Cards</h3>
+      <form [formGroup]="breakfastfoodcards" (ngSubmit)="SubmitmyBreakfastform()">
         <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="FoodName" required>
         <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="FoodDescription" required>
         <input type="number" class="mb-3 form-control" placeholder="Enter Your Price" formControlName="FoodPrice" required>
-        <input type="file" id="myfile5" name="myfile5" (change)="FoodImage($event)" #fileSelect class="mt-3">
+        <input type="file" id="myfile5" name="myfile5" (change)="BreakFastImage($event)" #fileSelect class="mt-3">
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
