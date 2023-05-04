@@ -21,4 +21,5 @@ export class MenuService {
   HardDeleteStarterFoodCardById(_id:any){
     return this._HttpClient.delete(`http://localhost:7070/menu/HardDeletestarterApi/${_id}`) 
   }
+  //
 }
