@@ -69,6 +69,8 @@ Submitmyfoodform(){
 
  this._menuService.BreakfastFoodCardApi(MultipleData).subscribe((res:any)=>{
   res;
+  this.breakfastfoodcards.reset();
+  this.fileSelect.nativeElement.value = null;
  })
 
  }
