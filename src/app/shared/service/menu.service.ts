@@ -31,4 +31,7 @@ export class MenuService {
   GetBreakfastFoodApiById(_id:any){
    return this._HttpClient.get(`http://localhost:7070/menu/GetBreakFastApiById/${_id}`)
   }
+  HardDeleteBreakfastFoodApi(_id:any){
+    return this._HttpClient.delete(`http://localhost:7070/menu/HardDeletebreakfastApi/${_id}`)
+  }
 }
