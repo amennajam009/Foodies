@@ -28,4 +28,7 @@ export class MenuService {
   GetAllDataOfBreakfastFoodApi(){
     return this._HttpClient.get('http://localhost:7070/menu/GetBreakfastAllApi')
   }
+  GetBreakfastFoodApiById(_id:any){
+   return this._HttpClient.get(`http://localhost:7070/menu/GetBreakFastApiById/${_id}`)
+  }
 }

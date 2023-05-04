@@ -12,10 +12,12 @@ export class FoodiesAnalyticsComponent implements OnInit {
   TwoCards:any=[];
   FourCards:any=[];
   StarterCards:any=[];
+  BreakFastCards:any=[];
   particularproducttwo:any={};
   particularproductData:any = {};
   particularproductque:any={};
   particularproductsta:any={};
+  particularproductbreak:any={};
   particularproductcard:any={};
   MakeMyIdPublic :any;
   frequentlyque:any=[];
@@ -48,6 +50,9 @@ export class FoodiesAnalyticsComponent implements OnInit {
     })
     this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
       this.StarterCards=res.Result;
+    })
+    this._menuService.GetAllDataOfBreakfastFoodApi().subscribe((res:any)=>{
+      this.BreakFastCards=res.Result;
     })
   }
 
@@ -137,6 +142,13 @@ HardDeleteStarterById(_id:any){
   })
 }
 
+GetBreakfastById(_id:any){
+  this.MakeMyIdPublic=_id;
+  this._menuService.GetBreakfastFoodApiById(_id).subscribe((res:any)=>{
+    res.Result;
+  this.particularproductbreak=res.Result;
+  })
+}
 
 //populateProductArray To Clear correctly my analytics
 PopulateProductArray(){
