@@ -11,6 +11,7 @@ import { WhatsappService } from 'src/app/shared/service/whatsapp.service';
 export class ShopComponent implements OnInit {
 
   data: any=[];
+  AllLunchCards:any=[];
   AllstarterCards:any=[];
   AllbreakfastCards:any=[];
   Url='http://localhost:7070/';
@@ -21,6 +22,7 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void { 
   this.GetFoodCardApi();
   this.GetBreakFastApi();
+  this.GetLunchFoodApi();
   }
 
 public GetFoodCardApi(){
@@ -34,5 +36,10 @@ public GetBreakFastApi(){
   })
 }
 
+public GetLunchFoodApi(){
+  this._menuService.GetAlldataOflunchApi().subscribe((res:any)=>{
+    this.AllLunchCards=res.Result;
+  })
+}
 
 }
