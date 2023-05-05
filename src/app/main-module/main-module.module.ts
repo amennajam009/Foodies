@@ -10,7 +10,8 @@ import { AboutUsComponent } from './About-Us/about-us/about-us.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { ReviewComponent } from './Review/review/review.component';
 import { FooterComponent } from './footer/footer/footer.component';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,14 @@ import { FooterComponent } from './footer/footer/footer.component';
     AboutUsComponent,
     ContactComponent,
     ReviewComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
     CommonModule,
-    MainModuleRoutingModule
+    MainModuleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModuleModule { }
