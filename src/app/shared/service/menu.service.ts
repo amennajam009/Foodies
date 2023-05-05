@@ -34,4 +34,9 @@ export class MenuService {
   HardDeleteBreakfastFoodApi(_id:any){
     return this._HttpClient.delete(`http://localhost:7070/menu/HardDeletebreakfastApi/${_id}`)
   }
+  //lunch Api's 
+
+  LunchFoodCardApi(payLoad:any){
+   return this._HttpClient.post('http://localhost:7070/menu/LunchPostApi',payLoad)
+  }
 }
