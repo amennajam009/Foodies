@@ -164,7 +164,13 @@ HardDeleteBreakfastById(_id:any){
     this.PopulateBreakfastArray();
   })
 }
-
+GetlunchCardById(_id:any){
+this.MakeMyIdPublic=_id;
+this._menuService.GetApiOfLuchApiById(_id).subscribe((res:any)=>{
+  res.Result;
+  this.particularproductLunchcard=res.Result;
+})
+}
 //populateProductArray To Clear correctly my analytics
 PopulateProductArray(){
   this._General.GetFourCardApi().subscribe((Responsefrombackend:any)=>{
