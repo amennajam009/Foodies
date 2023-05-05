@@ -8,14 +8,17 @@ import { MenuService } from 'src/app/shared/service/menu.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  Lunchfoodcards:FormGroup | any;
   foodcards:FormGroup | any;
   breakfastfoodcards:FormGroup | any;
   getFoodImage:any
   getBreakfastImage:any
+  getLunchImage:any
   @ViewChild('fileSelect') fileSelect:ElementRef|any;
   constructor(private _menuService:MenuService, private _FormBuilder:FormBuilder) { 
   this.myFoodCardsModel();
   this.myBreakfastcardModel();
+  this.myLunchFoodcardModel();
   }
 
   ngOnInit(): void {
@@ -73,6 +76,33 @@ Submitmyfoodform(){
   this.fileSelect.nativeElement.value = null;
  })
 
+ }
+
+
+ myLunchFoodcardModel(){
+  this.Lunchfoodcards=this._FormBuilder.group({
+    FoodName:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    FoodDescription:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    FoodPrice:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+  })
+ }
+
+ lunchFoodImage(event:any){
+  this.getLunchImage = event.target.files[0];
+ }
+
+ Submitmylunchfoodform(){
+let  MultiPartData = new FormData();
+MultiPartData.append('FoodName', this.Lunchfoodcards.get('FoodName').value);
+MultiPartData.append('FoodDescription', this.Lunchfoodcards.get('FoodDescription').value);
+MultiPartData.append('FoodPrice', this.Lunchfoodcards.get('FoodPrice').value);
+MultiPartData.append('lunchcard-image', this.getLunchImage);
+
+this._menuService.LunchFoodCardApi(MultiPartData).subscribe((res:any)=>{
+  res;
+  this.Lunchfoodcards.reset();
+  this.fileSelect.nativeElement.value = null;
+})
  }
 
 }
