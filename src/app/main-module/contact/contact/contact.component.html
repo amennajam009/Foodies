@@ -1,1 +1,7 @@
-<p>contact works!</p>
+<form [formGroup]="WhatsAppForm" (ngSubmit)="Submitwhatsappform()">
+    <div>
+      <input formControlName="WhatsAppMessage" placeholder="Message">
+      <input formControlName="PhoneNumber" placeholder="Phone number">
+      <button type="submit">Send</button>
+    </div>
+  </form>

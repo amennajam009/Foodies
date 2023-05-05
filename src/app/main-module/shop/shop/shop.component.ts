@@ -9,15 +9,13 @@ import { WhatsappService } from 'src/app/shared/service/whatsapp.service';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  // WhatsAppMessage: any = '';
-  // PhoneNumber:any = '';
-  WhatsAppForm:FormGroup | any;
+
   data: any=[];
   AllstarterCards:any=[];
   AllbreakfastCards:any=[];
   Url='http://localhost:7070/';
-  constructor(private _menuService:MenuService, private _whatsappService:WhatsappService , private _FormBuilder:FormBuilder) { 
- this.myWhatsappForm();
+  constructor(private _menuService:MenuService,  private _FormBuilder:FormBuilder) { 
+
   }
 
   ngOnInit(): void { 
@@ -36,26 +34,5 @@ public GetBreakFastApi(){
   })
 }
 
-myWhatsappForm(){
-  this.WhatsAppForm = this._FormBuilder.group({
-    WhatsAppMessage: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-    PhoneNumber: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)])
-  })
-}
 
-Submitwhatsappform(){
-  const payLoad = this.WhatsAppForm.value;
-  this._whatsappService.whatsappApi(payLoad).subscribe((res:any)=>{
-  res;
-  })
-}
-// sendMessage(){
-//   this._whatsappService.whatsappApi(this.PhoneNumber).subscribe((response:any )=> {
-//     console.log(response);
-//     alert('Message sent successfully!');
-//   }, error => {
-//     console.error(error);
-//     alert('Error sending message!');
-//   });
-// }
 }
