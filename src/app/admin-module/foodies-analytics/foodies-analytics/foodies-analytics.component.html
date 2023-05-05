@@ -325,7 +325,7 @@
 
 
 
-
+<!-- breakfast -->
     <h4 class="text-center mt-4">BreakFasts-<span style="color:#FFB000 ;">Menu</span>-Analytics</h4>
      <table class="table table-striped table-hover table-sm mt-5">
       <thead>
@@ -387,3 +387,74 @@
         </div>
       </div>
     </div>
+    <!-- breakfast -->
+
+
+
+
+
+
+
+<!-- Lunch -->
+    <h4 class="text-center mt-4">BreakFasts-<span style="color:#FFB000 ;">Menu</span>-Analytics</h4>
+    <table class="table table-striped table-hover table-sm mt-5">
+     <thead>
+       <tr>
+         <th class="text-center">#</th>
+         <th class="text-center">Image</th>
+         <th class="text-center">FoodName</th>
+         <th class="text-center">FoodDes</th>
+         <th class="text-center">FoodPrice</th>
+         <th class="text-center">Status</th>
+         <th class="text-center">status summary</th>
+         <th class="text-center" colspan="2">Actions</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let data of lunchCards ; let i=index">
+         <th class="text-center">{{i+1}}</th>
+         <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+         <td class="text-center">{{data.FoodName}}</td>
+         <td class="text-center">{{data.FoodDescription}}</td>
+         <td class="text-center">{{data.FoodPrice}}</td>
+         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
+         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
+         <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal8" (click)="GetBreakfastById(data._id)" ></i></td>
+         <td></td>
+         <td class="text-center"><button class="btn btn-outline-danger"  (click)="HardDeleteBreakfastById(data._id)">Hard Delete</button></td>
+       </tr>
+     </tbody>
+   </table>
+ 
+   <!-- FoodCard Modal -->
+   <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel8" aria-hidden="true" >
+     <div class="modal-dialog modal-fullscreen">
+       <div class="modal-content">
+         <div class="modal-header  text-white">
+           <h5 class="modal-title" id="exampleModalLabel8">{{ particularproductLunchcard?.FoodName}}</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <div class="container">
+             <div class="row">
+               <div *ngIf="particularproductLunchcard?.imageDetails">
+                 <ng-container *ngFor="let data of  particularproductLunchcard?.imageDetails">
+                   <img [src]="Url+data.imageUrl" class="img-fluid w-40 h-40 mt-5 ms-5">
+                 </ng-container>
+               </div>
+         <h1 class="mt-5">Frequently-Queston</h1>
+         <h5 class="modal-title mt-5" id="exampleModalLabel8"><span style="color: blue;">Question:</span>&nbsp;&nbsp;{{particularproductLunchcard?.FoodName}}</h5>
+         <p class="modal-title mt-3" id="exampleModalLabel8"><span style="color: blue;"><b>Answer:</b></span>&nbsp;&nbsp;{{particularproductLunchcard.FoodDescription}}</p>
+         <p class="modal-title mt-3" id="exampleModalLabel8"><span style="color: blue;"><b>Answer:</b></span>&nbsp;&nbsp;{{particularproductLunchcard?.FoodPrice}}</p>
+
+             </div>
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           <button type="submit" class="btn btn-primary">Save changes</button>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- Lunch -->

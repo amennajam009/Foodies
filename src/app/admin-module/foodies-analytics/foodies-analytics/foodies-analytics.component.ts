@@ -19,8 +19,10 @@ export class FoodiesAnalyticsComponent implements OnInit {
   particularproductsta:any={};
   particularproductbreak:any={};
   particularproductcard:any={};
+  particularproductLunchcard:any={}
   MakeMyIdPublic :any;
   frequentlyque:any=[];
+  lunchCards:any=[];
 
   
   // imageDetailsArray: any[] = [];
@@ -54,6 +56,9 @@ export class FoodiesAnalyticsComponent implements OnInit {
     })
     this._menuService.GetAllDataOfBreakfastFoodApi().subscribe((res:any)=>{
       this.BreakFastCards=res.Result;
+    })
+    this._menuService.GetAlldataOflunchApi().subscribe((res:any)=>{
+      this.lunchCards=res.Result;
     })
   }
 

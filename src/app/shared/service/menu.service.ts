@@ -39,4 +39,10 @@ export class MenuService {
   LunchFoodCardApi(payLoad:any){
    return this._HttpClient.post('http://localhost:7070/menu/LunchPostApi',payLoad)
   }
+  GetAlldataOflunchApi(){
+    return this._HttpClient.get('http://localhost:7070/menu/GetAlllunchApi')
+  }
+  GetApiOfLuchApiById(_id:any){
+    return this._HttpClient.get(`http://localhost:7070/menu/GetlunchApiById/${_id}`)
+  }
 }
