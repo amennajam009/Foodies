@@ -45,4 +45,7 @@ export class MenuService {
   GetApiOfLuchApiById(_id:any){
     return this._HttpClient.get(`http://localhost:7070/menu/GetlunchApiById/${_id}`)
   }
+  HardDeletelunchApi(_id:any){
+    return this._HttpClient.delete(`http://localhost:7070/menu/HardDeleteLunchApi/${_id}`)
+  }
 }
