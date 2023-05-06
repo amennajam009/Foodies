@@ -1,11 +1,5 @@
 /********** Template CSS **********/
-body {
-    background-color: #282828;
-    color: rgb(218, 215, 215);
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-  }
+
 
 :root {
     --primary: #4761FF;
