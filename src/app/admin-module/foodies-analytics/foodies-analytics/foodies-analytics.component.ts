@@ -177,7 +177,7 @@ HardDeletelunchById(_id:any){
   this._menuService.HardDeletelunchApi(_id).subscribe((res:any)=>{
     res.Result;
     this.lunchCards=[]
-    this.PopulateProductArray();
+    this.PopulateProductArrayOfLunch();
   })
 }
 //populateProductArray To Clear correctly my analytics
