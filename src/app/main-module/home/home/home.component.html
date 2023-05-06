@@ -1,254 +1,163 @@
-<!-- hero Image -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="background-color: #282828; color: rgb(218, 215, 215);" >
+  <!-- hero Image -->
 <div class="container-fluid px-0 mb-5"  >
-    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner" *ngFor="let data of HeroImage" >
-            <div   >
-                <img class="w-100" [src]="Url+data.imageDetail[0].imageUrl" alt="Image" height="1099px">
-                <!-- <img class="w-100" [src]="Url + data.ImageDetail[0].ImageUrl" alt="Image" height="1099px"> -->
-                <div class="carousel-caption">
-                    <div class="container mb-5">
-                        <div class="row justify-content-start mb-5">
-                            <div class="col-lg-7 text-start mb-5" >
-                                <p class="fs-4 text-white animated slideInRight mb-5">Welcome to
-                                    <strong>Foodies</strong>
-                                </p>
-                                <h1 class="display-1 text-white mb-4 animated slideInRight mb-5"> Good food never fails in bringing people together</h1>
-                                <a href=""
-                                    class="btn  rounded-pill py-3 px-5 animated slideInRight mb-5" style="background-color:#FFB000 ;">Explore
-                                    More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>      
-        </div>  
-    </div>
+  <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner" *ngFor="let data of HeroImage" >
+          <div   >
+              <img class="w-100" [src]="Url+data.imageDetail[0].imageUrl" alt="Image" height="1099px">
+              <!-- <img class="w-100" [src]="Url + data.ImageDetail[0].ImageUrl" alt="Image" height="1099px"> -->
+              <div class="carousel-caption">
+                  <div class="container mb-5">
+                      <div class="row justify-content-start mb-5">
+                          <div class="col-lg-7 text-start mb-5" >
+                              <p class="fs-4 text-white animated slideInRight mb-5">Welcome to
+                                  <strong>Foodies</strong>
+                              </p>
+                              <h1 class="display-1 text-white mb-4 animated slideInRight mb-5"> Good food never fails in bringing people together</h1>
+                              <a href=""
+                                  class="btn  rounded-pill py-3 px-5 animated slideInRight mb-5" style="background-color:#FFB000 ;">Explore
+                                  More</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>      
+      </div>  
+  </div>
 </div>
 
 
 
 
 <div class="fourcardheading mt-5 p-5">
-    <h3>Delicious Delights</h3>
-    <h1 class="mt-4">Mouth-<span style="color: #FFB000;">watering</span>&nbsp;Menus</h1>
-    <h3 class="mt-4">"We'll customize our recommendations to your taste buds"</h3>
-  </div>
-
-
-
-   <!-- Features Start -->
-   <div class="container-xxl py-5"  >
-    <div class="container" >
-        <div class="row g-0 feature-row"  >
-        <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s" *ngFor="let data of AllFourCards" >
-    <div class="feature-item border h-100 p-5">
-        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-         
-            <img class="img-fluid rounded-circle"  alt="Icon" [src]="Url+data.imageDetails.imageUrl" style="width: 64px; height: 64px;" >
-        </div>
-        <h5 class="mb-3">{{data.cardName}}</h5>
-        <p class="mb-0">{{data.cardDescriptionFour}}</p>
-    </div>
+  <h3>Delicious Delights</h3>
+  <h1 class="mt-4">Mouth-<span style="color: #FFB000;">watering</span>&nbsp;Menus</h1>
+  <h3 class="mt-4">"We'll customize our recommendations to your taste buds"</h3>
 </div>
-<!-- <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s" *ngFor="let data of AllFourCards" >
-    <div class="feature-item border h-100 p-5">
-        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-            <img class="img-fluid rounded-circle"  alt="Icon" [src]="Url+data.ImageDetail[1].ImageUrl" style="width: 64px; height: 64px;" >
-        </div>
-        <h5 class="mb-3">{{data.HeadingTwo}}</h5>
-        <p class="mb-0">{{data.descriptionTwo}}</p>
-    </div>
-</div> -->
-            <!-- <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s" *ngFor="let data of AllFourCards">
-                <div class="feature-item border h-100 p-5">
-                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-                        <img class="img-fluid rounded-circle" [src]="Url+data.ImageDetail[2].ImageUrl" alt="Icon" style="width: 64px; height: 64px;">
-                    </div>
-                    <h5 class="mb-3">{{data.HeadingThree}}</h5>
-                    <p class="mb-0">{{data.descriptionThree}}</p>
-                </div>
-            </div> -->
-            <!-- <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s" *ngFor="let data of AllFourCards">
-                <div class="feature-item border h-100 p-5">
-                    <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
-                        <img class="img-fluid rounded-circle" [src]="Url+data.ImageDetail[3].ImageUrl" alt="Icon" style="width: 64px; height: 64px;">
-                    </div>
-                    <h5 class="mb-3">{{data.HeadingFour}}</h5>
-                    <p class="mb-0">{{data.descriptionFour}}</p>
-                </div>
-            </div> -->
-        </div>
-    </div>
+
+
+
+ <!-- Features Start -->
+ <div class="container-xxl py-5"  >
+  <div class="container" >
+      <div class="row g-0 feature-row"  >
+      <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s" *ngFor="let data of AllFourCards" >
+  <div class="feature-item border h-100 p-5">
+      <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+       
+          <img class="img-fluid rounded-circle"  alt="Icon" [src]="Url+data.imageDetails.imageUrl" style="width: 64px; height: 64px;" >
+      </div>
+      <h5 class="mb-3">{{data.cardName}}</h5>
+      <p class="mb-0">{{data.cardDescriptionFour}}</p>
+  </div>
+</div>
+
+      </div>
+  </div>
 </div>
 
 <div class="showBox mt-3 pb-5 py-5 ">
-    <p>"Luxury food, luxury restaurant!."<p>
-    <p class="delay">"Luxury food, luxury restaurant!."<p>
-  </div>
+  <p>"Luxury food, luxury restaurant!."<p>
+  <p class="delay">"Luxury food, luxury restaurant!."<p>
+</div>
 
 <div class="container mt-5">
-    <!-- <div class="showBox mt-1">
-        <p>Sale<p>
-        <p class="delay">PKR 4,868<p>
-      </div> -->
-    <div class="row" >
-      <div class="col-md-6  " *ngFor="let data of TwoCards">
-        <img [src]="Url+data.imageDetail[0].imageUrl" class="img-fluid  mt-5 me-2 two" width="560px"  >
-      </div>
-      <!-- <div class="col-md-6">
-        <img [src]="Url+data.imageDetail[1].imageUrl" class="img-fluid">
-      </div> -->
+  <!-- <div class="showBox mt-1">
+      <p>Sale<p>
+      <p class="delay">PKR 4,868<p>
+    </div> -->
+  <div class="row" >
+    <div class="col-md-6  " *ngFor="let data of TwoCards">
+      <img [src]="Url+data.imageDetail[0].imageUrl" class="img-fluid  mt-5 me-2 two" width="560px"  >
     </div>
+    <!-- <div class="col-md-6">
+      <img [src]="Url+data.imageDetail[1].imageUrl" class="img-fluid">
+    </div> -->
   </div>
+</div>
 
-  <div class="fourcardheading mt-5 p-5">
-    <h3>Delicious Delights</h3>
-    <h1 class="mt-4">Mouth-<span style="color: #FFB000;">watering</span>&nbsp;Menus</h1>
-    <h3 class="mt-4">"We'll customize our recommendations to your taste buds"</h3>
+<div class="fourcardheading mt-5 p-5">
+  <h3>Delicious Delights</h3>
+  <h1 class="mt-4">Mouth-<span style="color: #FFB000;">watering</span>&nbsp;Menus</h1>
+  <h3 class="mt-4">"We'll customize our recommendations to your taste buds"</h3>
+</div>
+<section id="stats-counter" class="stats-counter">
+  <div class="container" data-aos="zoom-out">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Clients</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Projects</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Hours Of Support</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Workers</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+
   </div>
-  <section id="stats-counter" class="stats-counter">
-    <div class="container" data-aos="zoom-out">
+</section>
 
-      <div class="row gy-4">
-
-        <div class="col-lg-3 col-md-6">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Clients</p>
-          </div>
-        </div><!-- End Stats Item -->
-
-        <div class="col-lg-3 col-md-6">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Projects</p>
-          </div>
-        </div><!-- End Stats Item -->
-
-        <div class="col-lg-3 col-md-6">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hours Of Support</p>
-          </div>
-        </div><!-- End Stats Item -->
-
-        <div class="col-lg-3 col-md-6">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Workers</p>
-          </div>
-        </div><!-- End Stats Item -->
-
+<div class="question mt-5 py-5 ">
+  <section id="faq" class="faq ">
+    <div class="container" data-aos="fade-up">
+  
+      <div class="text-center mt-5 pt-5 py-4 ">
+        <h2>Frequently <span style="color: #FFB000 ;">&nbsp;Asked&nbsp;</span> Questions</h2>
       </div>
-
+  
+      <ul class="faq-list " data-aos="fade-up" *ngFor="let data of  GetFreq ; let i=index" >
+  
+        <li>
+          <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1"><span style="font-size: 20px; color: #FFB000;" >{{i+1}}</span>: {{data.headingQue}}
+            <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+          <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              🟡 {{data.AnswerQue}}
+            </p>
+          </div>
+        </li>
+  
+      </ul>
+  
     </div>
   </section>
-   
-
-
-  
-
-
+  </div>
+</body>
+</html>
 
 
 
 
 
-
-
-
-
-
-  <div class="question mt-5 py-5">
-    <section id="faq" class="faq ">
-      <div class="container" data-aos="fade-up">
-    
-        <div class="text-center mt-5 pt-5 py-4 ">
-          <h2>Frequently <span style="color:  #FFB000 ;">&nbsp;Asked&nbsp;</span> Questions</h2>
-        </div>
-    
-        <ul class="faq-list " data-aos="fade-up" *ngFor="let data of  GetFreq ; let i=index" >
-    
-          <li>
-            <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1"><span style="font-size: 20px; color: #D2042D;" >{{i+1}}</span>: {{data.headingQue}}
-              <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                🟡 {{data.AnswerQue}}
-              </p>
-            </div>
-          </li>
-    
-          <!-- <li>
-            <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">  <span style="font-size: 20px; color: #D2042D;">2</span>: How was this furniture made? <i
-                class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                🟡 If you're buying a table or chair, you need to know what type of frame it has, and what kind of materials
-                where used in the filling and support. All this affects the quality of your furniture. You may also want to
-                know where it was made and who manufactured it. If you have sustainability concerns, ask about industry
-                certifications and whether the finishes are non-toxic or low VOC which can inversely effect human health.
-              </p>
-            </div>
-          </li>
-    
-          <li>
-            <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">  <span style="font-size: 20px; color: #D2042D;">3</span>: Do you have other items in the same price
-              range?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                🟡 It's always good to look at all the options before you make up your mind. Take a look at similar items,
-                because you may find that some other piece fits your needs better. If the piece you like seems a little
-                above your budget, ask to see similar items in another price range. With online purchasing, alternative
-                suggestions are very often provided automatically to help you select the perfect piece for your budgets
-              </p>
-            </div>
-          </li>
-    
-          <li>
-            <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">  <span style="font-size: 20px; color: #D2042D;">4</span>: How do you deliver and how long will it
-              take? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                🟡 Never assume anything about deliveries, even if you've made a purchase on the particular online store
-                before. Ask about any additional delivery charges, whether they'll call before delivering your furniture,
-                and what day you should expect your furniture to arrive. Some online stores offer free shipping across their
-                product range, but many have an average spend requirement before the free shipping kicks in..
-              </p>
-            </div>
-          </li>
-    
-          <li>
-            <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">  <span style="font-size: 20px; color: #D2042D;">5</span>: Why should I buy from you? <i
-                class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                🟡 As a consumer, you have the choice to buy or not buy from an online store of your choice. Ask what sets this
-                store apart from others, what makes them special? It's a good idea to inquire about their merchandise
-                selection, customer service, pricing, warranties, and return policies. But trust your gut, if the online
-                store does not make you feel safe and secure and you question the safety of your personal info, rather move
-                onto an alternative online stor
-              </p>
-            </div>
-          </li>
-    
-          <li>
-            <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">  <span style="font-size: 20px; color: #D2042D;">6</span>: Can you remove my old furniture? <i
-                class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                🟡  As anyone who has tried to get rid of used furniture knows, discarding it can be a pain and a hassle. Not
-                many online furniture retailers will remove your old furniture when they deliver your new one. Some
-                suggestions are to place your old furniture of social media platforms to resell, with the payment going to
-                the the actual cost of the new item. Or you can always offer it up for free on one of the many online
-                platforms within the UK, giving the gift of something old to you to someone who would appreciate something
-                new to them.
-              </p>
-            </div>
-          </li> -->
-    
-        </ul>
-    
-      </div>
-    </section>
-    </div>

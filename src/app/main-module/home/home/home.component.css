@@ -195,7 +195,7 @@
 
 /*** Features ***/
 .feature-row {
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    box-shadow: 0 0 45px rgba(230, 224, 224, 0.979);
 }
 
 .feature-item {
@@ -620,7 +620,7 @@
   }
   .question ul li a{
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
     padding-top: 40px;
    }
    .question{
@@ -668,7 +668,7 @@
   }
   
   .faq .faq-list a.collapsed {
-    color: #343a40;
+    color: white;
   }
   
   .faq .faq-list a.collapsed:hover {
@@ -686,7 +686,7 @@
   .showBox {
     position: relative;
     margin-top: -30px;
-    color: black;
+    color: rgb(218, 215, 215);
     display: flex;
     justify-content: center;
     align-items: center;
