@@ -7,21 +7,17 @@
   }
 
   div ul li a {
-    font-size: 20px;
+    font-size: 22px;
+    
   }
   
  #text:hover {
     color: #FFB000;
   }
 
-
-  /* .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: top 0.3s;
+  .transparent-navbar {
+    background-color: transparent !important;
+    box-shadow: none;
+    border: none;
   }
-  
-  .navbar.scrolled {
-    top: -80px;
-  } */
+

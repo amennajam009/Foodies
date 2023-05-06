@@ -28,6 +28,7 @@ export class ContactComponent implements OnInit {
     const payLoad = this.WhatsAppForm.value;
     this._whatsappService.whatsappApi(payLoad).subscribe((res:any)=>{
     res;
+    this.WhatsAppForm.reset();
     })
   }
 }
