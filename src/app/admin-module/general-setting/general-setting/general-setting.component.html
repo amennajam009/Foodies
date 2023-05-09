@@ -10,6 +10,18 @@
 <!-- uplaod hero image -->
   <hr>
 
+  <!-- threehomeCards -->
+  <h3>Three home Cards</h3>
+  <form [formGroup]="Threehomecards" (ngSubmit)="Submitmythreecardsform()">
+      <input type="text" class="mb-3 form-control" placeholder="imageHeading" formControlName="imageHeading" required>
+      <input type="text" class="mb-3 form-control" placeholder="backflipCardHeading" formControlName="backflipCardHeading" required>
+      <input type="text" class="mb-3 form-control" placeholder="backflipCardDescription" formControlName="backflipCardDescription" required>
+      <input type="text" class="mb-3 form-control" placeholder="backflipCardDescription2" formControlName="backflipCardDescription2" required>
+      <input type="text" class="mb-3 form-control" placeholder="Price" formControlName="Price" required>
+      <input type="file" id="myfile4" name="myfile4"  (change)="threehomeCardImage($event)"  #fileSelect class="mt-3">
+      <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <!-- threehomeCards -->
 
   <!-- FourCards -->
   <h3>Four Cards</h3>

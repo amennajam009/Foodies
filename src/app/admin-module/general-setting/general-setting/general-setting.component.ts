@@ -12,6 +12,8 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 export class GeneralSettingComponent implements OnInit {
   twoImages:any
   cardImage:any
+  threeImages:any
+  Threehomecards:FormGroup | any ; 
   fourcards:FormGroup | any;
   FrequentlyQue:FormGroup | any;
   newImageArray:any=[]
@@ -24,12 +26,39 @@ export class GeneralSettingComponent implements OnInit {
   constructor(private _FormBuilder:FormBuilder , private _General:GeneralService) { 
     this.myFormModel();
     this.mySecondForm();
+    this.ThreehomecardModel();
   }
 
   ngOnInit(): void {
   }
 
 
+ ThreehomecardModel(){
+  this.Threehomecards=this._FormBuilder.group({
+    imageHeading: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    backflipCardHeading: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    backflipCardDescription: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    backflipCardDescription2: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    Price: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+  })
+ }
+ threehomeCardImage(event:any){
+  this.threeImages =event.target.files[0];
+ }
+ Submitmythreecardsform(){
+  let MultipartFormData = new FormData();
+  MultipartFormData.append('imageHeading', this.Threehomecards.get('imageHeading').value);
+  MultipartFormData.append('backflipCardHeading', this.Threehomecards.get('backflipCardHeading').value);
+  MultipartFormData.append('backflipCardDescription', this.Threehomecards.get('backflipCardDescription').value);
+  MultipartFormData.append('backflipCardDescription2', this.Threehomecards.get('backflipCardDescription2').value);
+  MultipartFormData.append('Price', this.Threehomecards.get('Price').value);
+  MultipartFormData.append('threecard-image', this.threeImages);
+
+  this._General.ThreeHomeCardApi(MultipartFormData).subscribe((res:any)=>{
+    res;
+    this.Threehomecards.reset();
+  })
+ }
 
 
   myFormModel(){

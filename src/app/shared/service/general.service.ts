@@ -66,5 +66,7 @@ export class GeneralService {
     return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeletFrequentlyAskedQue/${_id}`)
   }
 
-  
+  ThreeHomeCardApi(payLoad:any){
+     return this.HttpClient.post('http://localhost:7070/Generalsetting/HomeThreeCardsApi',payLoad)
+  }
 }
