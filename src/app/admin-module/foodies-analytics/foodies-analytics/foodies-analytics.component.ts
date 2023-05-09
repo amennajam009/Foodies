@@ -20,9 +20,11 @@ export class FoodiesAnalyticsComponent implements OnInit {
   particularproductbreak:any={};
   particularproductcard:any={};
   particularproductLunchcard:any={}
+  particualarproductofthreehomecards:any={}
   MakeMyIdPublic :any;
   frequentlyque:any=[];
   lunchCards:any=[];
+  ThreeHomeCards:any=[];
 
   
   // imageDetailsArray: any[] = [];
@@ -38,6 +40,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
     this.PopulateStarterArray();
     this.PopulateQuestionArray();
     this.PopulateProductArray();
+    this.GetThreeCardHomeData();
     this._General.GetHeroImage().subscribe((res:any)=>{
     this.Bannerimage=res.Result;
     this._General.GetFourCardApi().subscribe((res:any)=>{
@@ -63,7 +66,11 @@ export class FoodiesAnalyticsComponent implements OnInit {
     })
   }
 
-
+public GetThreeCardHomeData(){
+  this._General.ThreeHomeCardGetAllDataApi().subscribe((res:any)=>{
+    this.ThreeHomeCards=res.Result;
+  })
+}
 
 GetHeroImagebyId(_id:any){
   this.MakeMyIdPublic=_id;
@@ -178,6 +185,20 @@ HardDeletelunchById(_id:any){
     res.Result;
     this.lunchCards=[]
     this.PopulateProductArrayOfLunch();
+  })
+}
+HardDeleteThreehomeCardsById(_id:any){
+  this.MakeMyIdPublic=_id;
+  this._General.ThreeHomeCardHardDeleteDataById(_id).subscribe((res:any)=>{
+    res.Result;
+    this.ThreeHomeCards=[]
+
+  })
+}
+GetThreeCardById(_id:any){
+  this.MakeMyIdPublic=_id;
+  this._General.ThreehomecardsById(_id).subscribe((res:any)=>{
+    this.particualarproductofthreehomecards=res.Result;
   })
 }
 //populateProductArray To Clear correctly my analytics

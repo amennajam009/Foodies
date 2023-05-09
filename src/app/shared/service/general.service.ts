@@ -72,4 +72,10 @@ export class GeneralService {
   ThreeHomeCardGetAllDataApi(){
     return this.HttpClient.get('http://localhost:7070/Generalsetting/HomeThreeCardsGetAllData');
   }
+  ThreeHomeCardHardDeleteDataById(_id:any){
+    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddeletethreehomecard/${_id}`)
+  }
+  ThreehomecardsById(_id:any){
+    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetThreehomeCardsById/${_id}`)
+  }
 }
