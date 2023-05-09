@@ -35,6 +35,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
 
   ngOnInit(): void {
     //populate-Array to remove data 
+    this.PopulateProductArrayThreeCards();
     this.PopulateProductArrayOfLunch();
     this.PopulateBreakfastArray();
     this.PopulateStarterArray();
@@ -192,6 +193,7 @@ HardDeleteThreehomeCardsById(_id:any){
   this._General.ThreeHomeCardHardDeleteDataById(_id).subscribe((res:any)=>{
     res.Result;
     this.ThreeHomeCards=[]
+    this.PopulateProductArrayThreeCards();
 
   })
 }
@@ -202,6 +204,15 @@ GetThreeCardById(_id:any){
   })
 }
 //populateProductArray To Clear correctly my analytics
+PopulateProductArrayThreeCards(){
+  this._General.ThreeHomeCardGetAllDataApi().subscribe((res:any)=>{
+    res.Result.forEach((element:any) => {
+      if(element.softDeleteStatus !==1){
+        this.ThreeHomeCards.push(element);
+      }
+    });
+  })
+}
 PopulateProductArray(){
   this._General.GetFourCardApi().subscribe((Responsefrombackend:any)=>{
     Responsefrombackend.Result.forEach((element:any) => {
