@@ -3,7 +3,7 @@
 <div class="container-fluid px-0 mb-5"  >
   <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner" *ngFor="let data of HeroImage" >
-          <div   >
+          <div>
               <img class="w-100" [src]="Url+data.imageDetail[0].imageUrl" alt="Image" height="1099px">
               <!-- <img class="w-100" [src]="Url + data.ImageDetail[0].ImageUrl" alt="Image" height="1099px"> -->
               <div class="carousel-caption">
@@ -33,24 +33,24 @@
 <!-- testing -->
 
 <div class="container our-services">
-  <div class="row">
-    <div class="col-lg-4 col-md-6 g-4">
+  <div class="row" >
+    <div class="col-lg-4 col-md-6 g-4" *ngFor="let data of ThreehomeImage">
       <div class="flip-container mt-5">
         <div class="flipper">
           <div class="front" style="background: #c78e13;">
-            <img class="lazyload" src="../../../../assets/pic/burger (2).png" alt="Avatar" style="width:100%; max-height:380px;">
-            <h3 class="mt-4">Veggie Burger</h3>
+            <img class="lazyload" [src]="Url+data.imageDetails[0].imageUrl" alt="Avatar" style="width:100%; max-height:380px;">
+            <h3 class="mt-4">{{data.imageHeading}}</h3>
           </div>
           <div class="back" style="background: #2a302d;">
-            <h5 class="mt-5">Veggie Burger</h5>
-            <p>A burger typically considered a sandwich, consisting of one or more cooked patties usually placed inside a sliced bread roll or bun.</p>
-            <p>Onion, Lettuce, Tomatoe, Patty, Cheese</p>
-            <p>$ 5</p>
+            <h5 class="mt-5">{{data.backflipCardHeading}}</h5>
+            <p>{{data.backflipCardDescription}}</p>
+            <p>{{data.backflipCardDescription2}}</p>
+            <p>${{data.Price}}</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 g-4">
+    <!-- <div class="col-lg-4 col-md-6 g-4">
       <div class="flip-container mt-5">
         <div class="flipper">
           <div class="front" style="background: #c78e13;">
@@ -81,7 +81,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 <!-- testing -->

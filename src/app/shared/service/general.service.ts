@@ -69,4 +69,7 @@ export class GeneralService {
   ThreeHomeCardApi(payLoad:any){
      return this.HttpClient.post('http://localhost:7070/Generalsetting/HomeThreeCardsApi',payLoad)
   }
+  ThreeHomeCardGetAllDataApi(){
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/HomeThreeCardsGetAllData');
+  }
 }

@@ -16,11 +16,12 @@ export class HomeComponent implements OnInit {
   HeroImage:any=[];
   TwoCards:any=[];
   GetFreq:any=[]
+  ThreehomeImage:any=[];
 
   constructor(private _General:GeneralService) { }
 
   ngOnInit(): void {
- 
+   this.GetThreeHomeCardApi();
     this._General.GetFourCardApi().subscribe((res:any)=>{
       this.AllFourCards = res.Result;
       // this.HeroImage = res.Result; // Assign the received data to your component variable
@@ -41,5 +42,11 @@ export class HomeComponent implements OnInit {
       this.GetFreq = res.Result;
     })
     
+  }
+
+  public GetThreeHomeCardApi(){
+    this._General.ThreeHomeCardGetAllDataApi().subscribe((res:any)=>{
+      this.ThreehomeImage = res.Result;
+    })
   }
 }
