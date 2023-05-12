@@ -1,4 +1,4 @@
-.navbar-brand {
+ /* .navbar-brand {
     margin-left: 50px;
   }
 
@@ -19,5 +19,35 @@
     background-color: transparent !important;
     box-shadow: none;
     border: none;
-  }
+  } 
+ */
 
+
+ *{
+  font-family: 'Nanum Myeongjo';
+}
+
+
+.header_change{
+  /* position: fixed; */
+  background:rgb(13,7,5);
+  width: 100%;
+  z-index: 1;
+  top:0;
+  left: 0;
+  transition: 0.4s all linear;
+
+}
+.navbar-brand{
+font-family: 'Cinzel' !important;
+
+}
+
+
+
+
+
+
+
+
+ 
