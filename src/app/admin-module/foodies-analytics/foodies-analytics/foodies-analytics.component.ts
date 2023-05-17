@@ -25,6 +25,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   frequentlyque:any=[];
   lunchCards:any=[];
   ThreeHomeCards:any=[];
+  popularFoodcard:any=[];
 
   
   // imageDetailsArray: any[] = [];
@@ -42,6 +43,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
     this.PopulateQuestionArray();
     this.PopulateProductArray();
     this.GetThreeCardHomeData();
+    this.GetpopularFoodApi();
     this._General.GetHeroImage().subscribe((res:any)=>{
     this.Bannerimage=res.Result;
     this._General.GetFourCardApi().subscribe((res:any)=>{
@@ -66,6 +68,15 @@ export class FoodiesAnalyticsComponent implements OnInit {
       this.lunchCards=res.Result;
     })
   }
+
+
+public GetpopularFoodApi(){
+  this._menuService.GetpopularApi().subscribe((res:any)=>{
+    this.popularFoodcard=res.Result;
+  })
+}
+
+
 
 public GetThreeCardHomeData(){
   this._General.ThreeHomeCardGetAllDataApi().subscribe((res:any)=>{
