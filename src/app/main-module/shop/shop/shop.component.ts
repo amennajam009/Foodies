@@ -14,6 +14,7 @@ export class ShopComponent implements OnInit {
   AllLunchCards:any=[];
   AllstarterCards:any=[];
   AllbreakfastCards:any=[];
+  AllpopularFoodcards:any=[];
   Url='http://localhost:7070/';
   constructor(private _menuService:MenuService) { 
 
@@ -23,6 +24,7 @@ export class ShopComponent implements OnInit {
   this.GetFoodCardApi();
   this.GetBreakFastApi();
   this.GetLunchFoodApi();
+  this.GetpopularFoodAPI();
   }
 
 public GetFoodCardApi(){
@@ -39,6 +41,11 @@ public GetBreakFastApi(){
 public GetLunchFoodApi(){
   this._menuService.GetAlldataOflunchApi().subscribe((res:any)=>{
     this.AllLunchCards=res.Result;
+  })
+}
+public GetpopularFoodAPI(){
+  this._menuService.GetpopularApi().subscribe((res:any)=>{
+    res;
   })
 }
 

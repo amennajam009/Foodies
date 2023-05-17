@@ -51,4 +51,7 @@ export class MenuService {
   popularFoodApi(payLoad:any){
     return this._HttpClient.post('http://localhost:7070/menu/PopularFoodApi',payLoad)
    }
+   GetpopularApi(){
+    return this._HttpClient.get('http://localhost:7070/menu/Getpopularapi')
+   }
 }
