@@ -217,7 +217,7 @@ GetThreeCardById(_id:any){
 }
 
 GetpopularfoodById(_id:any){
- this.MakeMyIdPublic =_id;
+ this.MakeMyIdPublic=_id;
  this._menuService.GetpopularApiByid(_id).subscribe((res:any)=>{
   this.particularproductofpopularfoodcard=res.Result;
  })
