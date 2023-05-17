@@ -11,6 +11,8 @@ export class MenuComponent implements OnInit {
   Lunchfoodcards:FormGroup | any;
   foodcards:FormGroup | any;
   breakfastfoodcards:FormGroup | any;
+  populafoodcard: FormGroup | any;
+  getpopularFoodimage:any
   getFoodImage:any
   getBreakfastImage:any
   getLunchImage:any
@@ -19,6 +21,7 @@ export class MenuComponent implements OnInit {
   this.myFoodCardsModel();
   this.myBreakfastcardModel();
   this.myLunchFoodcardModel();
+  this.mypoplularfoodModel();
   }
 
   ngOnInit(): void {
@@ -104,5 +107,32 @@ this._menuService.LunchFoodCardApi(MultiPartData).subscribe((res:any)=>{
   this.fileSelect.nativeElement.value = null;
 })
  }
+
+
+
+//popularFoodcard
+mypoplularfoodModel(){
+  this.populafoodcard = this._FormBuilder.group({
+    CardHeading:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    CardDescription:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+  })
+}
+
+popularFoodImage(event:any){
+ this.getpopularFoodimage = event.target.files[0]
+}
+submitpopularFood(){
+  let MultipartData= new FormData();
+  MultipartData.append('CardHeading', this.populafoodcard.get('CardHeading').value);
+  MultipartData.append('CardDescription', this.populafoodcard.get('CardDescription').value);
+  MultipartData.append('Food-image', this.getpopularFoodimage);
+
+  this._menuService.popularFoodApi(MultipartData).subscribe((res:any)=>{
+    res;
+    this.populafoodcard.reset();
+    this.fileSelect.nativeElement.value = null;
+  })
+}
+
 
 }

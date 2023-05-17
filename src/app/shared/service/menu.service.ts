@@ -48,4 +48,7 @@ export class MenuService {
   HardDeletelunchApi(_id:any){
     return this._HttpClient.delete(`http://localhost:7070/menu/HardDeleteLunchApi/${_id}`)
   }
+  popularFoodApi(payLoad:any){
+    return this._HttpClient.post('http://localhost:7070/menu/PopularFoodApi',payLoad)
+   }
 }
