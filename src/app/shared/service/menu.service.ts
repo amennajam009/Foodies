@@ -55,6 +55,6 @@ export class MenuService {
     return this._HttpClient.get('http://localhost:7070/menu/Getpopularapi')
    }
    GetpopularApiByid(_id:any){
-   return this._HttpClient.get(`http://localhost:7070/menu/GetpopularApiById/${_id}`)
+    return this._HttpClient.get(`http://localhost:7070/menu/GetpopularApiById/${_id}`)
    }
 }
