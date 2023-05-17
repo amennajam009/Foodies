@@ -54,4 +54,7 @@ export class MenuService {
    GetpopularApi(){
     return this._HttpClient.get('http://localhost:7070/menu/Getpopularapi')
    }
+   GetpopularApiByid(_id:any){
+   return this._HttpClient.get(`http://localhost:7070/menu/GetpopularApiById/${_id}`)
+   }
 }

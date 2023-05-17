@@ -21,6 +21,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   particularproductcard:any={};
   particularproductLunchcard:any={}
   particualarproductofthreehomecards:any={}
+  particularproductofpopularfoodcard:any={}
   MakeMyIdPublic :any;
   frequentlyque:any=[];
   lunchCards:any=[];
@@ -213,6 +214,13 @@ GetThreeCardById(_id:any){
   this._General.ThreehomecardsById(_id).subscribe((res:any)=>{
     this.particualarproductofthreehomecards=res.Result;
   })
+}
+
+GetpopularfoodById(_id:any){
+ this.MakeMyIdPublic =_id;
+ this._menuService.GetpopularApiByid(_id).subscribe((res:any)=>{
+  this.particularproductofpopularfoodcard=res.Result;
+ })
 }
 //populateProductArray To Clear correctly my analytics
 PopulateProductArrayThreeCards(){

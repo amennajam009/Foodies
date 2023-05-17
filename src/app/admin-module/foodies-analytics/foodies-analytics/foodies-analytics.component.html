@@ -559,7 +559,7 @@
         <td class="text-center text-light">{{data.CardDescription}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
-        <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9" (click)="GetlunchCardById(data._id)" ></i></td>
+        <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9" (click)="GetpopularfoodById(data._id)" ></i></td>
         <td></td>
         <td class="text-center"><button class="btn btn-outline-danger"  (click)="HardDeletelunchById(data._id)">Hard Delete</button></td>
       </tr>
@@ -571,21 +571,21 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header  text-white">
-          <h5 class="modal-title text-dark" id="exampleModalLabel9">{{particularproductLunchcard?.FoodName}}</h5>
+          <h5 class="modal-title text-dark" id="exampleModalLabel9">{{particularproductofpopularfoodcard?.CardHeading}}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <div *ngIf="particularproductLunchcard?.imageDetails">
-                <ng-container *ngFor="let data of  particularproductLunchcard?.imageDetails">
+              <div *ngIf="particularproductofpopularfoodcard?.imageDetails">
+                <ng-container *ngFor="let data of  particularproductofpopularfoodcard?.imageDetails">
                   <img [src]="Url+data.imageUrl" class="img-fluid w-40 h-40 mt-5 ms-5">
                 </ng-container>
               </div>
         <h1 class="mt-5">Frequently-Queston</h1>
-        <h5 class="modal-title mt-5 text-dark" id="exampleModalLabel9"><span style="color: blue;">FoodName:</span>&nbsp;&nbsp;{{particularproductLunchcard?.FoodName}}</h5>
-        <p class="modal-title mt-3 text-dark" id="exampleModalLabel9"><span style="color: blue;"><b>FoodDescription:</b></span>&nbsp;&nbsp;{{particularproductLunchcard.FoodDescription}}</p>
-        <p class="modal-title mt-3 text-dark" id="exampleModalLabel9"><span style="color: blue;"><b>FoodPrice:</b></span>&nbsp;&nbsp;{{particularproductLunchcard?.FoodPrice}}</p>
+        <h5 class="modal-title mt-5 text-dark" id="exampleModalLabel9"><span style="color: blue;">FoodName:</span>&nbsp;&nbsp;{{particularproductofpopularfoodcard?.CardHeading}}</h5>
+        <p class="modal-title mt-3 text-dark" id="exampleModalLabel9"><span style="color: blue;"><b>FoodDescription:</b></span>&nbsp;&nbsp;{{particularproductofpopularfoodcard.CardDescription}}</p>
+
 
             </div>
           </div>
