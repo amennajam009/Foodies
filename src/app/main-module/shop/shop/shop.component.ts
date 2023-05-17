@@ -45,7 +45,7 @@ public GetLunchFoodApi(){
 }
 public GetpopularFoodAPI(){
   this._menuService.GetpopularApi().subscribe((res:any)=>{
-    res;
+    this.AllpopularFoodcards=res.Result;
   })
 }
 
