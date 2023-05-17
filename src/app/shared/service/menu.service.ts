@@ -57,4 +57,7 @@ export class MenuService {
    GetpopularApiByid(_id:any){
     return this._HttpClient.get(`http://localhost:7070/menu/GetpopularApiById/${_id}`)
    }
+   HardDeletepopularFoodApiById(_id:any){
+   return this._HttpClient.delete(`http://localhost:7070/menu/HardDeletepopularApi/${_id}`)
+   }
 }
