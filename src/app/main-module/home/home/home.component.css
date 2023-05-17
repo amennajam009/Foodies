@@ -1,6 +1,8 @@
 /********** Template CSS **********/
 
-
+*{
+    font-family: 'Nanum Myeongjo';
+  }
 :root {
     --primary: #4761FF;
     --secondary: #555555;
