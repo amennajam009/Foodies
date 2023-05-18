@@ -229,7 +229,7 @@ svg {
 }
 
 .round a {
-  color: crimson;
+  color: #f39c12;
 }
 
 .round .button {
@@ -240,7 +240,7 @@ svg {
   margin: 20px;
   position: relative;
   overflow: hidden;
-  border: 2px solid crimson;
+  border: 2px solid #f39c12;
   transition: color .5s;
 }
 
@@ -248,7 +248,7 @@ svg {
   content: "";
   position: absolute;
   z-index: -1;
-  background: crimson;
+  background: #f39c12;
   height: 150px;
   width: 200px;
   border-radius: 50%;
