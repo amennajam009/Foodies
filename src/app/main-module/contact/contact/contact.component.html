@@ -1,7 +1,11 @@
-<form [formGroup]="WhatsAppForm" (ngSubmit)="Submitwhatsappform()">
+
+
+<br><br><br><br>
+<!-- <form [formGroup]="WhatsAppForm" (ngSubmit)="Submitwhatsappform()">
     <div>
       <input formControlName="WhatsAppMessage" placeholder="Message">
       <input formControlName="PhoneNumber" placeholder="Phone number">
       <button type="submit">Send</button>
     </div>
-  </form>
+  </form> -->
+  <button><a [href]="generateWhatsAppLink()" target="_blank">Chat on WhatsApp</a></button>

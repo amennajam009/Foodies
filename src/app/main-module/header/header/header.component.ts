@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
 
-
+ 
   header_variable=false
   @HostListener("document:scroll")
   scrollfunction(){
