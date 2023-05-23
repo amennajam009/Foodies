@@ -12,7 +12,7 @@
 
         <div class="row g-0 mt-5">
 
-          <div class="col-lg-4 reservation-img" style="background-image: url(../../../../assets/pic/gallery-1.jpg);" data-aos="zoom-out" data-aos-delay="200"></div>
+          <div class="col-lg-4 reservation-img" style="background-image: url(../../../../assets/pic/gallery-1.jpg);" data-aos="zoom-out" data-aos-delay="200" ></div>
 
           <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
             <form  [formGroup]="OrderTable" (ngSubmit)="SubmitOrderTableform()"  action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
@@ -66,4 +66,12 @@
       <button type="submit">Send</button>
     </div>
   </form> -->
-  <button><a [href]="generateWhatsAppLink()" target="_blank">Chat on WhatsApp</a></button>
+  <!-- <button><a [href]="generateWhatsAppLink()" target="_blank">Chat on WhatsApp</a></button> -->
+<br>
+<br>
+<br>
+<div class="whatsapp-icon-container">
+  <a [href]="generateWhatsAppLink()" target="_blank" style="text-decoration: none;">
+    <i class="circle-ripple fa fa-whatsapp fa-2x"></i>
+  </a>
+</div>

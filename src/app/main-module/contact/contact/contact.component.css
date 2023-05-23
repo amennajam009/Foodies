@@ -1,0 +1,27 @@
+.circle-ripple {
+    background-color: #35ffc3;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    animation: ripple 0.7s linear infinite;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes ripple {
+    0% {
+      box-shadow: 0 0 0 0 rgba(2, 207, 170, 0.3), 0 0 0 12px rgba(2, 207, 170, 0.3), 0 0 0 20px rgba(2, 207, 170, 0.3), 0 0 0 28px rgba(2, 207, 170, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 0 12px rgba(2, 207, 170, 0.3), 0 0 0 20px rgba(2, 207, 170, 0.3), 0 0 0 28px rgba(2, 207, 170, 0.3), 0 0 0 40px rgba(2, 207, 170, 0);
+    }
+  }
+
+  .whatsapp-icon-container {
+    position: fixed;
+    bottom: 230px; /* Adjust the value to position it vertically */
+    right: 40px; /* Adjust the value to position it horizontally */
+  }
