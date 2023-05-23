@@ -2,6 +2,7 @@ import { Component, OnInit ,ViewChild,ElementRef } from '@angular/core';
 import { FormBuilder,FormGroup,FormControl,ReactiveFormsModule,Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { GeneralService } from 'src/app/shared/service/general.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -23,7 +24,9 @@ export class GeneralSettingComponent implements OnInit {
   @ViewChild('fileSelect') fileSelect:ElementRef|any;
   
 
-  constructor(private _FormBuilder:FormBuilder , private _General:GeneralService) { 
+  constructor(private _FormBuilder:FormBuilder,
+              private _General:GeneralService,
+              private _toaster:ToastrService) { 
     this.myFormModel();
     this.mySecondForm();
     this.ThreehomecardModel();
@@ -55,7 +58,7 @@ export class GeneralSettingComponent implements OnInit {
   MultipartFormData.append('threecard-image', this.threeImages);
 
   this._General.ThreeHomeCardApi(MultipartFormData).subscribe((res:any)=>{
-    res;
+    this._toaster.success(res)
     this.Threehomecards.reset();
   })
  }
@@ -103,7 +106,7 @@ export class GeneralSettingComponent implements OnInit {
     // });
   
     this._General.FourCardApi(MultipartFormData).subscribe((res: any) => {
-      res;
+      this._toaster.success(res)
       this.fourcards.reset();
       this.fileSelect.nativeElement.value = null;
       this.newImageArray = [];
@@ -196,7 +199,7 @@ mySecondForm(){
 Submitfreqform(){
   const payload = this.FrequentlyQue.value;
   this._General.FrequentlyAskedQueAPI(payload).subscribe((res:any)=>{
-    res;
+    this._toaster.success(res)
     this.FrequentlyQue.reset();
   })
 }

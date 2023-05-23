@@ -105,7 +105,7 @@ MultiPartData.append('FoodPrice', this.Lunchfoodcards.get('FoodPrice').value);
 MultiPartData.append('lunchcard-image', this.getLunchImage);
 
 this._menuService.LunchFoodCardApi(MultiPartData).subscribe((res:any)=>{
-  res;
+  this._toaster.success(res)
   this.Lunchfoodcards.reset();
   this.fileSelect.nativeElement.value = null;
 })
@@ -131,7 +131,7 @@ submitpopularFood(){
   MultipartData.append('Food-image', this.getpopularFoodimage);
 
   this._menuService.popularFoodApi(MultipartData).subscribe((res:any)=>{
-    res;
+    this._toaster.success(res)
     this.populafoodcard.reset();
     this.fileSelect.nativeElement.value = null;
   })
