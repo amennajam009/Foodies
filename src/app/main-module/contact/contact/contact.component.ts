@@ -3,6 +3,8 @@ import { FormBuilder ,Validators ,FormControl,FormGroup } from '@angular/forms';
 import { WhatsappService } from 'src/app/shared/service/whatsapp.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser'
 import { ContactService } from 'src/app/shared/service/contact.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -12,7 +14,10 @@ export class ContactComponent implements OnInit {
   OrderTable:FormGroup | any
   phoneNumber: string = '+923064484061';
   WhatsAppForm:FormGroup | any;
-  constructor(private _whatsappService:WhatsappService , private _FormBuilder:FormBuilder , private _contactservice:ContactService) {
+  constructor(private _whatsappService:WhatsappService,
+             private _FormBuilder:FormBuilder ,
+             private _contactservice:ContactService,
+             private _toasterService:ToastrService) {
     // this.myWhatsappForm();
     this.Ordertablemodel();
    }
@@ -35,7 +40,8 @@ export class ContactComponent implements OnInit {
   SubmitOrderTableform(){
     const payLoad = this.OrderTable.value;
     this._contactservice.UserBookedTable(payLoad).subscribe((res:any)=>{
-      res;
+      this._toasterService.success(res.message)
+
       this.OrderTable.reset();
     })
   }

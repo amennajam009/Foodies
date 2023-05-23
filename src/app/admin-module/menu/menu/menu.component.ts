@@ -1,5 +1,6 @@
 import { Component, OnInit,ElementRef,ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup ,Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { MenuService } from 'src/app/shared/service/menu.service';
 
 @Component({
@@ -17,7 +18,9 @@ export class MenuComponent implements OnInit {
   getBreakfastImage:any
   getLunchImage:any
   @ViewChild('fileSelect') fileSelect:ElementRef|any;
-  constructor(private _menuService:MenuService, private _FormBuilder:FormBuilder) { 
+  constructor(private _menuService:MenuService,
+              private _FormBuilder:FormBuilder,
+              private _toaster:ToastrService) { 
   this.myFoodCardsModel();
   this.myBreakfastcardModel();
   this.myLunchFoodcardModel();
@@ -48,7 +51,7 @@ Submitmyfoodform(){
     MultipartFormData.append('Foodcard-image', this.getFoodImage);
     
     this._menuService.StarterFoodCardApi(MultipartFormData).subscribe((res:any) => {
-    res;
+      this._toaster.success(res)
     this.foodcards.reset();
     this.fileSelect.nativeElement.value = null;
     });
@@ -74,7 +77,7 @@ Submitmyfoodform(){
   MultipleData.append('breakcard-image', this.getBreakfastImage);
 
  this._menuService.BreakfastFoodCardApi(MultipleData).subscribe((res:any)=>{
-  res;
+  this._toaster.success(res)
   this.breakfastfoodcards.reset();
   this.fileSelect.nativeElement.value = null;
  })
