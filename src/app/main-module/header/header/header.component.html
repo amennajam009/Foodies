@@ -33,50 +33,44 @@
 
 
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 " [class.header_change]="header_variable">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3" [class.header_change]="header_variable">
     <div class="container">
-      <a class="navbar-brand fs-3 fw-bold" >TASTY-<span style="color: #FFB000;">BITES</span></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <div class="navbar-brand fs-3 fw-bold" style="margin-left: 30px;">
+        TASTY-<span style="color: #FFB000;">BITES</span>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+  
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="mx-auto"></div>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-white px-2" routerLink="/home" >HOME</a>
+            <a class="nav-link text-white px-2" routerLink="/home">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white px-2"routerLink="/shop">SHOP</a>
+            <a class="nav-link text-white px-2" routerLink="/shop">SHOP</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white px-2" routerLink="/About-us" >ABOUT US </a>
+            <a class="nav-link text-white px-2" routerLink="/About-us">ABOUT US</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link text-white px-2" routerLink="/contact" >CONTACT</a>
+            <a class="nav-link text-white px-2" routerLink="/contact">CONTACT</a>
           </li>
         </ul>
       </div>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" style="margin-right: 30px;">
         <li class="nav-item">
-          <a class="nav-link text-white  px-2"  ><i class="bi text-white bi-cart">CART</i></a>
+          <a class="nav-link text-white px-2"><i class="bi text-white bi-cart">CART</i></a>
         </li>
       </ul>
-      <button class="btn  me-5 p-2 " style="background-color: #FFB000; color: white;" routerLink="/managment-module/admin-login">Sign-In/Login-In &nbsp;&nbsp;<i class="fas fa-user"></i></button>
+      <button class="btn me-5 p-2" style="background-color: #FFB000; color: white;"
+        routerLink="/managment-module/admin-login">
+        Sign-In/Login-In &nbsp;&nbsp;<i class="fas fa-user"></i>
+      </button>
     </div>
-
   </nav>
-
-
 
 
 
