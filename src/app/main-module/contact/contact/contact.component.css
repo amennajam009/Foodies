@@ -175,3 +175,24 @@
       transform: rotate(360deg);
     }
   }
+
+  .back-video{
+    width: 100%;
+    height: 170%;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    z-index: -6; 
+   
+    
+  }
+  
+  .back-video video{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+  }
+
+ .blah{
+    margin-bottom: 40px;
+ }

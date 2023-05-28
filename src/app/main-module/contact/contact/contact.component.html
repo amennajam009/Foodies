@@ -1,5 +1,17 @@
 
-
+<div style="position: relative;">
+  <video autoplay loop muted plays-inline class="w-100"  >
+    <source src="../../../../assets/pic/videocontact.mp4" type="video/mp4"  >
+  </video>
+  <div style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);" >
+    <h1 style="color: white; font-size: 50px;" >ADVENTURE AWAITS</h1>
+    <h4 style="color: white;" class="d-flex justify-content-center">What Are You Waiting For?</h4>
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-lg btn-outline-light mx-2 mt-4">GET STARTED</button>
+      <button type="button" class="btn btn-lg btn-light mx-2 mt-4">WATCH TRAILER</button>
+    </div>
+  </div>
+</div>
 <br><br><br><br>
     <!-- ======= Book A Table Section ======= -->
     <section id="book-a-table" class="book-a-table">
@@ -128,20 +140,20 @@
 
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+        <form   [formGroup]="ContactUs" (ngSubmit)="SubmitContactUsform()"   action="forms/contact.php"  method="post" role="form" class="php-email-form p-3 p-md-4">
           <div class="row">
             <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required formControlName="UserName">
             </div>
             <div class="col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required formControlName="UserEmail">
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required formControlName="Subject">
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required formControlName="Message"></textarea>
           </div>
           <!-- <div class="my-3">
             <div class="loading">Loading</div>

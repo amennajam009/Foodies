@@ -11,4 +11,7 @@ export class ContactService {
   UserBookedTable(payLoad:any){
    return this.HttpClient.post('http://localhost:7070/Contact/OrderTableApi',payLoad)
   }
+  ContactUsApi(payLoad:any){
+ return this.HttpClient.post('http://localhost:7070/Contact/ContactUsApi',payLoad)
+  }
 }

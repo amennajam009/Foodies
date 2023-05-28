@@ -151,7 +151,7 @@
 }
 
 
-.btn {
+/* .btn {
   background: #f39c12;
   color: #fff;
   padding: 1rem 3rem;
@@ -167,7 +167,7 @@
   background: #fff;
   box-shadow: 0px 2px 20px 10px #97B1BF;
   color: #000;
-}
+} */
 
 
 
@@ -190,7 +190,7 @@
 
 /* GENERAL STYLES */
 
-body {
+ body {
   text-align: center;
   background: black;
 }
@@ -217,7 +217,7 @@ span {
 svg {
   width: 130px;
   height: 40px;
-}
+} 
 
 
 /* THE ROUND PSEUDO-ELEMENT HOVER STYLES */
@@ -288,11 +288,11 @@ svg {
 .round .button:nth-child(3):hover:before {
   top: -30px;
   left: -30px;
-}
+} 
 
 
 /* THE SVG HOVER EFFECTS */
-.svg .button {
+ .svg .button {
   text-decoration: none;
   color: #fff;
   position: relative;
@@ -301,9 +301,9 @@ svg {
   height: 40px;
   margin: 20px;
   overflow: hidden;
-}
+} 
 
-.svg .button:nth-child(3) {
+ .svg .button:nth-child(3) {
   overflow: visible;
   position: relative;
   top: -20px;
@@ -395,7 +395,7 @@ svg {
   100% {
       transform: scale(1.35);
   }
-}
+} 
 
 
 /* HIGHLIGHT */
@@ -427,4 +427,4 @@ svg {
   left: 150px;
   transition: all .5s;
 }
-.highlight {margin-bottom:100px;}
+.highlight {margin-bottom:100px;} 
