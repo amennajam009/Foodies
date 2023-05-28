@@ -7,14 +7,16 @@ import { Component, OnInit,HostListener } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  isNavbarExpanded = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
  
+  toggleNavbar() {
+    this.isNavbarExpanded = !this.isNavbarExpanded;
+  }
   header_variable=false
   @HostListener("document:scroll")
   scrollfunction(){

@@ -1,3 +1,9 @@
+*{
+  font-family: 'Nanum Myeongjo';
+  
+}
+
+
 .circle-ripple {
     background-color: #35ffc3;
     width: 1em;
@@ -196,3 +202,28 @@
  .blah{
     margin-bottom: 40px;
  }
+
+ @media (max-width: 767px) {
+  .video-content {
+    margin-top: 30px; /* Adjust the margin value as needed */
+   
+  }
+ 
+}
+
+@media (max-width: 767px) {
+  .video-content h1.display-4 {
+    font-size: 30px; /* Adjust the font size as needed */
+    font-weight: 500;
+  }
+
+  .video-content h4.display-6 {
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight: 500;
+  }
+  .video-content .btn {
+    border-width: 1px; /* Adjust the border size as needed */
+  }
+}
+
+

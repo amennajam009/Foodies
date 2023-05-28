@@ -33,13 +33,13 @@
 
 
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3" [class.header_change]="header_variable">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3" [class.header_change]="header_variable" [ngClass]="{ 'navbar-fixed-top': isNavbarExpanded, 'navbar-top': !isNavbarExpanded }" >
     <div class="container">
       <div class="navbar-brand fs-3 fw-bold" style="margin-left: 30px;">
         TASTY-<span style="color: #FFB000;">BITES</span>
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      (click)="toggleNavbar()"  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
   
@@ -58,6 +58,11 @@
           <li class="nav-item">
             <a class="nav-link text-white px-2" routerLink="/contact">CONTACT</a>
           </li>
+
+          <button class="btn me-5 p-2" style="background-color: #FFB000; color: white;"
+          routerLink="/managment-module/admin-login">
+          Sign-In/Login-In &nbsp;&nbsp;<i class="fas fa-user"></i>
+        </button>
         </ul>
       </div>
       <ul class="navbar-nav" style="margin-right: 30px;">
@@ -65,10 +70,7 @@
           <a class="nav-link text-white px-2"><i class="bi text-white bi-cart">CART</i></a>
         </li>
       </ul>
-      <button class="btn me-5 p-2" style="background-color: #FFB000; color: white;"
-        routerLink="/managment-module/admin-login">
-        Sign-In/Login-In &nbsp;&nbsp;<i class="fas fa-user"></i>
-      </button>
+   
     </div>
   </nav>
 

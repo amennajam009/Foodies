@@ -28,6 +28,7 @@
 }
 
 
+
 .header_change{
   /* position: fixed; */
   background:rgb(13,7,5);
@@ -43,6 +44,12 @@ font-family: 'Cinzel' !important;
 
 }
 
+  /* Media query for mobile screens */
+  @media (max-width: 767px) {
+    .header_change {
+      background: black !important;
+    }
+  }
 
 
 
@@ -50,5 +57,11 @@ font-family: 'Cinzel' !important;
 
 
 
-
- 
+  .navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: black;
+  }
