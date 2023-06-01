@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   Url = 'http://localhost:7070/';
   ThreeHomeCards: any;
   selectedItemId: any;
-  cartItemsCount: number = 0;
+  cartItemsCount: number = 1;
   ngOnInit(): void {
     this.GetThreeCardHomeData();
     this.getCartItemsCount();
