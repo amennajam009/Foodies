@@ -18,6 +18,7 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
     this.GetThreeCardHomeData()
     this.getCartItems()
+   
   }
 
 
@@ -25,6 +26,7 @@ export class AboutUsComponent implements OnInit {
     const cartItems = localStorage.getItem('cartItems');
     this.cartItems = cartItems ? JSON.parse(cartItems) : [];
   }
+  
   public GetThreeCardHomeData(){
     this._General.ThreeHomeCardGetAllDataApi().subscribe((res:any)=>{
       this.ThreeHomeCards=res.Result;
