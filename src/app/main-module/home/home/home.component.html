@@ -1,5 +1,6 @@
 
-<section id="hero" class="d-flex align-items-center">
+ <!-- Hero Section -->
+ <section id="hero" class="d-flex align-items-center">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
@@ -12,16 +13,18 @@
         </div>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-        <img src="../../../../assets/pic/banner.png" class="img-fluid animated custom-img" alt="">
+        <img src="../../../../assets/pic/banner.png" class="img-fluid animated custom-img w-100" alt="">
       </div>
     </div>
   </div>
-</section><!-- End Hero -->
- 
+</section>
+
+<!-- Hero Section -->
 
 
-  <!-- ======= Cliens Section ======= -->
-  <section id="cliens" class="cliens section-bg backcolor pt-4">
+
+  <!-- ======= Resturant Locations ======= -->
+   <section id="cliens" class="cliens section-bg backcolor pt-4">
     <div class="container">
 
       <div class="row" data-aos="zoom-in">
@@ -55,19 +58,17 @@
           <img src="../../../../assets/pic/no6.jfif" class="img-fluid rounded-circle" alt="" style="width: 90px; height: 120px;">
           <div class="mt-2 text-center ms-1"><i class="fa fa-map-marker ms-1" aria-hidden="true" style="color: red;"></i>Meguro</div>
         </div>
-
       </div>
-
     </div>
   </section>
- 
+  <!-- ======= Resturant Locations ======= -->
 
 
 
  <h2 class="text-center mt-5 pt-5 text-light">PICKUP <span style="color: #FFB000;">&</span> DELIVERY</h2>
  <h4 class="text-center mt- pt-5">Thin crust pizza, hand-made fresh pasta & more!</h4>
 
-<!-- testing -->
+<!-- Three Cards -->
 
 <div class="container our-services">
   <div class="row" >
@@ -87,44 +88,12 @@
         </div>
       </div>
     </div>
-    <!-- <div class="col-lg-4 col-md-6 g-4">
-      <div class="flip-container mt-5">
-        <div class="flipper">
-          <div class="front" style="background: #c78e13;">
-            <img class="lazyload" src="../../../../assets/pic/pasta.png" alt="Avatar" style="width:100%; max-height:217px;">
-            <h3 class="mt-4">Pasta</h3>
-          </div>
-          <div class="back " style="background: #2a302d;">
-            <h5 class="mt-5">Pasta</h5>
-            <p>Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs</p>
-            <p>Onion, Lettuce, Tomatoe, Patty, Cheese</p>
-            <p>$ 5</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 g-4">
-      <div class="flip-container mt-5">
-        <div class="flipper">
-          <div class="front" style="background: #c78e13;">
-            <img class="lazyload" src="../../../../assets/pic/pizza.png" alt="Avatar" style="width:100%; max-height:217px;">
-            <h3 class="mt-4">Pepperoni Pizza</h3>
-          </div>
-          <div class="back" style="background: #2a302d;">
-            <h5 class="mt-5">Pepperoni Pizza</h5>
-            <p>Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese,</p>
-            <p>Onion, Lettuce, Tomatoe, Patty, Cheese</p>
-            <p>$ 5</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>
-<!-- testing -->
+<!-- Three Cards -->
 
 
-<div class="fourcardheading mt-5 p-5">
+<div class="fourcardheading  p-5">
   <h3>Delicious Delights</h3>
   <h1 class="mt-4 text-light">Mouth-<span style="color: #FFB000;">watering</span>&nbsp;Menus</h1>
   <h3 class="mt-4">"We'll customize our recommendations to your taste buds"</h3>
@@ -132,9 +101,10 @@
 
 
 
- <!-- Features Start -->
- <div class="container-xxl py-5"  >
-  <div class="container" >
+ <!-- Four Cards -->
+ <div style="background-color: rgba(0, 0, 0, 0.235);" class="mt-5">
+ <div class="container-xxl py-5">
+  <div class="container">
       <div class="row g-0 feature-row"  >
       <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s" *ngFor="let data of AllFourCards" >
   <div class="feature-item border h-100 p-5">
@@ -146,84 +116,63 @@
       <p class="mb-0">{{data.cardDescriptionFour}}</p>
   </div>
 </div>
-
-      </div>
+</div>
   </div>
 </div>
+</div>
+ <!-- Four Cards -->
 
-<div class="showBox mt-3 pb-5 py-5 ">
+<!-- two Images -->
+<div class="showBox  pb-5 py-5 ">
   <p>"Luxury food, luxury restaurant!."<p>
   <p class="delay">"Luxury food, luxury restaurant!."<p>
 </div>
 
 <div class="container mt-5">
-  <!-- <div class="showBox mt-1">
-      <p>Sale<p>
-      <p class="delay">PKR 4,868<p>
-    </div> -->
   <div class="row" >
     <div class="col-md-6  " *ngFor="let data of TwoCards">
       <img [src]="Url+data.imageDetail[0].imageUrl" class="img-fluid  mt-5 me-2 two" width="560px"  >
     </div>
-    <!-- <div class="col-md-6">
-      <img [src]="Url+data.imageDetail[1].imageUrl" class="img-fluid">
-    </div> -->
   </div>
 </div>
 
-<div class="fourcardheading mt-5 p-5">
+<!-- Two Images -->
+
+<div class="fourcardheading">
   <h3>Delicious Delights</h3>
   <h1 class="mt-4">Mouth-<span style="color: #FFB000;">watering</span>&nbsp;Menus</h1>
   <h3 class="mt-4">"We'll customize our recommendations to your taste buds"</h3>
 </div>
-<section id="stats-counter" class="stats-counter">
-  <div class="container" data-aos="zoom-out">
 
-    <div class="row gy-4">
 
-      <div class="col-lg-3 col-md-6">
-        <div class="stats-item text-center w-100 h-100">
-          <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Clients</p>
-        </div>
-      </div><!-- End Stats Item -->
+<!-- banner image  -->
+<section class="section cta" style="height: 400px;">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8 col-md-12 col-sm-12">
+				<div class="text-center">
+					<span class="h6 letter-spacing text-white">Dscover your potential</span>
+					<h2 class="text-lg mt-4 mb-5 text-white">
+						Book your early seat to get <span class="text-color">summer 25% </span>dicsount
+					</h2>
 
-      <div class="col-lg-3 col-md-6">
-        <div class="stats-item text-center w-100 h-100">
-          <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Projects</p>
-        </div>
-      </div><!-- End Stats Item -->
-
-      <div class="col-lg-3 col-md-6">
-        <div class="stats-item text-center w-100 h-100">
-          <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Hours Of Support</p>
-        </div>
-      </div><!-- End Stats Item -->
-
-      <div class="col-lg-3 col-md-6">
-        <div class="stats-item text-center w-100 h-100">
-          <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Workers</p>
-        </div>
-      </div><!-- End Stats Item -->
-
-    </div>
-
-  </div>
+					<a href="pricing.html" class="btn btn-main text-white">Join Today</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
+<!-- banner Image -->
+
+<!-- frequently Questions -->
 <div class="question mt-5 py-5" >
   <section id="faq" class="faq ">
     <div class="container" data-aos="fade-up">
-  
       <div class="text-center mt-5 pt-5 py-4 ">
         <h2>Frequently <span style="color: #FFB000 ;">&nbsp;Asked&nbsp;</span> Questions</h2>
       </div>
-  
       <ul class="faq-list " data-aos="fade-up" *ngFor="let data of  GetFreq ; let i=index" >
-  
         <li>
           <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1"><span style="font-size: 20px; color: #FFB000;" >{{i+1}}</span>: {{data.headingQue}}
             <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
@@ -233,12 +182,11 @@
             </p>
           </div>
         </li>
-  
       </ul>
-  
     </div>
   </section>
   </div>
+  <!-- frequently Questions -->
 
 
 
