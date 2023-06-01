@@ -79,4 +79,5 @@ export class GeneralService {
     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetThreehomeCardsById/${_id}`)
   }
  
+ 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit,HostListener } from '@angular/core';
+import { GeneralService } from 'src/app/shared/service/general.service';
 
 
 @Component({
@@ -8,9 +9,15 @@ import { Component, OnInit,HostListener } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isNavbarExpanded = false;
-  constructor() { }
-
+  constructor(private _General:GeneralService) { }
+  MakeMyIdPublic: any;
+  Url = 'http://localhost:7070/';
+  ThreeHomeCards: any;
+  selectedItemId: any;
+  cartItemsCount: number = 0;
   ngOnInit(): void {
+    this.GetThreeCardHomeData();
+    this.getCartItemsCount();
   }
 
  
@@ -26,5 +33,24 @@ export class HeaderComponent implements OnInit {
     else{
       this.header_variable=false
     }
+  }
+
+
+  public GetThreeCardHomeData() {
+    this._General.ThreeHomeCardGetAllDataApi().subscribe((res: any) => {
+      this.ThreeHomeCards = res.Result;
+    });
+  }
+
+  GetThreeCardById(_id: any) {
+    this.MakeMyIdPublic = _id;
+    this._General.ThreehomecardsById(_id).subscribe((res: any) => {
+     res.Result;
+    });
+  }
+
+  getCartItemsCount(): void {
+    const cartItems = localStorage.getItem('cartItems');
+    this.cartItemsCount = cartItems ? JSON.parse(cartItems).length : 0;
   }
 }

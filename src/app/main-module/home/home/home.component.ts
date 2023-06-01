@@ -17,11 +17,14 @@ export class HomeComponent implements OnInit {
   TwoCards:any=[];
   GetFreq:any=[]
   ThreehomeImage:any=[];
-
+  cartItems: any[] = [];
+  MakeMyIdPublic:any
+  particualarproductofthreehomecards:any={}
   constructor(private _General:GeneralService) { }
 
   ngOnInit(): void {
    this.GetThreeHomeCardApi();
+  
     this._General.GetFourCardApi().subscribe((res:any)=>{
       this.AllFourCards = res.Result;
       // this.HeroImage = res.Result; // Assign the received data to your component variable
@@ -48,5 +51,17 @@ export class HomeComponent implements OnInit {
     this._General.ThreeHomeCardGetAllDataApi().subscribe((res:any)=>{
       this.ThreehomeImage = res.Result;
     })
+  }
+
+
+  addToCart(_id: any) {
+    this.MakeMyIdPublic = _id;
+    this._General.ThreehomecardsById(_id).subscribe((res: any) => {
+      const product = res.Result;
+      const cartItems = localStorage.getItem('cartItems') ?? '';
+      const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
+      parsedCartItems.push(product);
+      localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+    });
   }
 }
