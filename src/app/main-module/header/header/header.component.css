@@ -42,6 +42,7 @@
 .navbar-brand{
 font-family: 'Cinzel' !important;
 
+
 }
 
   /* Media query for mobile screens */
@@ -65,3 +66,5 @@ font-family: 'Cinzel' !important;
     z-index: 1;
     background-color: black;
   }
+
+  
