@@ -21,6 +21,7 @@ export class ViewCartComponent implements OnInit {
     this.GetThreeCardHomeData();
     this.getCartItems();
 
+
     // Listen for changes in the localStorage
     window.addEventListener('storage', this.handleStorageChange.bind(this));
   }
@@ -32,12 +33,25 @@ export class ViewCartComponent implements OnInit {
     this.totalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
   }
 
+
+  // handleStorageChange(event: StorageEvent): void {
+  //   if (event.key === 'cartItems') {
+  //     const cartItems = event.newValue ? JSON.parse(event.newValue) : [];
+  //     this.cartItems = cartItems;
+  //   }
+  // }
+
+
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
       const cartItems = event.newValue ? JSON.parse(event.newValue) : [];
       this.cartItems = cartItems;
+    } else if (event.key === 'totalPrice') {
+      const totalPrice = parseFloat(event.newValue ?? '0');
+      this.totalPrice = totalPrice;
     }
   }
+
 
   public GetThreeCardHomeData() {
     this._General.ThreeHomeCardGetAllDataApi().subscribe((res: any) => {
