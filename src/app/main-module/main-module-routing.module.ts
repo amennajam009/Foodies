@@ -7,6 +7,7 @@ import { ShopComponent } from './shop/shop/shop.component';
 import { AboutUsComponent } from './About-Us/about-us/about-us.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { ReviewComponent } from './Review/review/review.component';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
 const routes: Routes = [{ path: '', component: MainModuleComponent ,
 children:[
@@ -16,6 +17,7 @@ children:[
   {path:'About-us', component:AboutUsComponent},
   {path:'contact' , component:ContactComponent},
   {path:'Review' , component:ReviewComponent},
+  {path:'ViewCart',component:ViewCartComponent}
 
 
 ]

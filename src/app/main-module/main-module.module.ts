@@ -12,6 +12,7 @@ import { ReviewComponent } from './Review/review/review.component';
 import { FooterComponent } from './footer/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactComponent,
     ReviewComponent,
     FooterComponent,
+    ViewCartComponent,
 
   ],
   imports: [
