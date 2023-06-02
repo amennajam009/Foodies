@@ -62,6 +62,9 @@ export class HomeComponent implements OnInit {
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
       parsedCartItems.push(product);
       localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+  
+      // Update the cart items count using the CartService
+      this._General.updateCartItemsCount(parsedCartItems.length);
     });
   }
 }

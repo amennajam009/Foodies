@@ -1,14 +1,15 @@
 
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable ,EventEmitter} from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralService {
-
+  addToCartEvent: EventEmitter<void> = new EventEmitter<void>();
   constructor(private HttpClient:HttpClient) { }
-
+ 
 
 
   HeroImageApi(payLoad:any){
@@ -79,5 +80,10 @@ export class GeneralService {
     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetThreehomeCardsById/${_id}`)
   }
  
- 
+  private cartItemsCountSubject = new BehaviorSubject<number>(0);
+  cartItemsCount$ = this.cartItemsCountSubject.asObservable();
+
+  updateCartItemsCount(count: number) {
+    this.cartItemsCountSubject.next(count);
+  }
 }

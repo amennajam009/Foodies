@@ -18,9 +18,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.GetThreeCardHomeData();
     this.getCartItemsCount();
+  
+    this._General.cartItemsCount$.subscribe(count => {
+      this.cartItemsCount = count;
+    });
   }
 
  
+  
+  
   toggleNavbar() {
     this.isNavbarExpanded = !this.isNavbarExpanded;
   }
@@ -53,4 +59,7 @@ export class HeaderComponent implements OnInit {
     const cartItems = localStorage.getItem('cartItems');
     this.cartItemsCount = cartItems ? JSON.parse(cartItems).length : 0;
   }
+
+  
+
 }
