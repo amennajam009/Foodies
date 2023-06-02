@@ -8,7 +8,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GeneralService {
   addToCartEvent: EventEmitter<void> = new EventEmitter<void>();
-  constructor(private HttpClient:HttpClient) { }
+  constructor(private HttpClient:HttpClient) { 
+    const storedCount = localStorage.getItem('cartItemsCount');
+    const initialCount = storedCount ? parseInt(storedCount) : 0;
+    this.cartItemsCountSubject = new BehaviorSubject<number>(initialCount);
+    this.cartItemsCount$ = this.cartItemsCountSubject.asObservable();
+  }
  
 
 
@@ -80,10 +85,13 @@ export class GeneralService {
     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetThreehomeCardsById/${_id}`)
   }
  
+
+  
   private cartItemsCountSubject = new BehaviorSubject<number>(0);
   cartItemsCount$ = this.cartItemsCountSubject.asObservable();
 
   updateCartItemsCount(count: number) {
     this.cartItemsCountSubject.next(count);
+    localStorage.setItem('cartItemsCount', count.toString());
   }
 }
