@@ -6,8 +6,8 @@
         <th class="text-center">#</th>
         <th class="text-center">Image</th>
         <th class="text-center">FoodName</th>
-        <th class="text-center">Status</th>
-        <th class="text-center">status summary</th>
+        <th class="text-center">Price</th>
+        <th class="text-center">Total Price</th>
         <th class="text-center" colspan="2">Actions</th>
       </tr>
     </thead>
@@ -16,8 +16,8 @@
         <th class="text-center text-light">{{i+1}}</th>
         <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
         <td class="text-center text-light">{{data.imageHeading}}</td>
-        <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'"></td>
-        <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'"></td>
+        <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}}</td>
+        <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{totalPrice}}</td>
         <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9" ></i></td>
         <td></td>
         <td class="text-center"><button class="btn btn-outline-danger">Hard Delete</button></td>

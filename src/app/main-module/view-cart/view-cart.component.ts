@@ -16,7 +16,7 @@ export class ViewCartComponent implements OnInit {
   cartItems: any[] = [];
 
   constructor(private _General:GeneralService) {}
-
+  totalPrice!: number;
   ngOnInit(): void {
     this.GetThreeCardHomeData();
     this.getCartItems();
@@ -28,6 +28,8 @@ export class ViewCartComponent implements OnInit {
   getCartItems(): void {
     const cartItems = localStorage.getItem('cartItems');
     this.cartItems = cartItems ? JSON.parse(cartItems) : [];
+    const storedTotalPrice = localStorage.getItem('totalPrice');
+    this.totalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
   }
 
   handleStorageChange(event: StorageEvent): void {

@@ -54,6 +54,20 @@ export class HomeComponent implements OnInit {
   }
 
 
+  // addToCart(_id: any) {
+  //   this.MakeMyIdPublic = _id;
+  //   this._General.ThreehomecardsById(_id).subscribe((res: any) => {
+  //     const product = res.Result;
+  //     const cartItems = localStorage.getItem('cartItems') ?? '';
+  //     const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
+  //     parsedCartItems.push(product);
+  //     localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+
+  //     this._General.updateCartItemsCount(parsedCartItems.length);
+  //   });
+  // }
+
+
   addToCart(_id: any) {
     this.MakeMyIdPublic = _id;
     this._General.ThreehomecardsById(_id).subscribe((res: any) => {
@@ -63,8 +77,22 @@ export class HomeComponent implements OnInit {
       parsedCartItems.push(product);
       localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
   
-      // Update the cart items count using the CartService
       this._General.updateCartItemsCount(parsedCartItems.length);
+  
+      // Calculate the total price
+      let totalPrice = 0;
+      parsedCartItems.forEach((data: any) => {
+        totalPrice += data.Price;
+      });
+  
+      // Store the total price in localStorage
+      localStorage.setItem('totalPrice', totalPrice.toString());
+  
+      // Retrieve the total price from localStorage
+      const storedTotalPrice = localStorage.getItem('totalPrice');
+  
+      console.log('Total Price:', storedTotalPrice);
     });
   }
+
 }
