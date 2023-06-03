@@ -58,7 +58,8 @@ export class GeneralSettingComponent implements OnInit {
   MultipartFormData.append('threecard-image', this.threeImages);
 
   this._General.ThreeHomeCardApi(MultipartFormData).subscribe((res:any)=>{
-    this._toaster.success(res)
+    res;
+    this._toaster.success('Card Created Successfully!!')
     this.Threehomecards.reset();
   })
  }
@@ -106,7 +107,8 @@ export class GeneralSettingComponent implements OnInit {
     // });
   
     this._General.FourCardApi(MultipartFormData).subscribe((res: any) => {
-      this._toaster.success(res)
+      res;
+      this._toaster.success('Card Created Sucessfully!!')
       this.fourcards.reset();
       this.fileSelect.nativeElement.value = null;
       this.newImageArray = [];
