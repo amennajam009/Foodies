@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
   addToCart(_id: any) {
     this.MakeMyIdPublic = _id;
     this._General.ThreehomecardsById(_id).subscribe((res: any) => {
-      this.Toaster.success('Item Is Added To Cart')
+      this.Toaster.success('Item Is Added To Cart 🛒')
       const product = res.Result;
       const cartItems = localStorage.getItem('cartItems') ?? '';
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
