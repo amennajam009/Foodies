@@ -20,9 +20,11 @@
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{totalPrice}}</td>
         <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9"></i></td>
         <td></td>
-        <button class="btn btn-warning " (click)="removeCartItemById(data._id)">Delete</button>
+        <button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Delete</button>
+    
       </tr>
     </tbody>
+
   </table>
 
 
