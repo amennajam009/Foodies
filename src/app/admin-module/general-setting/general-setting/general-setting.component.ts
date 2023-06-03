@@ -170,6 +170,8 @@ export class GeneralSettingComponent implements OnInit {
     MultipartFormData.append('images', this.twoImages);
   
     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
+      res;
+      this._toaster.success('Uploaded Successfully!!')
       this.twoImages.reset();
       this.fileSelect.nativeElement.value = null;
       this.TwoCardsArray = [];
@@ -201,7 +203,8 @@ mySecondForm(){
 Submitfreqform(){
   const payload = this.FrequentlyQue.value;
   this._General.FrequentlyAskedQueAPI(payload).subscribe((res:any)=>{
-    this._toaster.success(res)
+    res;
+    this._toaster.success('Uploaded Successfully!!')
     this.FrequentlyQue.reset();
   })
 }
