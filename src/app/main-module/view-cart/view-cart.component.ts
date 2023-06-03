@@ -75,10 +75,17 @@ export class ViewCartComponent implements OnInit {
         });
         // Store the total price in localStorage
         localStorage.setItem('totalPrice', totalPrice.toString());
+          // Recalculate the total price
+      this.totalPrice = this.calculateTotalPrice();
       }
     }
   }
-
-
-
+//Again Calculating the values to Get the Updated Price
+  calculateTotalPrice(): number {
+    let totalPrice = 0;
+    for (let data of this.cartItems) {
+      totalPrice += data.Price;
+    }
+    return totalPrice;
+  }
 }
