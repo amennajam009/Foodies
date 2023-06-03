@@ -181,17 +181,6 @@ export class GeneralSettingComponent implements OnInit {
   }
 
 
-//   submitTwoImages(){
-//     let MultipartFormData = new FormData();
-//     MultipartFormData.append('images', this.twoImages);
-  
-//     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
-//       this.fileSelect.nativeElement.value = null;
-//       this.TwoCardsArray = [];
-//       // Manually clear the image array
-//       this.TwoCardsArray.length = 0;
-//     });
-// }
  
 mySecondForm(){
   this.FrequentlyQue = this._FormBuilder.group({
