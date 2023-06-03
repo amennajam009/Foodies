@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   selectedItemId: any;
   cartItemsCount: number = 1;
   ngOnInit(): void {
-    this.GetThreeCardHomeData();
+
     this.getCartItemsCount();
   
     this._General.cartItemsCount$.subscribe(count => {
@@ -42,11 +42,6 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  public GetThreeCardHomeData() {
-    this._General.ThreeHomeCardGetAllDataApi().subscribe((res: any) => {
-      this.ThreeHomeCards = res.Result;
-    });
-  }
 
   GetThreeCardById(_id: any) {
     this.MakeMyIdPublic = _id;

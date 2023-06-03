@@ -18,9 +18,11 @@
         <td class="text-center text-light">{{data.imageHeading}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{totalPrice}}</td>
-        <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9" ></i></td>
+        <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9"></i></td>
         <td></td>
-        <!-- <button (click)="removeItemFromCart(data.id)">Remove Item</button> -->
+        <button (click)="removeCartItemById(data._id)">Delete</button>
       </tr>
     </tbody>
   </table>
+
+

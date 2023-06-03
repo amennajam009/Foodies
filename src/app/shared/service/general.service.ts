@@ -94,4 +94,6 @@ export class GeneralService {
     this.cartItemsCountSubject.next(count);
     localStorage.setItem('cartItemsCount', count.toString());
   }
+
+ 
 }
