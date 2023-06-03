@@ -54,25 +54,18 @@ export class ViewCartComponent implements OnInit {
 
 
  
-
-
   removeCartItemById(_id: any): void {
     const cartItems = localStorage.getItem('cartItems');
     if (cartItems) {
       let parsedCartItems = JSON.parse(cartItems);
-  
       // Find the index of the item to be removed
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
-  
       if (itemIndex !== -1) {
         parsedCartItems.splice(itemIndex, 1);
-  
         // Update the localStorage with the modified cartItems
         localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
-  
         // Update the cartItems array in the component
       this.cartItems = parsedCartItems;
-  
       const itemCount = this.cartItems.length; // Update itemCount based on the updated cartItems
       this._General.updateCartItemsCount(itemCount);
         // Calculate the total price
