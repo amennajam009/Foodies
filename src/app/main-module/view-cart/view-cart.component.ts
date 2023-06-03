@@ -18,7 +18,6 @@ export class ViewCartComponent implements OnInit {
   constructor(private _General:GeneralService) {}
   totalPrice!: number;
   ngOnInit(): void {
-    this.GetThreeCardHomeData();
     this.getCartItems();
 
 
@@ -34,14 +33,6 @@ export class ViewCartComponent implements OnInit {
   }
 
 
-  // handleStorageChange(event: StorageEvent): void {
-  //   if (event.key === 'cartItems') {
-  //     const cartItems = event.newValue ? JSON.parse(event.newValue) : [];
-  //     this.cartItems = cartItems;
-  //   }
-  // }
-
-
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
       const cartItems = event.newValue ? JSON.parse(event.newValue) : [];
@@ -53,11 +44,6 @@ export class ViewCartComponent implements OnInit {
   }
 
 
-  public GetThreeCardHomeData() {
-    this._General.ThreeHomeCardGetAllDataApi().subscribe((res: any) => {
-      this.ThreeHomeCards = res.Result;
-    });
-  }
 
   GetThreeCardById(_id: any) {
     this.MakeMyIdPublic = _id;
@@ -65,5 +51,6 @@ export class ViewCartComponent implements OnInit {
       this.particualarproductofthreehomecards = res.Result;
     });
   }
+
 
 }

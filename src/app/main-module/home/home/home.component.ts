@@ -76,22 +76,15 @@ export class HomeComponent implements OnInit {
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
       parsedCartItems.push(product);
       localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
-  
+      //This will Update My cart Item Counting
       this._General.updateCartItemsCount(parsedCartItems.length);
-  
       // Calculate the total price
       let totalPrice = 0;
       parsedCartItems.forEach((data: any) => {
         totalPrice += data.Price;
       });
-  
       // Store the total price in localStorage
       localStorage.setItem('totalPrice', totalPrice.toString());
-  
-      // Retrieve the total price from localStorage
-      const storedTotalPrice = localStorage.getItem('totalPrice');
-  
-      console.log('Total Price:', storedTotalPrice);
     });
   }
 
