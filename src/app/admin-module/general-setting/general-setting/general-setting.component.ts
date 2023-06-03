@@ -69,12 +69,6 @@ export class GeneralSettingComponent implements OnInit {
     this.fourcards=this._FormBuilder.group({
       cardName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
       cardDescriptionFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      // HeadingTwo: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      // descriptionTwo: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      // HeadingThree: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      // descriptionThree: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      // HeadingFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      // descriptionFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)])
     })
   }
 
