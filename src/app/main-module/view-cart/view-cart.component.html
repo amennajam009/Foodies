@@ -7,7 +7,9 @@
         <th class="text-center">Image</th>
         <th class="text-center">FoodName</th>
         <th class="text-center">Price</th>
-        <th class="text-center">Total Price</th>
+        <th class="text-center"></th>
+        <th></th>
+        
 
       </tr>
     </thead>
@@ -17,13 +19,10 @@
         <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
         <td class="text-center text-light">{{data.imageHeading}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}}</td>
-        <!-- <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9"></i></td> -->
-        <button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Remove Item</button>
-    
+        <td><button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Remove Item</button></td>
+        <td></td>
       </tr>
-      <!-- <td class="text-light">{{totalPrice}}</td> -->
     </tbody>
-    <!-- <td class="text-light">{{totalPrice}}</td> -->
   </table>
   <div style="display: flex;justify-content: end;" class="me-5">
     <h2>Total-Price</h2>
