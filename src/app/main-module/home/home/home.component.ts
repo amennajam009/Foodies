@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { GeneralService } from 'src/app/shared/service/general.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   cartItems: any[] = [];
   MakeMyIdPublic:any
   particualarproductofthreehomecards:any={}
-  constructor(private _General:GeneralService) { }
+  constructor(private _General:GeneralService,private Toaster:ToastrService) { }
 
   ngOnInit(): void {
    this.GetThreeHomeCardApi();
@@ -71,6 +72,7 @@ export class HomeComponent implements OnInit {
   addToCart(_id: any) {
     this.MakeMyIdPublic = _id;
     this._General.ThreehomecardsById(_id).subscribe((res: any) => {
+      this.Toaster.success('Item Is Added To Cart')
       const product = res.Result;
       const cartItems = localStorage.getItem('cartItems') ?? '';
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
