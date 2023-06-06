@@ -854,25 +854,8 @@
     font-size: 24px;
   }
   
- /* .secondbtn{
-  font-family: "Jost", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 28px 11px 28px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 10px 0 0 0;
-  color: #fff;
-  background: #FFB000;
-  text-decoration: none;
- }
- 
- .secondbtn:hover{
-background: #161a1b;
- } */
- .secondbtn {
+
+ /* .secondbtn {
   font-family: "Jost", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -884,15 +867,15 @@ background: #161a1b;
   margin: 10px 0 0 0;
   color: #fff;
   background: transparent;
-  border: 2px solid #FFB000; /* Add a yellow outline */
+  border: 2px solid #FFB000; 
   text-decoration: none;
 }
 
 .secondbtn:hover {
-  background: #fff; /* Change the background to white on hover */
-  color: #161a1b; /* Change the text color to black on hover */
-  border-color: #fff; /* Change the outline color to white on hover */
-}
+  background: #fff; 
+  color: #161a1b;
+  border-color: #fff;
+} */
 
   #hero .btn-get-started {
     font-family: "Jost", sans-serif;
@@ -911,6 +894,28 @@ background: #161a1b;
   
   #hero .btn-get-started:hover {
     background: #161a1b;
+  }
+
+  #hero .btn-get-started.secondbtn {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #FFB000; /* Add a yellow border */
+    text-decoration: none;
+  }
+  
+  #hero .btn-get-started.secondbtn:hover {
+    background: #fff; /* Change the background to white on hover */
+    color: #161a1b; /* Change the text color to black on hover */
+    border-color: #fff; /* Change the border color to white on hover */
   }
   
   #hero .btn-watch-video {
@@ -990,6 +995,11 @@ background: #161a1b;
       padding: 10px 24px 11px 24px;
       margin-bottom: 40%;
     }
+    #hero .btn-get-started.secondbtn {
+      font-size: 16px;
+      padding: 10px 24px 11px 24px;
+      margin-bottom: 40%;
+    }
   }
   
   @-webkit-keyframes up-down {
@@ -1055,8 +1065,13 @@ background: #161a1b;
     background: url("../../../../assets/pic/backimage.jpg") fixed 50% 50% no-repeat;
     background-size: cover;
     margin-top: 6%;
+    
   }
 
 
 
+  .banerscrollimage{
+    margin-top: 90px;
+   
+  }
   
