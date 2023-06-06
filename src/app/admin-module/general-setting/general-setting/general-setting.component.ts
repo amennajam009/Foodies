@@ -59,7 +59,7 @@ export class GeneralSettingComponent implements OnInit {
 
   this._General.ThreeHomeCardApi(MultipartFormData).subscribe((res:any)=>{
     res;
-    this._toaster.success('Card Created Successfully!!')
+    this._toaster.success('Card Created Successfully!! 😊')
     this.Threehomecards.reset();
   })
  }
@@ -102,7 +102,7 @@ export class GeneralSettingComponent implements OnInit {
   
     this._General.FourCardApi(MultipartFormData).subscribe((res: any) => {
       res;
-      this._toaster.success('Card Created Sucessfully!!')
+      this._toaster.success('Card Created Sucessfully!! 😊')
       this.fourcards.reset();
       this.fileSelect.nativeElement.value = null;
       this.newImageArray = [];
@@ -165,7 +165,7 @@ export class GeneralSettingComponent implements OnInit {
   
     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
       res;
-      this._toaster.success('Uploaded Successfully!!')
+      this._toaster.success('Uploaded Successfully!! 😊')
       this.twoImages.reset();
       this.fileSelect.nativeElement.value = null;
       this.TwoCardsArray = [];
@@ -187,7 +187,7 @@ Submitfreqform(){
   const payload = this.FrequentlyQue.value;
   this._General.FrequentlyAskedQueAPI(payload).subscribe((res:any)=>{
     res;
-    this._toaster.success('Uploaded Successfully!!')
+    this._toaster.success('Uploaded Successfully!! 😊')
     this.FrequentlyQue.reset();
   })
 }

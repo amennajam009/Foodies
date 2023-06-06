@@ -235,7 +235,7 @@ GetpopularfoodById(_id:any){
 HardDeletepopularFoodById(_id:any){
 this.MakeMyIdPublic=_id;
 this._menuService.HardDeletepopularFoodApiById(_id).subscribe((res:any)=>{
-  this.Toaster.error('Deleted PopularFoodCard')
+  this.Toaster.error('Deleted PopularFoodCard 🗑️')
   res.Result;
   this.popularFoodcard=[];
   this.PopulateProductOfpopularfood();
