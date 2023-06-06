@@ -69,13 +69,11 @@ export class GeneralSettingComponent implements OnInit {
     this.fourcards=this._FormBuilder.group({
       cardName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
       cardDescriptionFour: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      Price:new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)])
     })
   }
 
 
- 
-
- 
   getImages(event: any){
     let fileLength=event.target.files.length;
     if(event.target.files.length<=5){
@@ -94,7 +92,9 @@ export class GeneralSettingComponent implements OnInit {
     let MultipartFormData = new FormData();
     MultipartFormData.append('cardName', this.fourcards.get('cardName').value);
     MultipartFormData.append('cardDescriptionFour', this.fourcards.get('cardDescriptionFour').value);
+    MultipartFormData.append('Price',this.fourcards.get('Price').value);
     MultipartFormData.append('card-image', this.cardImage);
+
   
     // this.newImageArray.forEach((imagedata: any) => {
     //   MultipartFormData.append('images', imagedata);
