@@ -94,3 +94,26 @@ export class ViewCartComponent implements OnInit {
     return totalPrice;
   }
 }
+
+
+
+//save for later use 
+
+// removeCartItemById(_id: any): void {
+//   const cartItems = localStorage.getItem('cartItems');
+//   if (cartItems) {
+//     const parsedCartItems = JSON.parse(cartItems);
+//     const updatedCartItems = parsedCartItems.filter((item: any) => item._id !== _id);
+//     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+//     this.cartItems = updatedCartItems;
+//     const itemCount = updatedCartItems.length;
+//     this._General.updateCartItemsCount(itemCount);
+//     const totalPrice = this.calculateTotalPrice(updatedCartItems);
+//     localStorage.setItem('totalPrice', totalPrice.toString());
+//     this.totalPrice = totalPrice;
+//   }
+// }
+
+// calculateTotalPrice(cartItems: any[]): number {
+//   return cartItems.reduce((total: number, item: any) => total + parseFloat(item.Price), 0);
+// }
