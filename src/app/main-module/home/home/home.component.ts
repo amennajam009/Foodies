@@ -57,8 +57,32 @@ export class HomeComponent implements OnInit {
 
 
 
+ addToCartFourcard(_id:any){
+  this.MakeMyIdPublic = _id;
+  this._General.GetFourcardsById(_id).subscribe((res:any)=>{
+    this.Toaster.success('Item Is Added To Cart 🛒')
+    const product = res.Result;
+    const cartItems = localStorage.getItem('cartItems') ?? '';
+    const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
+    parsedCartItems.push(product);
+    localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+    //This will Update My cart Item Counting
+    this._General.updateCartItemsCount(parsedCartItems.length);
+    // Calculate the total price
+    let totalPrice = 0;
+    parsedCartItems.forEach((data: any) => {
+      totalPrice += data.Price;
+    });
+    // Store the total price in localStorage
+    localStorage.setItem('totalPrice', totalPrice.toString());
+  });
+
+ }
+
+
+
   addToCart(_id: any) {
-    this.MakeMyIdPublic = _id;
+    this.MakeMyIdPublic = _id; 
     this._General.ThreehomecardsById(_id).subscribe((res: any) => {
       this.Toaster.success('Item Is Added To Cart 🛒')
       const product = res.Result;
@@ -78,4 +102,5 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  
 }

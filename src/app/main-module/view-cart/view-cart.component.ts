@@ -9,6 +9,7 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 export class ViewCartComponent implements OnInit {
 
   particualarproductofthreehomecards: any = {};
+  AllFourCards : any = {}
   MakeMyIdPublic: any;
   Url = 'http://localhost:7070/';
   ThreeHomeCards: any;
@@ -43,7 +44,12 @@ export class ViewCartComponent implements OnInit {
     }
   }
 
-
+  GetFourCardbyId(_id:any){
+    this.MakeMyIdPublic = _id;
+    this._General.GetFourcardsById(_id).subscribe((res:any)=>{
+      this.AllFourCards = res.Result;
+    })
+  }
 
   GetThreeCardById(_id: any) {
     this.MakeMyIdPublic = _id;
