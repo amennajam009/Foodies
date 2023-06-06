@@ -68,31 +68,28 @@ export class ViewCartComponent implements OnInit {
       // Find the index of the item to be removed
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
       if (itemIndex !== -1) {
+        // Remove the item from the cartItems array
         parsedCartItems.splice(itemIndex, 1);
         // Update the localStorage with the modified cartItems
         localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
         // Update the cartItems array in the component
-      this.cartItems = parsedCartItems;
-      const itemCount = this.cartItems.length; // Update itemCount based on the updated cartItems
-      this._General.updateCartItemsCount(itemCount);
-        // Calculate the total price
-        let totalPrice = 0;
-        parsedCartItems.forEach((data: any) => {
-          totalPrice += data.Price;
-        });
+        this.cartItems = parsedCartItems;
+        const itemCount = this.cartItems.length;
+        this._General.updateCartItemsCount(itemCount);
+        // Recalculate the total price
+        let totalPrice = this.calculateTotalPrice(parsedCartItems);
         // Store the total price in localStorage
         localStorage.setItem('totalPrice', totalPrice.toString());
-          // Recalculate the total price
-      this.totalPrice = this.calculateTotalPrice();
+        // Update the totalPrice in the component
+        this.totalPrice = totalPrice;
       }
     }
   }
   
-//Again Calculating the values to Get the Updated Price
-  calculateTotalPrice(): number {
+  calculateTotalPrice(cartItems: any[]): number {
     let totalPrice = 0;
-    for (let data of this.cartItems) {
-      totalPrice += data.Price;
+    for (let data of cartItems) {
+      totalPrice += parseFloat(data.Price);
     }
     return totalPrice;
   }
