@@ -48,6 +48,7 @@ export class ViewCartComponent implements OnInit {
     this.MakeMyIdPublic = _id;
     this._General.GetFourcardsById(_id).subscribe((res:any)=>{
       this.AllFourCards = res.Result;
+      // this.particualarproductofthreehomecards = res.Result;
     })
   }
 

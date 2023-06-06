@@ -76,7 +76,6 @@ export class HomeComponent implements OnInit {
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
   });
-
  }
 
 
@@ -99,11 +98,13 @@ export class HomeComponent implements OnInit {
       });
       // Store the total price in localStorage
       localStorage.setItem('totalPrice', totalPrice.toString());
-
-
     });
 
   }
+
+
+
+
 
 
   
