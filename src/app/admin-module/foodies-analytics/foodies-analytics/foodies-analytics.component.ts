@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { GeneralService } from 'src/app/shared/service/general.service';
 import { MenuService } from 'src/app/shared/service/menu.service';
 
@@ -33,7 +34,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
  
   // ProductArray:any = []
   Url='http://localhost:7070/'
-  constructor(private _General:GeneralService , private _menuService:MenuService) { }
+  constructor(private _General:GeneralService , private _menuService:MenuService, private Toaster:ToastrService) { }
 
   ngOnInit(): void {
     //populate-Array to remove data 
@@ -227,6 +228,7 @@ GetpopularfoodById(_id:any){
 HardDeletepopularFoodById(_id:any){
 this.MakeMyIdPublic=_id;
 this._menuService.HardDeletepopularFoodApiById(_id).subscribe((res:any)=>{
+  this.Toaster.error('Deleted PopularFoodCard')
   res.Result;
   this.popularFoodcard=[];
   this.PopulateProductOfpopularfood();
