@@ -116,7 +116,7 @@ GetFourCardsByItId(_id:any){
 HardDeletFourCards(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeletFourCardById(_id).subscribe((res:any)=>{
-    this.Toaster.error('Deleted Card')
+    this.Toaster.error('Deleted Card 🗑️')
       this.FourCards=res.Result;
       this.FourCards=[]
       this.PopulateProductArray();
@@ -134,7 +134,7 @@ GetTwoCardsById(_id:any){
 HardDeleteTwoCards(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeleteTwoCardById(_id).subscribe((res:any)=>{
-    this.Toaster.error('Deleted Card')
+    this.Toaster.error('Deleted Card 🗑️')
     this.TwoCards=res.Result;
     this.PopulateProductArray();
   })
@@ -150,7 +150,7 @@ this.particularproductque=res.Result;
 HardDeletFrequentlyQuestion(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.HardDeletFrequentlyAskedQueById(_id).subscribe((res:any)=>{
-    this.Toaster.error('Deleted Question')
+    this.Toaster.error('Deleted Question 🗑️')
     this.frequentlyque=res.Result;
     this.frequentlyque=[]
     this.PopulateQuestionArray();
@@ -168,7 +168,7 @@ this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res:any)=>{
 HardDeleteStarterById(_id:any){
   this.MakeMyIdPublic=_id;
   this._menuService.HardDeleteStarterFoodCardById(_id).subscribe((res:any)=>{
-  this.Toaster.error('Deleted Starter Card')
+  this.Toaster.error('Deleted Starter Card 🗑️')
    res.Result;
    this.StarterCards=[]
    this.PopulateStarterArray();
@@ -187,7 +187,7 @@ GetBreakfastById(_id:any){
 HardDeleteBreakfastById(_id:any){
   this.MakeMyIdPublic=_id;
   this._menuService.HardDeleteBreakfastFoodApi(_id).subscribe((res:any)=>{
-    this.Toaster.error('Deleted BreakFast Card')
+    this.Toaster.error('Deleted BreakFast Card 🗑️')
     res.Result;
     this.BreakFastCards=[]
     this.PopulateBreakfastArray();
@@ -203,7 +203,7 @@ this._menuService.GetApiOfLuchApiById(_id).subscribe((res:any)=>{
 HardDeletelunchById(_id:any){
   this.MakeMyIdPublic=_id;
   this._menuService.HardDeletelunchApi(_id).subscribe((res:any)=>{
-    this.Toaster.error('Deleted Lunch Card')
+    this.Toaster.error('Deleted Lunch Card 🗑️')
     res.Result;
     this.lunchCards=[]
     this.PopulateProductArrayOfLunch();
@@ -212,7 +212,7 @@ HardDeletelunchById(_id:any){
 HardDeleteThreehomeCardsById(_id:any){
   this.MakeMyIdPublic=_id;
   this._General.ThreeHomeCardHardDeleteDataById(_id).subscribe((res:any)=>{
-    this.Toaster.error('Deleted Card')
+    this.Toaster.error('Deleted Card 🗑️')
     res.Result;
     this.ThreeHomeCards=[]
     this.PopulateProductArrayThreeCards();
