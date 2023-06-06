@@ -87,6 +87,7 @@ export class ViewCartComponent implements OnInit {
       }
     }
   }
+  
 //Again Calculating the values to Get the Updated Price
   calculateTotalPrice(): number {
     let totalPrice = 0;
