@@ -11,12 +11,18 @@ export class RegisterLoginService {
 
 
   AdminRegisterApi(payLoad:any){
-    this.HttpClient.post('http://localhost:7070/AdminRegister/AdminRegister',payLoad)
+  return  this.HttpClient.post('http://localhost:7070/AdminRegister/AdminRegister',payLoad)
   }
 
  AdminLoginApi(payLoad:any){
-  this.HttpClient.post('http://localhost:7070/AdminRegister/AdminLogin',payLoad)
+ return this.HttpClient.post('http://localhost:7070/AdminRegister/AdminLogin',payLoad)
  }
 
+ setTokenIntoLocalStorage(payLoad:any){
+  localStorage.setItem('Admin-Token',payLoad)
+  }
 
+  checkUserLogin(){
+    return localStorage.getItem('Admin-Token')!==null
+  }
 }

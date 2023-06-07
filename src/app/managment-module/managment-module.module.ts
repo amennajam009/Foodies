@@ -9,6 +9,7 @@ import { AdminLoginComponent } from './admin-managment/admin-login/admin-login.c
 import { AdminRegisterComponent } from './admin-managment/admin-register/admin-register.component';
 import { UserLoginComponent } from './user-managment/user-login/user-login.component';
 import { UserRegisterComponent } from './user-managment/user-register/user-register.component';
+import { ReactiveFormsModule ,FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { UserRegisterComponent } from './user-managment/user-register/user-regis
   ],
   imports: [
     CommonModule,
-    ManagmentModuleRoutingModule
+    ManagmentModuleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ManagmentModuleModule { }
