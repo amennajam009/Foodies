@@ -107,7 +107,7 @@ export class GeneralSettingComponent implements OnInit {
   
     this._General.FourCardApi(MultipartFormData).subscribe((res: any) => {
       res;
-      if(res.data === false){
+      if(res.Data === false){
         this._toaster.error(res.message)
       }
       else{
@@ -175,7 +175,7 @@ export class GeneralSettingComponent implements OnInit {
   
     this._General.TwoCardsApi(MultipartFormData).subscribe((res: any) => {
       res;
-      if(res.data === false){
+      if(res.Data === false){
         this._toaster.error(res.message)
       }
       else{
@@ -202,7 +202,7 @@ Submitfreqform(){
   const payload = this.FrequentlyQue.value;
   this._General.FrequentlyAskedQueAPI(payload).subscribe((res:any)=>{
     res;
-    if(res.data === false){
+    if(res.Data === false){
       this._toaster.error(res.message)
     }
     else{
