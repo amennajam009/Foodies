@@ -8,6 +8,7 @@ import { UserRegisterComponent } from './user-managment/user-register/user-regis
 
 const routes: Routes = [{ path: '', component: ManagmentModuleComponent,
 children:[
+  {path:'',component:AdminLoginComponent},
   {path:'admin-login',component:AdminLoginComponent},
   {path:'admin-register',component:AdminRegisterComponent},
   {path:'user-login',component:UserLoginComponent},
