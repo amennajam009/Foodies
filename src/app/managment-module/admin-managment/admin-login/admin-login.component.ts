@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisterLoginService } from 'src/app/shared/service/register-login.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { RegisterLoginService } from 'src/app/shared/service/register-login.serv
 })
 export class AdminLoginComponent implements OnInit {
   AdminLogin : FormGroup | any
-  constructor(private FormBuilder:FormBuilder , private AdminRegisterLoginService:RegisterLoginService) { }
+  constructor(private FormBuilder:FormBuilder , private AdminRegisterLoginService:RegisterLoginService , private Route:Router) { }
 
   ngOnInit(): void {
     this.AdminLoginModel();
@@ -27,6 +28,13 @@ export class AdminLoginComponent implements OnInit {
   const Payload = this.AdminLogin.value;
   this.AdminRegisterLoginService.AdminLoginApi(Payload).subscribe((res:any)=>{
     res;
+    this.AdminRegisterLoginService.setTokenIntoLocalStorage(res.token)
+    if(res.data === true){
+      this.Route.navigate(['/Admin-module'])
+    }
+    else{
+      this.Route.navigate(['/managment-module/admin-login'])
+    }
   })
  }
 
