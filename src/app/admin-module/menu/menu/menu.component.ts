@@ -90,7 +90,7 @@ Submitmyfoodform(){
   this.Lunchfoodcards=this._FormBuilder.group({
     FoodName:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
     FoodDescription:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-    FoodPrice:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    Price:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
   })
  }
 
@@ -102,7 +102,7 @@ Submitmyfoodform(){
 let  MultiPartData = new FormData();
 MultiPartData.append('FoodName', this.Lunchfoodcards.get('FoodName').value);
 MultiPartData.append('FoodDescription', this.Lunchfoodcards.get('FoodDescription').value);
-MultiPartData.append('FoodPrice', this.Lunchfoodcards.get('FoodPrice').value);
+MultiPartData.append('Price', this.Lunchfoodcards.get('Price').value);
 MultiPartData.append('lunchcard-image', this.getLunchImage);
 
 this._menuService.LunchFoodCardApi(MultiPartData).subscribe((res:any)=>{

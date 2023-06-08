@@ -99,6 +99,25 @@ addToCartBreakfast(_id: any) {
   });
 }
 
+addToCartLuch(_id: any) {
+  this.MakeMyIdPublic = _id; 
+  this._menuService.GetApiOfLuchApiById(_id).subscribe((res: any) => {
+    this.Toaster.success('Item Is Added To Cart 🛒');
+    const product = res.Result;
+    const cartItems = localStorage.getItem('cartItems') ?? '';
+    const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
+    parsedCartItems.push(product);
+    localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+    // This will Update My cart Item Counting
+    this._General.updateCartItemsCount(parsedCartItems.length);
+    // Calculate the total price
+    let totalPrice = parseFloat(localStorage.getItem('totalPrice') ?? '0');
+    totalPrice += parseFloat(product.Price);
+    // Store the total price in localStorage
+    localStorage.setItem('totalPrice', totalPrice.toString());
+  });
+}
+
 
 
 
