@@ -73,7 +73,7 @@
                             {{data.FoodDescription}}
                           </p>
                           <p class="price text-success">
-                            ${{data.FoodPrice}}  <button type="button" class="btn btn-warning ms-3"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartStarter(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
                         </div>
                       </div>
@@ -94,7 +94,7 @@
                             {{data.FoodDescription}}
                           </p>
                           <p class="price text-success">
-                            ${{data.FoodPrice}}  <button type="button" class="btn btn-warning ms-3"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
                         </div><!-- Menu Item -->
                       </div>

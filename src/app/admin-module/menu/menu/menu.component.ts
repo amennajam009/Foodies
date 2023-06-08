@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
     this.foodcards=this._FormBuilder.group({
       FoodName:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
       FoodDescription:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      FoodPrice:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      Price:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
     })
 }
 
@@ -47,7 +47,7 @@ Submitmyfoodform(){
   let MultipartFormData = new FormData();
     MultipartFormData.append('FoodName', this.foodcards.get('FoodName').value);
     MultipartFormData.append('FoodDescription', this.foodcards.get('FoodDescription').value);
-    MultipartFormData.append('FoodPrice', this.foodcards.get('FoodPrice').value);
+    MultipartFormData.append('Price', this.foodcards.get('Price').value);
     MultipartFormData.append('Foodcard-image', this.getFoodImage);
     
     this._menuService.StarterFoodCardApi(MultipartFormData).subscribe((res:any) => {
@@ -62,7 +62,7 @@ Submitmyfoodform(){
   this.breakfastfoodcards=this._FormBuilder.group({
       FoodName:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
       FoodDescription:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      FoodPrice:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      Price:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
   })
  }
 
@@ -73,7 +73,7 @@ Submitmyfoodform(){
   let MultipleData = new FormData();
   MultipleData.append('FoodName', this.breakfastfoodcards.get('FoodName').value);
   MultipleData.append('FoodDescription', this.breakfastfoodcards.get('FoodDescription').value);
-  MultipleData.append('FoodPrice', this.breakfastfoodcards.get('FoodPrice').value);
+  MultipleData.append('Price', this.breakfastfoodcards.get('Price').value);
   MultipleData.append('breakcard-image', this.getBreakfastImage);
 
  this._menuService.BreakfastFoodCardApi(MultipleData).subscribe((res:any)=>{
