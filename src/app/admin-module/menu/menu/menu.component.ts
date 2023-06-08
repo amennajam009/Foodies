@@ -51,7 +51,13 @@ Submitmyfoodform(){
     MultipartFormData.append('Foodcard-image', this.getFoodImage);
     
     this._menuService.StarterFoodCardApi(MultipartFormData).subscribe((res:any) => {
-      this._toaster.success(res)
+      res;
+      if(res.Data === false){
+        this._toaster.error(res.message)
+      }
+      else{
+        this._toaster.success('Uploaded Successfully!!😊')
+      }
     this.foodcards.reset();
     this.fileSelect.nativeElement.value = null;
     });
@@ -78,7 +84,12 @@ Submitmyfoodform(){
 
  this._menuService.BreakfastFoodCardApi(MultipleData).subscribe((res:any)=>{
   res;
-  this._toaster.success('Uploaded Card 😊')
+  if(res.Data ===false){
+    this._toaster.error(res.message)
+  }
+  else{
+    this._toaster.success('Uploaded Card 😊') 
+  }
   this.breakfastfoodcards.reset();
   this.fileSelect.nativeElement.value = null;
  })
@@ -107,7 +118,12 @@ MultiPartData.append('lunchcard-image', this.getLunchImage);
 
 this._menuService.LunchFoodCardApi(MultiPartData).subscribe((res:any)=>{
   res;
-  this._toaster.success('Uploaded Card 😊')
+  if(res.Data ===false){
+    this._toaster.error(res.message)
+  }
+  else{
+    this._toaster.success('Uploaded Card 😊')
+  }
   this.Lunchfoodcards.reset();
   this.fileSelect.nativeElement.value = null;
 })
@@ -134,7 +150,12 @@ submitpopularFood(){
 
   this._menuService.popularFoodApi(MultipartData).subscribe((res:any)=>{
     res;
-    this._toaster.success('Uploaded Card 😊')
+    if(res.Data ===false){
+      this._toaster.error(res.message)
+    }
+    else{
+      this._toaster.success('Uploaded Card 😊')
+    }
     this.populafoodcard.reset();
     this.fileSelect.nativeElement.value = null;
   })
