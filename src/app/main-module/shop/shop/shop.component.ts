@@ -80,6 +80,7 @@ addToCartStarter(_id: any) {
 }
 
 
+
 addToCartBreakfast(_id: any) {
   this.MakeMyIdPublic = _id; 
   this._menuService.GetBreakfastFoodApiById(_id).subscribe((res: any) => {
@@ -98,6 +99,7 @@ addToCartBreakfast(_id: any) {
     localStorage.setItem('totalPrice', totalPrice.toString());
   });
 }
+
 
 addToCartLuch(_id: any) {
   this.MakeMyIdPublic = _id; 
