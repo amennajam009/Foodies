@@ -136,6 +136,7 @@ mypoplularfoodModel(){
   this.populafoodcard = this._FormBuilder.group({
     CardHeading:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
     CardDescription:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    Price:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
   })
 }
 
@@ -146,6 +147,7 @@ submitpopularFood(){
   let MultipartData= new FormData();
   MultipartData.append('CardHeading', this.populafoodcard.get('CardHeading').value);
   MultipartData.append('CardDescription', this.populafoodcard.get('CardDescription').value);
+  MultipartData.append('Price', this.populafoodcard.get('Price').value);
   MultipartData.append('Food-image', this.getpopularFoodimage);
 
   this._menuService.popularFoodApi(MultipartData).subscribe((res:any)=>{

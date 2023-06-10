@@ -480,3 +480,9 @@ svg {
 
 
 
+.star-rating {
+  display: flex;
+}
+.checked {
+  color: orange;
+}
