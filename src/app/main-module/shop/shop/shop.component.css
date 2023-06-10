@@ -199,7 +199,7 @@
 p {
   color: #ddd;
   font-family: Helvetica;
-  font-size: 20px;
+  font-size: 16px;
   margin: 20px 0 0 0;
 }
 
@@ -485,4 +485,8 @@ svg {
 }
 .checked {
   color: orange;
+}
+.fixed-image-size {
+  width: 400px;
+  height: 300px;
 }

@@ -285,20 +285,13 @@
                       </div>
                     </div>
                 
-                    <div class="row mt-5" >
+                    <div class="row mt-5">
                       <div class="col-lg-3 col-md-6 mt-5" *ngFor="let data of AllpopularFoodcards">
                         <div class="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                          <img [src]="Url+data.imageDetails.imageUrl" alt="" class="img-fluid">
+                          <img [src]="Url+data.imageDetails.imageUrl" alt="" class="img-fluid fixed-image-size">
                           <div class="card-body">
                             <a href="course-single.html"><h4 class="font-secondary mb-0">{{data.CardHeading}}</h4></a>
-                            <!-- <div class="star-rating">
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                            </div> -->
-                            <p class=" mb-2 text-dark">{{data.CardDescription}}</p> 
+                            <p class="mb-2 text-dark">{{data.CardDescription}}</p>
                             <div class="star-rating">
                               <span class="fa fa-star checked"></span>
                               <span class="fa fa-star checked"></span>
@@ -308,7 +301,6 @@
                             </div>
                             <p style="color: green;"><b><span><del class="text-danger">$320</del>&nbsp;&nbsp;</span>${{data.Price}}</b></p>
                           </div>
-                  
                           <button class="btn btn-warning">Add To Cart</button>
                         </div>
                       </div>
