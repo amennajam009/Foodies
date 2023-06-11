@@ -62,8 +62,8 @@ export class GeneralService {
   FrequentlyAskedQueAPI(payLoad:any){
    return this.HttpClient.post('http://localhost:7070/Generalsetting/FrequentlyAskedQestions',payLoad);
   }
-  GetFrequentlyAskedQue(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetFrequentlyAskedQestions')
+  GetFrequentlyAskedQue() {
+    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetFrequentlyAskedQestions');
   }
   GetFrequentlyAskedQueById(_id:any){
     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFrequeById/${_id}`)
