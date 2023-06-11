@@ -22,17 +22,17 @@ export class GeneralService {
   }
 
   FourCardApi(payLoad:any){
-       return this.HttpClient.post('https://foodies-backend.vercel.app/Generalsetting/FourCardsApi',payLoad);
+       return this.HttpClient.post('http://localhost:7070/Generalsetting/FourCardsApi',payLoad);
   }
 
   GetFourCardApi(){
-    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetHeadingDescriptionFourCards');
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeadingDescriptionFourCards');
   }
   GetHeroImage(){
-    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetHeroImage')
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeroImage')
   }
   GetHeroImageById(_id:any){
-    return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/HeroImageGetById/${_id}`)
+    return this.HttpClient.get(`http://localhost:7070/Generalsetting/HeroImageGetById/${_id}`)
   }
 
   DeleteHeroImageById(_id:any){
@@ -40,30 +40,30 @@ export class GeneralService {
 
   }
   GetFourcardsById(_id:any){
-     return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/GetFourCardsById/${_id}`)
+     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFourCardsById/${_id}`)
   }
   HardDeletFourCardById(_id:any){
-    return this.HttpClient.delete(`https://foodies-backend.vercel.app/Generalsetting/Harddelete/${_id}`)
+    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddelete/${_id}`)
 
   }
   TwoCardsApi(payLoad:any){
-    return this.HttpClient.post('https://foodies-backend.vercel.app/Generalsetting/TwoImagesApi',payLoad)
+    return this.HttpClient.post('http://localhost:7070/Generalsetting/TwoImagesApi',payLoad)
   }
   GetTwoImage(){
-    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetTwocardsApi')
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetTwocardsApi')
   }
   GetTwoCardById(_id:any){
-    return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/GetTwocardsById/${_id}`) 
+    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetTwocardsById/${_id}`) 
   }
   HardDeleteTwoCardById(_id:any){
-   return this.HttpClient.delete(`https://foodies-backend.vercel.app/Generalsetting/HardDeleteTwoimage/${_id}`)
+   return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeleteTwoimage/${_id}`)
   }
 
   FrequentlyAskedQueAPI(payLoad:any){
    return this.HttpClient.post('http://localhost:7070/Generalsetting/FrequentlyAskedQestions',payLoad);
   }
-  GetFrequentlyAskedQue() {
-    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetFrequentlyAskedQestions');
+  GetFrequentlyAskedQue(){
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetFrequentlyAskedQestions')
   }
   GetFrequentlyAskedQueById(_id:any){
     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFrequeById/${_id}`)
@@ -73,16 +73,16 @@ export class GeneralService {
   }
 
   ThreeHomeCardApi(payLoad:any){
-     return this.HttpClient.post('https://foodies-backend.vercel.app/Generalsetting/HomeThreeCardsApi',payLoad)
+     return this.HttpClient.post('http://localhost:7070/Generalsetting/HomeThreeCardsApi',payLoad)
   }
   ThreeHomeCardGetAllDataApi(){
-    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/HomeThreeCardsGetAllData');
+    return this.HttpClient.get('http://localhost:7070/Generalsetting/HomeThreeCardsGetAllData');
   }
   ThreeHomeCardHardDeleteDataById(_id:any){
-    return this.HttpClient.delete(`https://foodies-backend.vercel.app/Generalsetting/Harddeletethreehomecard/${_id}`)
+    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddeletethreehomecard/${_id}`)
   }
   ThreehomecardsById(_id:any){
-    return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/GetThreehomeCardsById/${_id}`)
+    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetThreehomeCardsById/${_id}`)
   }
  
 
