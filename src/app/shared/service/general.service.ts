@@ -22,11 +22,11 @@ export class GeneralService {
   }
 
   FourCardApi(payLoad:any){
-       return this.HttpClient.post('/Generalsetting/FourCardsApi',payLoad);
+       return this.HttpClient.post('https://foodies-backend-sxo6.vercel.app/Generalsetting/FourCardsApi',payLoad);
   }
 
   GetFourCardApi(){
-    return this.HttpClient.get('/Generalsetting/GetHeadingDescriptionFourCards');
+    return this.HttpClient.get('https://foodies-backend-sxo6.vercel.app/Generalsetting/GetHeadingDescriptionFourCards');
   }
   GetHeroImage(){
     return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeroImage')
