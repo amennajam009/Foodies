@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   data: any=[];
   AllFourCards:any=[];
   // AnotherImageUrl: any = [];
-  Url='http://localhost:7070/';
+  Url='https://foodies-backend.vercel.app';
   HeroImage:any=[];
   TwoCards:any=[];
   GetFreq:any=[]
