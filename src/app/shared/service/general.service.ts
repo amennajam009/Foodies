@@ -29,10 +29,10 @@ export class GeneralService {
     return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetHeadingDescriptionFourCards');
   }
   GetHeroImage(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeroImage')
+    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetHeroImage')
   }
   GetHeroImageById(_id:any){
-    return this.HttpClient.get(`http://localhost:7070/Generalsetting/HeroImageGetById/${_id}`)
+    return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/HeroImageGetById/${_id}`)
   }
 
   DeleteHeroImageById(_id:any){
@@ -40,23 +40,23 @@ export class GeneralService {
 
   }
   GetFourcardsById(_id:any){
-     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFourCardsById/${_id}`)
+     return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/GetFourCardsById/${_id}`)
   }
   HardDeletFourCardById(_id:any){
     return this.HttpClient.delete(`https://foodies-backend.vercel.app/Generalsetting/Harddelete/${_id}`)
 
   }
   TwoCardsApi(payLoad:any){
-    return this.HttpClient.post('http://localhost:7070/Generalsetting/TwoImagesApi',payLoad)
+    return this.HttpClient.post('https://foodies-backend.vercel.app/Generalsetting/TwoImagesApi',payLoad)
   }
   GetTwoImage(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetTwocardsApi')
+    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetTwocardsApi')
   }
   GetTwoCardById(_id:any){
-    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetTwocardsById/${_id}`) 
+    return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/GetTwocardsById/${_id}`) 
   }
   HardDeleteTwoCardById(_id:any){
-   return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeleteTwoimage/${_id}`)
+   return this.HttpClient.delete(`https://foodies-backend.vercel.app/Generalsetting/HardDeleteTwoimage/${_id}`)
   }
 
   FrequentlyAskedQueAPI(payLoad:any){
