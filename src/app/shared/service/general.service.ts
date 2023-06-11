@@ -22,11 +22,11 @@ export class GeneralService {
   }
 
   FourCardApi(payLoad:any){
-       return this.HttpClient.post('https://foodies-backend-sxo6.vercel.app/Generalsetting/FourCardsApi',payLoad);
+       return this.HttpClient.post('https://foodies-backend.vercel.app/Generalsetting/FourCardsApi',payLoad);
   }
 
   GetFourCardApi(){
-    return this.HttpClient.get('https://foodies-backend-sxo6.vercel.app/Generalsetting/GetHeadingDescriptionFourCards');
+    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/GetHeadingDescriptionFourCards');
   }
   GetHeroImage(){
     return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeroImage')
@@ -43,7 +43,7 @@ export class GeneralService {
      return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFourCardsById/${_id}`)
   }
   HardDeletFourCardById(_id:any){
-    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddelete/${_id}`)
+    return this.HttpClient.delete(`https://foodies-backend.vercel.app/Generalsetting/Harddelete/${_id}`)
 
   }
   TwoCardsApi(payLoad:any){
@@ -73,16 +73,16 @@ export class GeneralService {
   }
 
   ThreeHomeCardApi(payLoad:any){
-     return this.HttpClient.post('http://localhost:7070/Generalsetting/HomeThreeCardsApi',payLoad)
+     return this.HttpClient.post('https://foodies-backend.vercel.app/Generalsetting/HomeThreeCardsApi',payLoad)
   }
   ThreeHomeCardGetAllDataApi(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/HomeThreeCardsGetAllData');
+    return this.HttpClient.get('https://foodies-backend.vercel.app/Generalsetting/HomeThreeCardsGetAllData');
   }
   ThreeHomeCardHardDeleteDataById(_id:any){
-    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddeletethreehomecard/${_id}`)
+    return this.HttpClient.delete(`https://foodies-backend.vercel.app/Generalsetting/Harddeletethreehomecard/${_id}`)
   }
   ThreehomecardsById(_id:any){
-    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetThreehomeCardsById/${_id}`)
+    return this.HttpClient.get(`https://foodies-backend.vercel.app/Generalsetting/GetThreehomeCardsById/${_id}`)
   }
  
 
