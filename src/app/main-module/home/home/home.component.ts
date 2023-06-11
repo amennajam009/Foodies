@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
     this._General.GetTwoImage().subscribe((res:any)=>{
       this.TwoCards=res.Result;
     });
+    
 
     this._General.GetFrequentlyAskedQue().subscribe((res:any)=>{
       this.GetFreq = res.Result;
