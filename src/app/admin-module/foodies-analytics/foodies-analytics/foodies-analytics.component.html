@@ -203,7 +203,7 @@
             <!-- <td class="text-center">{{data.cardName}}</td> -->
             <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
             <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
-            <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="GetTwoCardsById(data._id)"></i></td>
+            <!-- <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="GetTwoCardsById(data._id)"></i></td> -->
             <td></td>
             <td class="text-center"><button class="btn btn-outline-danger"  (click)="HardDeleteTwoCards(data._id)">Hard Delete</button></td>
           </tr>
@@ -345,7 +345,7 @@
       <tbody>
         <tr *ngFor="let data of StarterCards ; let i=index">
           <th class="text-center text-light">{{i+1}}</th>
-          <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+          <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
           <td class="text-center text-light">{{data.FoodName}}</td>
           <td class="text-center text-light">{{data.FoodDescription}}</td>
           <td class="text-center text-light ">{{data.FoodPrice}}</td>
@@ -414,7 +414,7 @@
       <tbody>
         <tr *ngFor="let data of BreakFastCards ; let i=index">
           <th class="text-center text-light">{{i+1}}</th>
-          <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+          <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
           <td class="text-center text-light">{{data.FoodName}}</td>
           <td class="text-center text-light">{{data.FoodDescription}}</td>
           <td class="text-center text-light">{{data.FoodPrice}}</td>
@@ -484,7 +484,7 @@
      <tbody>
        <tr *ngFor="let data of lunchCards ; let i=index">
          <th class="text-center text-light">{{i+1}}</th>
-         <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+         <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
          <td class="text-center text-light">{{data.FoodName}}</td>
          <td class="text-center text-light">{{data.FoodDescription}}</td>
          <td class="text-center text-light">{{data.FoodPrice}}</td>
@@ -554,7 +554,7 @@
     <tbody>
       <tr *ngFor="let data of popularFoodcard ; let i=index">
         <th class="text-center text-light">{{i+1}}</th>
-        <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+        <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
         <td class="text-center text-light">{{data.CardHeading}}</td>
         <td class="text-center text-light">{{data.CardDescription}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>

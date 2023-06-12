@@ -22,7 +22,7 @@ export class FoodiesAnalyticsComponent implements OnInit {
   particularproductcard:any={};
   particularproductLunchcard:any={}
   particualarproductofthreehomecards:any={}
-  particularproductofpopularfoodcard:any={}
+  particularproductofpopularfoodcard:any=[]
   MakeMyIdPublic :any;
   frequentlyque:any=[];
   lunchCards:any=[];
