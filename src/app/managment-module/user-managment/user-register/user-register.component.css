@@ -14,3 +14,6 @@
     height: 100%;
     object-fit: cover;
   }
+  *{
+    font-family: 'Nanum Myeongjo';
+  }

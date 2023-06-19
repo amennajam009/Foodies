@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,FormControl ,Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RegisterLoginService } from 'src/app/shared/service/register-login.service';
 
@@ -10,7 +11,10 @@ import { RegisterLoginService } from 'src/app/shared/service/register-login.serv
 })
 export class UserLoginComponent implements OnInit {
   UserLogin : FormGroup | any
-  constructor(private FormBuilder:FormBuilder,private UserLoginSignUpservice: RegisterLoginService,private Toaster:ToastrService) { 
+  constructor(private FormBuilder:FormBuilder,
+              private UserLoginSignUpservice:RegisterLoginService,
+              private Toaster:ToastrService,
+              private Route:Router) { 
     this.UserLoginModel()
   }
 
@@ -35,6 +39,12 @@ export class UserLoginComponent implements OnInit {
         this.Toaster.success('User Login Successfully')
       }
      this.UserLoginSignUpservice.SetUserTokenIntoLocalStorage(res.Token)
+     if(res.Data === true){
+      this.Route.navigate(['/Main-module/home'])
+    }
+    else{
+      this.Route.navigate(['/managment-module/user-login'])
+    }
     })
   }
 }
