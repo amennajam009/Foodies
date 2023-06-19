@@ -11,7 +11,7 @@ import { ViewCartComponent } from './view-cart/view-cart.component';
 
 const routes: Routes = [{ path: '', component: MainModuleComponent ,
 children:[
-  {path:'' , component:HomeComponent},
+  // {path:'' , component:HomeComponent},
   {path:'home' , component:HomeComponent},
   {path:'shop' , component:ShopComponent},
   {path:'About-us', component:AboutUsComponent},
