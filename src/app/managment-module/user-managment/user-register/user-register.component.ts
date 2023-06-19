@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder,FormControl ,Validators} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { RegisterLoginService } from 'src/app/shared/service/register-login.service';
@@ -9,7 +9,8 @@ import { RegisterLoginService } from 'src/app/shared/service/register-login.serv
   styleUrls: ['./user-register.component.css']
 })
 export class UserRegisterComponent implements OnInit {
-  
+  @ViewChild('videoPlayer')
+  videoPlayer!: ElementRef;
   UserRegister : FormGroup | any
   constructor(private FormBuilder:FormBuilder,
             private UserSignInSignUpService:RegisterLoginService,
