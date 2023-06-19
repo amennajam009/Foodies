@@ -12,18 +12,18 @@
   
 		  <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
   
-			<form  style="width: 23rem;" >
+			<form  [formGroup]="UserRegister"  (ngSubmit)="UserRegisterform()" style="width: 23rem;" >
   
 			  <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Resgister Here!</h3>
   
 			  <div class="form-outline mb-4">
 				<label class="form-label" for="form2Example18">First Name</label>
-				<input type="text" id="form2Example18" class="form-control form-control-lg" formControlName="FirstName"  >
+				<input type="text" id="form2Example18" class="form-control form-control-lg" formControlName="firstName">
 			  </div>
   
 			  <div class="form-outline mb-4">
 				<label class="form-label" for="form2Example28">Last Name</label>
-				<input type="text" id="form2Example28" class="form-control form-control-lg"  formControlName="LastName">
+				<input type="text" id="form2Example28" class="form-control form-control-lg"  formControlName="lastName">
 		
 			  </div>
 			  <div class="form-outline mb-4">

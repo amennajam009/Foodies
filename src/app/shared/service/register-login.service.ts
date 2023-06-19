@@ -25,4 +25,12 @@ export class RegisterLoginService {
   checkUserLogin(){
     return localStorage.getItem('Admin-Token')!==null
   }
+
+  UserRegisterApi(payLoad:any){
+    return this.HttpClient.post('http://localhost:7070/UserRegister/UserRegister',payLoad)
+  }
+  UserLoginApi(payLoad:any){
+   return this.HttpClient.post('http://localhost:7070/UserRegister/UserLogin',payLoad)
+  }
+  
 }
