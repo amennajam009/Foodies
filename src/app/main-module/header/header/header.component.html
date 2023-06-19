@@ -58,11 +58,20 @@
           <li class="nav-item">
             <a class="nav-link text-white px-2" routerLink="/contact">CONTACT</a>
           </li>
-
-          <button class="btn me-5 p-2" style="background-color: #FFB000; color: white;"
+      
+          <div class="dropdown ms-5">
+            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #FFB000; color: white;">
+              Login Privilege
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" routerLink="/managment-module/user-login">Login As User</a></li>
+              <li><a class="dropdown-item" routerLink="/managment-module/admin-login">Login As Admin</a></li>
+            </ul>
+          </div>
+          <!-- <button class="btn me-5 p-2" style="background-color: #FFB000; color: white;"
           routerLink="/managment-module/admin-login">
           Login-In &nbsp;&nbsp;<i class="fas fa-user"></i>
-        </button>
+        </button> -->
         </ul>
       </div>
       <!-- <ul class="navbar-nav" style="margin-right: 30px;">
