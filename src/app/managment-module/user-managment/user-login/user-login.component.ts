@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder,FormControl ,Validators} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { RegisterLoginService } from 'src/app/shared/service/register-login.service';
 
 @Component({
   selector: 'app-user-login',
@@ -6,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-
-  constructor() { }
+  UserLogin : FormGroup | any
+  constructor(private FormBuilder:FormBuilder,private UserLoginSignUpservice: RegisterLoginService,private Toaster:ToastrService) { }
 
   ngOnInit(): void {
   }
 
+  UserLoginModel(){
+    this.UserLogin = this.FormBuilder.group({
+      Email: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      Password: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    })
+  }
+
+
+  UserLoginform(){
+    const payLoad = this.UserLogin.value;
+    this.UserLoginSignUpservice.UserLoginApi(payLoad).subscribe((res:any)=>{
+      if(res.Data === false){
+        this.Toaster.error(res.Message)
+      }
+      else{
+        this.Toaster.success('User Login Successfully')
+      }
+     this.UserLoginSignUpservice.SetUserTokenIntoLocalStorage(res.token)
+    })
+  }
 }

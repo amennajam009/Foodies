@@ -32,5 +32,11 @@ export class RegisterLoginService {
   UserLoginApi(payLoad:any){
    return this.HttpClient.post('http://localhost:7070/UserRegister/UserLogin',payLoad)
   }
-  
+
+  SetUserTokenIntoLocalStorage(payLoad:any){
+    localStorage.setItem('User-Token',payLoad)
+  }
+  checkUser2Login(){
+    return localStorage.getItem('User-Token') !==null
+  }
 }
