@@ -10,7 +10,9 @@ import { RegisterLoginService } from 'src/app/shared/service/register-login.serv
 })
 export class UserLoginComponent implements OnInit {
   UserLogin : FormGroup | any
-  constructor(private FormBuilder:FormBuilder,private UserLoginSignUpservice: RegisterLoginService,private Toaster:ToastrService) { }
+  constructor(private FormBuilder:FormBuilder,private UserLoginSignUpservice: RegisterLoginService,private Toaster:ToastrService) { 
+    this.UserLoginModel()
+  }
 
   ngOnInit(): void {
   }
@@ -32,7 +34,7 @@ export class UserLoginComponent implements OnInit {
       else{
         this.Toaster.success('User Login Successfully')
       }
-     this.UserLoginSignUpservice.SetUserTokenIntoLocalStorage(res.token)
+     this.UserLoginSignUpservice.SetUserTokenIntoLocalStorage(res.Token)
     })
   }
 }
