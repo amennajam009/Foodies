@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactComponent implements OnInit {
   OrderTable:FormGroup | any
-  phoneNumber: string = '+923064484061';
+  phoneNumber: string = 'Your Number';
   WhatsAppForm:FormGroup | any;
   ContactUs : FormGroup | any
   constructor(private _whatsappService:WhatsappService,
