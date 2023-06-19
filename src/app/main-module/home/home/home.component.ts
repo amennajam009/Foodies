@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { ContactService } from 'src/app/shared/service/contact.service';
 import { GeneralService } from 'src/app/shared/service/general.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 })
 export class HomeComponent implements OnInit {
   
- 
+
   data: any=[];
   AllFourCards:any=[];
   // AnotherImageUrl: any = [];
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   ThreehomeImage:any=[];
   cartItems: any[] = [];
   MakeMyIdPublic:any
-  particualarproductofthreehomecards:any={}
+  particualarproductofthreehomecards:any=[]
   constructor(private _General:GeneralService,private Toaster:ToastrService) { }
 
   ngOnInit(): void {
@@ -46,6 +47,8 @@ export class HomeComponent implements OnInit {
     this._General.GetFrequentlyAskedQue().subscribe((res:any)=>{
       this.GetFreq = res.Result;
     })
+
+  
     
   }
 
@@ -146,5 +149,6 @@ export class HomeComponent implements OnInit {
   }
   
 
-  
+
+
 }

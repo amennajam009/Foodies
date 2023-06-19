@@ -32,6 +32,7 @@ import { ViewCartComponent } from './view-cart/view-cart.component';
     MainModuleRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  
+  ], 
 })
 export class MainModuleModule { }

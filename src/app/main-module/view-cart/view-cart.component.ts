@@ -8,11 +8,11 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 })
 export class ViewCartComponent implements OnInit {
 
-  particualarproductofthreehomecards: any = {};
-  AllFourCards : any = {}
+  particualarproductofthreehomecards: any =[];
+  AllFourCards : any = []
   MakeMyIdPublic: any;
   Url = 'http://localhost:7070/';
-  ThreeHomeCards: any;
+  ThreeHomeCards: any ;
   selectedItemId: any;
   cartItems: any[] = [];
  

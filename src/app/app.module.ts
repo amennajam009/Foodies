@@ -7,11 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+
+
 @NgModule({
   declarations: [
     AppComponent
    
   ],
+
   imports: [
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
@@ -20,9 +23,10 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-   
+
+
   ],
-  providers: [],
+
   bootstrap: [AppComponent],
  
 })

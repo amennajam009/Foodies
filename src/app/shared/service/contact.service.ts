@@ -8,6 +8,7 @@ export class ContactService {
 
   constructor( private HttpClient:HttpClient) { }
 
+
   UserBookedTable(payLoad:any){
    return this.HttpClient.post('http://localhost:7070/Contact/OrderTableApi',payLoad)
   }
