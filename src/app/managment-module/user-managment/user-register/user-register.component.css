@@ -1,7 +1,10 @@
 .logtext{
     margin-top: 10%;
+    font-size: 25px;
   }
-
+.wel{
+  font-size: 60px;
+}
   section {
     position: relative;
   }
