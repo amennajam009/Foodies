@@ -12,6 +12,25 @@
                                         <h6 class="mb-0">Edit Profile</h6>
                                         <button class="btn settingbtn">Settings</button>
                                       </div>
+                                     <!-- here i'm -->
+                                     <div class="row">
+                                        <div class="small-12 medium-2 large-2 columns">
+                                            <div class="circle">
+                                                <img class="profile_pic"
+                                                    src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                                            </div>
+                                            <div class="p-image">
+                                                <i class="fa fa-camera upload-button" (click)="onUploadButtonClick()"></i>
+                                                <input class="file-upload" type="file" accept="image/*" (change)="onFileChange($event)" #fileInput style="display:none" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <!-- here i'm -->
+
+
+
+
                                     <h6 class="mb-0 mt-4 text-secondary">USER INFORMATION</h6>
                                     <hr>
                                     <div class="row g-3">
