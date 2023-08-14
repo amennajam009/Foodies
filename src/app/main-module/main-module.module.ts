@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewCartComponent } from './view-cart/view-cart.component';
+import { BookingComponent } from './booking/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ViewCartComponent } from './view-cart/view-cart.component';
     ReviewComponent,
     FooterComponent,
     ViewCartComponent,
+    BookingComponent,
 
   ],
   imports: [

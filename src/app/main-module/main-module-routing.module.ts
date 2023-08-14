@@ -8,6 +8,7 @@ import { AboutUsComponent } from './About-Us/about-us/about-us.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { ReviewComponent } from './Review/review/review.component';
 import { ViewCartComponent } from './view-cart/view-cart.component';
+import { BookingComponent } from './booking/booking/booking.component';
 
 const routes: Routes = [{ path: '', component: MainModuleComponent ,
 children:[
@@ -17,7 +18,8 @@ children:[
   {path:'About-us', component:AboutUsComponent},
   {path:'contact' , component:ContactComponent},
   {path:'Review' , component:ReviewComponent},
-  {path:'ViewCart',component:ViewCartComponent}
+  {path:'ViewCart',component:ViewCartComponent},
+  {path:'booking' , component:BookingComponent}
 
 
 ]
