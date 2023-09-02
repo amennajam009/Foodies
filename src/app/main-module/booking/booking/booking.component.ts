@@ -29,8 +29,6 @@ export class BookingComponent implements OnInit {
       FirstName: new FormControl ('',Validators.required),
       LastName: new FormControl ('',Validators.required),
       City: new FormControl ('',Validators.required),
-      // People: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
-      // Message: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
     })
   }
 
