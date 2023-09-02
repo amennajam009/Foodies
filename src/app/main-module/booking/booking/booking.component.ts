@@ -18,6 +18,7 @@ export class BookingComponent implements OnInit {
              }
 
   ngOnInit(): void {
+    this.GetcustomerbookingApi()
   }
   
   customerbooking(){
@@ -39,4 +40,9 @@ export class BookingComponent implements OnInit {
     })
   }
 
+  public GetcustomerbookingApi(){
+    this.customerbookingservice.customerbookinggetApi().subscribe((res:any)=>{
+      res;
+    })
+  }
 }

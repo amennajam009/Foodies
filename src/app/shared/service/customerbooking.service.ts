@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerbookingService {
-  group: any;
 
   constructor(private HttpClient:HttpClient) { }
 
@@ -13,6 +12,9 @@ export class CustomerbookingService {
     return this.HttpClient.post('http://localhost:7070/customeronlinebooking/CustomerOnlineBooking',payLoad)
   }
 
+  customerbookinggetApi(){
+    return this.HttpClient.get('http://localhost:7070/customeronlinebooking/CustomerOnlineBookinggetAPI')
+  }
 
 
 }
