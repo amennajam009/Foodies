@@ -10,6 +10,7 @@ import { CustomerbookingService } from 'src/app/shared/service/customerbooking.s
 })
 export class BookingComponent implements OnInit {
   @ViewChild('fileInput')fileInput!: ElementRef;
+  MyhtmlContent: string | any;
   customerBooking: FormGroup | any;
   constructor(private customerbookingservice:CustomerbookingService,
              private formBuilder:FormBuilder,
@@ -37,6 +38,10 @@ export class BookingComponent implements OnInit {
     const Payload = this.customerBooking.value;
     this.customerbookingservice.customerbookingApi(Payload).subscribe((res:any)=>{
       this._toasterService.success(res.message)
+      console.log("myres", res)
+      const MyhtmlContent = res.result.html;
+      console.log('content',MyhtmlContent)
+      
     })
   }
 
