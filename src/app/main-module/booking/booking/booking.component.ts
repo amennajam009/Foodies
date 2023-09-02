@@ -10,7 +10,7 @@ import { CustomerbookingService } from 'src/app/shared/service/customerbooking.s
 })
 export class BookingComponent implements OnInit {
   @ViewChild('fileInput')fileInput!: ElementRef;
-  MyhtmlContent: string | any;
+  MyhtmlContent: string = '';
   customerBooking: FormGroup | any;
   constructor(private customerbookingservice:CustomerbookingService,
              private formBuilder:FormBuilder,
