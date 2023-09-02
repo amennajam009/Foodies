@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { CustomerbookingService } from 'src/app/shared/service/customerbooking.service';
 
 @Component({
@@ -8,9 +10,33 @@ import { CustomerbookingService } from 'src/app/shared/service/customerbooking.s
 })
 export class BookingComponent implements OnInit {
   @ViewChild('fileInput')fileInput!: ElementRef;
-  constructor(private customerbookingservice:CustomerbookingService) { }
+  customerBooking: FormGroup | any;
+  constructor(private customerbookingservice:CustomerbookingService,
+             private formBuilder:FormBuilder,
+             private _toasterService:ToastrService) { 
+              this.customerbooking()
+             }
 
   ngOnInit(): void {
   }
   
+  customerbooking(){
+    this.customerBooking = this.formBuilder.group({
+      Username: new FormControl ('',Validators.required),
+      Emailaddress: new FormControl ('',Validators.required),
+      FirstName: new FormControl ('',Validators.required),
+      LastName: new FormControl ('',Validators.required),
+      City: new FormControl ('',Validators.required),
+      // People: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      // Message: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    })
+  }
+
+  Submitcustomerbooking(){
+    const Payload = this.customerBooking.value;
+    this.customerbookingservice.customerbookingApi(Payload).subscribe((res:any)=>{
+      this._toasterService.success(res.message)
+    })
+  }
+
 }
