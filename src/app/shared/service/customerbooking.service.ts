@@ -9,11 +9,11 @@ export class CustomerbookingService {
   constructor(private HttpClient:HttpClient) { }
 
   customerbookingApi(payLoad:any){
-    return this.HttpClient.post('http://localhost:7070/customeronlinebooking/CustomerOnlineBooking',payLoad)
+    return this.HttpClient.post('http://localhost:4040/customeronlinebooking/CustomerOnlineBooking',payLoad)
   }
 
   customerbookinggetApi(){
-    return this.HttpClient.get('http://localhost:7070/customeronlinebooking/CustomerOnlineBookinggetAPI')
+    return this.HttpClient.get('http://localhost:4040/customeronlinebooking/CustomerOnlineBookinggetAPI')
   }
 
 

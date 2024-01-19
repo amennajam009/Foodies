@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { GeneralService } from 'src/app/shared/service/general.service';
-
+declare var paypal: any; 
 @Component({
   selector: 'app-view-cart',
   templateUrl: './view-cart.component.html',
@@ -11,18 +12,49 @@ export class ViewCartComponent implements OnInit {
   particualarproductofthreehomecards: any =[];
   AllFourCards : any = []
   MakeMyIdPublic: any;
-  Url = 'http://localhost:7070/';
+  Url = 'http://localhost:4040/';
   ThreeHomeCards: any ;
   selectedItemId: any;
   cartItems: any[] = [];
- 
-  constructor(private _General:GeneralService) {}
+   @ViewChild('paymentRef',{static: true}) paymentRef!:ElementRef
+  constructor(private _General:GeneralService,
+            private router: Router) {}
   totalPrice!: number;
   ngOnInit(): void {
     this.getCartItems();
 
     // Listen for changes in the localStorage
     window.addEventListener('storage', this.handleStorageChange.bind(this));
+    paypal.Buttons({
+      createOrder: (data: any, actions: any) => {
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                value: this.totalPrice,
+                // value: this.amount.toString(),
+                currency_code: 'USD',
+                quantity: 7,
+              },
+            }
+          ]
+        });
+      },
+      onApprove: (data: any, actions: any) => {
+        return actions.order.capture().then((details: any) => {
+          console.log(details)
+          if (details.status === 'COMPLETED') {
+            this.router.navigate(['/Main-module/confirm'])
+            // this.payment.transactionID = details.id;
+            // this.router.navigate(['/confirm']);
+          }
+        });
+      },
+      onError: (error: any) => {
+        console.log(error);
+      }
+    }).render(this.paymentRef.nativeElement)
+    console.log(paypal)
   }
 
   getCartItems(): void {

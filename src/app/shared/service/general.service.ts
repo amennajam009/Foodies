@@ -18,71 +18,71 @@ export class GeneralService {
 
 
   HeroImageApi(payLoad:any){
-     return this.HttpClient.post('http://localhost:7070/Generalsetting/HeroImageApi',payLoad);
+     return this.HttpClient.post('http://localhost:4040/Generalsetting/HeroImageApi',payLoad);
   }
 
   FourCardApi(payLoad:any){
-       return this.HttpClient.post('http://localhost:7070/Generalsetting/FourCardsApi',payLoad);
+       return this.HttpClient.post('http://localhost:4040/Generalsetting/FourCardsApi',payLoad);
   }
 
   GetFourCardApi(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeadingDescriptionFourCards');
+    return this.HttpClient.get('http://localhost:4040/Generalsetting/GetHeadingDescriptionFourCards');
   }
   GetHeroImage(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetHeroImage')
+    return this.HttpClient.get('http://localhost:4040/Generalsetting/GetHeroImage')
   }
   GetHeroImageById(_id:any){
-    return this.HttpClient.get(`http://localhost:7070/Generalsetting/HeroImageGetById/${_id}`)
+    return this.HttpClient.get(`http://localhost:4040/Generalsetting/HeroImageGetById/${_id}`)
   }
 
   DeleteHeroImageById(_id:any){
-    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeletHeroImage/${_id}`)
+    return this.HttpClient.delete(`http://localhost:4040/Generalsetting/HardDeletHeroImage/${_id}`)
 
   }
   GetFourcardsById(_id:any){
-     return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFourCardsById/${_id}`)
+     return this.HttpClient.get(`http://localhost:4040/Generalsetting/GetFourCardsById/${_id}`)
   }
   HardDeletFourCardById(_id:any){
-    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddelete/${_id}`)
+    return this.HttpClient.delete(`http://localhost:4040/Generalsetting/Harddelete/${_id}`)
 
   }
   TwoCardsApi(payLoad:any){
-    return this.HttpClient.post('http://localhost:7070/Generalsetting/TwoImagesApi',payLoad)
+    return this.HttpClient.post('http://localhost:4040/Generalsetting/TwoImagesApi',payLoad)
   }
   GetTwoImage(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetTwocardsApi')
+    return this.HttpClient.get('http://localhost:4040/Generalsetting/GetTwocardsApi')
   }
   GetTwoCardById(_id:any){
-    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetTwocardsById/${_id}`) 
+    return this.HttpClient.get(`http://localhost:4040/Generalsetting/GetTwocardsById/${_id}`) 
   }
   HardDeleteTwoCardById(_id:any){
-   return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeleteTwoimage/${_id}`)
+   return this.HttpClient.delete(`http://localhost:4040/Generalsetting/HardDeleteTwoimage/${_id}`)
   }
 
   FrequentlyAskedQueAPI(payLoad:any){
-   return this.HttpClient.post('http://localhost:7070/Generalsetting/FrequentlyAskedQestions',payLoad);
+   return this.HttpClient.post('http://localhost:4040/Generalsetting/FrequentlyAskedQestions',payLoad);
   }
   GetFrequentlyAskedQue(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/GetFrequentlyAskedQestions')
+    return this.HttpClient.get('http://localhost:4040/Generalsetting/GetFrequentlyAskedQestions')
   }
   GetFrequentlyAskedQueById(_id:any){
-    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetFrequeById/${_id}`)
+    return this.HttpClient.get(`http://localhost:4040/Generalsetting/GetFrequeById/${_id}`)
   }
   HardDeletFrequentlyAskedQueById(_id:any){
-    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/HardDeletFrequentlyAskedQue/${_id}`)
+    return this.HttpClient.delete(`http://localhost:4040/Generalsetting/HardDeletFrequentlyAskedQue/${_id}`)
   }
 
   ThreeHomeCardApi(payLoad:any){
-     return this.HttpClient.post('http://localhost:7070/Generalsetting/HomeThreeCardsApi',payLoad)
+     return this.HttpClient.post('http://localhost:4040/Generalsetting/HomeThreeCardsApi',payLoad)
   }
   ThreeHomeCardGetAllDataApi(){
-    return this.HttpClient.get('http://localhost:7070/Generalsetting/HomeThreeCardsGetAllData');
+    return this.HttpClient.get('http://localhost:4040/Generalsetting/HomeThreeCardsGetAllData');
   }
   ThreeHomeCardHardDeleteDataById(_id:any){
-    return this.HttpClient.delete(`http://localhost:7070/Generalsetting/Harddeletethreehomecard/${_id}`)
+    return this.HttpClient.delete(`http://localhost:4040/Generalsetting/Harddeletethreehomecard/${_id}`)
   }
   ThreehomecardsById(_id:any){
-    return this.HttpClient.get(`http://localhost:7070/Generalsetting/GetThreehomeCardsById/${_id}`)
+    return this.HttpClient.get(`http://localhost:4040/Generalsetting/GetThreehomeCardsById/${_id}`)
   }
  
 

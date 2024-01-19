@@ -11,11 +11,11 @@ export class RegisterLoginService {
 
 
   AdminRegisterApi(payLoad:any){
-  return  this.HttpClient.post('http://localhost:7070/AdminRegister/AdminRegister',payLoad)
+  return  this.HttpClient.post('http://localhost:4040/AdminRegister/AdminRegister',payLoad)
   }
 
  AdminLoginApi(payLoad:any){
- return this.HttpClient.post('http://localhost:7070/AdminRegister/AdminLogin',payLoad)
+ return this.HttpClient.post('http://localhost:4040/AdminRegister/AdminLogin',payLoad)
  }
 
  setTokenIntoLocalStorage(payLoad:any){
@@ -27,10 +27,10 @@ export class RegisterLoginService {
   }
 
   UserRegisterApi(payLoad:any){
-    return this.HttpClient.post('http://localhost:7070/UserRegister/UserRegister',payLoad)
+    return this.HttpClient.post('http://localhost:4040/UserRegister/UserRegister',payLoad)
   }
   UserLoginApi(payLoad:any){
-   return this.HttpClient.post('http://localhost:7070/UserRegister/UserLogin',payLoad)
+   return this.HttpClient.post('http://localhost:4040/UserRegister/UserLogin',payLoad)
   }
 
   SetUserTokenIntoLocalStorage(payLoad:any){

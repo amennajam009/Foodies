@@ -18,7 +18,7 @@ export class ShopComponent implements OnInit {
   AllbreakfastCards:any=[];
   AllpopularFoodcards:any=[];
   MakeMyIdPublic:any
-  Url='http://localhost:7070/';
+  Url='http://localhost:4040/';
   constructor(private _menuService:MenuService ,private _General:GeneralService , private Toaster:ToastrService) { 
 
   }
