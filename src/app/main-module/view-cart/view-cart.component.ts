@@ -32,7 +32,6 @@ export class ViewCartComponent implements OnInit {
             {
               amount: {
                 value: this.totalPrice,
-                // value: this.amount.toString(),
                 currency_code: 'USD',
                 quantity: 7,
               },
