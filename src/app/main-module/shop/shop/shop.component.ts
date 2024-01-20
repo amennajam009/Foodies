@@ -22,7 +22,7 @@ export class ShopComponent implements OnInit {
 
   constructor(private _menuService:MenuService,
               private _General:GeneralService,
-               private Toaster:ToastrService) { 
+              private Toaster:ToastrService) { 
   }
 
   ngOnInit(): void { 
@@ -84,11 +84,9 @@ addToCartStarter(index:number) {
 
 
 
-addToCartBreakfast(_id: any) {
-  this.MakeMyIdPublic = _id; 
-  this._menuService.GetBreakfastFoodApiById(_id).subscribe((res: any) => {
+addToCartBreakfast(index:number) {
+  const product = this.BreakfastCards[index]
     this.Toaster.success('Item Is Added To Cart 🛒');
-    const product = res.Result;
     const cartItems = localStorage.getItem('cartItems') ?? '';
     const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
     parsedCartItems.push(product);
@@ -100,15 +98,12 @@ addToCartBreakfast(_id: any) {
     totalPrice += parseFloat(product.Price);
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
-  });
 }
 
 
-addToCartLuch(_id: any) {
-  this.MakeMyIdPublic = _id; 
-  this._menuService.GetApiOfLuchApiById(_id).subscribe((res: any) => {
+addToCartLunch(index:number) {
+  const product = this.LunchCards[index]
     this.Toaster.success('Item Is Added To Cart 🛒');
-    const product = res.Result;
     const cartItems = localStorage.getItem('cartItems') ?? '';
     const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
     parsedCartItems.push(product);
@@ -120,7 +115,6 @@ addToCartLuch(_id: any) {
     totalPrice += parseFloat(product.Price);
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
-  });
 }
 
 

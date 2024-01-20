@@ -87,14 +87,14 @@
                       </div>
             
                       <div class="row gy-5">
-                        <div class="col-lg-4 menu-item" *ngFor="let data of BreakfastCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of BreakfastCards; let i = index">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
                           <p class="price text-success">
-                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartBreakfast(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartBreakfast(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
                         </div><!-- Menu Item -->
                       </div>
@@ -109,14 +109,14 @@
                       </div>
                       <div class="row gy-5">
           
-                        <div class="col-lg-4 menu-item" *ngFor="let data of LunchCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of LunchCards ; let i = index">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
                           <p class="price text-success">
-                            ${{data.Price}} <button type="button" class="btn btn-warning ms-3" (click)="addToCartLuch(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                            ${{data.Price}} <button type="button" class="btn btn-warning ms-3" (click)="addToCartLunch(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                          
                           </p>
                           <!-- <button type="button" class="btn btn-warning">Add To Cart</button> -->
