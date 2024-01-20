@@ -66,7 +66,7 @@
                         <h3>Starters</h3>
                       </div>
                       <div class="row gy-5">
-                        <div class="col-lg-4 menu-item" *ngFor="let data of AllstarterCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of StarterCards">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
@@ -87,7 +87,7 @@
                       </div>
             
                       <div class="row gy-5">
-                        <div class="col-lg-4 menu-item" *ngFor="let data of AllbreakfastCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of BreakfastCards">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
@@ -109,7 +109,7 @@
                       </div>
                       <div class="row gy-5">
           
-                        <div class="col-lg-4 menu-item" *ngFor="let data of AllLunchCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of LunchCards">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
@@ -300,7 +300,7 @@
                     </div>
                 
                     <div class="row mt-5">
-                      <div class="col-lg-3 col-md-6 mt-5" *ngFor="let data of AllpopularFoodcards">
+                      <div class="col-lg-3 col-md-6 mt-5" *ngFor="let data of PopularFoodCards">
                         <div class="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
                           <img [src]="Url+data.imageDetails[0].imageUrl" alt="" class="img-fluid fixed-image-size w-100">
                           <div class="card-body">

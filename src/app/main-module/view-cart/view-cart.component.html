@@ -9,6 +9,7 @@
         <th class="text-center">#</th>
         <th class="text-center">Image</th>
         <th class="text-center">FoodName</th>
+        <th class="text-center">Quantity</th>
         <th class="text-center">Price</th>
         <th class="text-center"></th>
         <th></th>
@@ -17,9 +18,21 @@
     <tbody>
       <tr *ngFor="let data of cartItems ; let i=index">
         <th class="text-center text-light">{{i+1}}</th>
-        <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+        <td class="text-center">
+          <img *ngIf="data.imageDetails.imageUrl; else indexImage" [src]="Url + data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;">
+          <ng-template #indexImage>
+            <img [src]="Url + data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;">
+          </ng-template>
+        </td>
         <td class="text-center text-light">{{data.imageHeading}}  {{data.cardName}} {{data.FoodName}}</td>
+        <!-- <td class="text-center text-light">
+          <button class="btn btn-sm text-light" (click)="decrementQuantity(i)">-</button>
+          {{i+1}}
+          <button class="btn btn-sm text-light" (click)="incrementQuantity(i)">+</button>
+        </td> -->
+        <td class="text-center text-light">1</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}} {{data.FoodPrice}} </td>
+
         <td><button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Remove Item</button></td>
         <td></td>
       </tr>

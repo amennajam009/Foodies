@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   ThreehomeImage:any=[];
   cartItems: any[] = [];
   MakeMyIdPublic:any
-  particualarproductofthreehomecards:any=[]
   constructor(private _General:GeneralService,private Toaster:ToastrService) { }
 
   ngOnInit(): void {
@@ -41,6 +40,7 @@ export class HomeComponent implements OnInit {
  GetFourCards(){
   this._General.GetFourCardApi().subscribe((res:any)=>{
     this.AllFourCards = res.Result; 
+    console.log('allfourcardss',this.AllFourCards)
   });
  }
 
@@ -59,11 +59,9 @@ export class HomeComponent implements OnInit {
  }
 
 
-  addToCartFourcard(_id: any) {
-    this.MakeMyIdPublic = _id; 
-    this._General.GetFourcardsById(_id).subscribe((res: any) => {
-      this.Toaster.success('Item Is Added To Cart 🛒');
-      const product = res.Result;
+  addToCartFourcard(index: number) {
+    const product = this.AllFourCards[index];
+    this.Toaster.success('Item Is Added To Cart 🛒');
       const cartItems = localStorage.getItem('cartItems') ?? '';
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
       parsedCartItems.push(product);
@@ -74,15 +72,12 @@ export class HomeComponent implements OnInit {
       let totalPrice = parseFloat(localStorage.getItem('totalPrice') ?? '0');
       totalPrice += parseFloat(product.Price);
       // Store the total price in localStorage
-      localStorage.setItem('totalPrice', totalPrice.toString());
-    });
+      localStorage.setItem('totalPrice', totalPrice.toString()); 
   }
   
-  addToCart(_id: any) {
-    this.MakeMyIdPublic = _id; 
-    this._General.ThreehomecardsById(_id).subscribe((res: any) => {
+  addToCart(index:number) {
+     const product = this.ThreehomeImage[index]
       this.Toaster.success('Item Is Added To Cart 🛒');
-      const product = res.Result;
       const cartItems = localStorage.getItem('cartItems') ?? '';
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
       parsedCartItems.push(product);
@@ -96,7 +91,6 @@ export class HomeComponent implements OnInit {
       });
       // Store the total price in localStorage
       localStorage.setItem('totalPrice', totalPrice.toString());
-    });
   }
   
 

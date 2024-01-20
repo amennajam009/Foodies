@@ -11,16 +11,18 @@ import { WhatsappService } from 'src/app/shared/service/whatsapp.service';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-
   data: any=[];
-  AllLunchCards:any=[];
-  AllstarterCards:any=[];
-  AllbreakfastCards:any=[];
-  AllpopularFoodcards:any=[];
+  LunchCards:any=[];
+  StarterCards:any=[];
+  BreakfastCards:any=[];
+  PopularFoodCards:any=[];
   MakeMyIdPublic:any
   Url='http://localhost:4040/';
-  constructor(private _menuService:MenuService ,private _General:GeneralService , private Toaster:ToastrService) { 
 
+
+  constructor(private _menuService:MenuService,
+              private _General:GeneralService,
+               private Toaster:ToastrService) { 
   }
 
   ngOnInit(): void { 
@@ -30,36 +32,40 @@ export class ShopComponent implements OnInit {
   this.GetpopularFoodAPI();
   }
 
-public GetFoodCardApi(){
+
+
+//Get Food Card
+ GetFoodCardApi(){
   this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
-    this.AllstarterCards=res.Result;
+    this.StarterCards=res.Result;
   })
 }
-public GetBreakFastApi(){
+
+//Get BreakFast Food
+GetBreakFastApi(){
   this._menuService.GetAllDataOfBreakfastFoodApi().subscribe((res:any)=>{
-    this.AllbreakfastCards=res.Result;
+    this.BreakfastCards=res.Result;
   })
 }
 
-public GetLunchFoodApi(){
+//Get Lunch Food
+GetLunchFoodApi(){
   this._menuService.GetAlldataOflunchApi().subscribe((res:any)=>{
-    this.AllLunchCards=res.Result;
+    this.LunchCards=res.Result;
   })
 }
-public GetpopularFoodAPI(){
+
+//Get Popular Food
+GetpopularFoodAPI(){
   this._menuService.GetpopularApi().subscribe((res:any)=>{
-    this.AllpopularFoodcards=res.Result;
+    this.PopularFoodCards=res.Result;
   })
 }
-
-
 
 
 
 
 // Add to Cart Function 
-
-
 addToCartStarter(_id: any) {
   this.MakeMyIdPublic = _id; 
   this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res: any) => {

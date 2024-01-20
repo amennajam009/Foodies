@@ -93,7 +93,7 @@
 
 <div class="container our-services">
   <div class="row" >
-    <div class="col-lg-4 col-md-6 g-4" *ngFor="let data of ThreehomeImage">
+    <div class="col-lg-4 col-md-6 g-4" *ngFor="let data of ThreehomeImage ; let i = index">
       <div class="flip-container mt-5">
         <div class="flipper">
           <div class="front" style="background: #c78e13;">
@@ -105,7 +105,7 @@
             <p>{{data.backflipCardDescription}}</p>
             <p>{{data.backflipCardDescription2}}</p>
             <p>${{data.Price}}</p>
-            <button class="btn btn-warning mb-5"  (click)="addToCart(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+            <button class="btn btn-warning mb-5"  (click)="addToCart(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
  <div class="container-xxl py-5">
   <div class="container">
       <div class="row g-0 feature-row"  >
-      <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s" *ngFor="let data of AllFourCards" >
+      <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s" *ngFor="let data of AllFourCards ; let i=index" >
   <div class="feature-item border h-100 p-5">
       <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
        
@@ -137,7 +137,7 @@
       <h5 class="mb-3">{{data.cardName}}</h5>
       <p class="mb-0">{{data.cardDescriptionFour}}</p>
       <p class="text-success mt-3"><b>${{data.Price}}</b></p>
-      <button class="btn btn-warning" (click)="addToCartFourcard(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+      <button class="btn btn-warning" (click)="addToCartFourcard(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
   </div> 
 </div>
 </div>

@@ -9,7 +9,7 @@ declare var paypal: any;
 })
 export class ViewCartComponent implements OnInit {
 
-  particualarproductofthreehomecards: any =[];
+  threeCardsById: any =[];
   AllFourCards : any = []
   MakeMyIdPublic: any;
   Url = 'http://localhost:4040/';
@@ -44,8 +44,6 @@ export class ViewCartComponent implements OnInit {
           console.log(details)
           if (details.status === 'COMPLETED') {
             this.router.navigate(['/Main-module/confirm'])
-            // this.payment.transactionID = details.id;
-            // this.router.navigate(['/confirm']);
           }
         });
       },
@@ -74,22 +72,6 @@ export class ViewCartComponent implements OnInit {
       this.totalPrice = totalPrice;
     }
   }
-
-  GetFourCardbyId(_id:any){
-    this.MakeMyIdPublic = _id;
-    this._General.GetFourcardsById(_id).subscribe((res:any)=>{
-      this.AllFourCards = res.Result;
-      // this.particualarproductofthreehomecards = res.Result;
-    })
-  }
-
-  GetThreeCardById(_id: any) {
-    this.MakeMyIdPublic = _id;
-    this._General.ThreehomecardsById(_id).subscribe((res: any) => {
-      this.particualarproductofthreehomecards = res.Result;
-    });
-  }
-
 
  
   removeCartItemById(_id: any): void {
