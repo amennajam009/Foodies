@@ -66,14 +66,14 @@
                         <h3>Starters</h3>
                       </div>
                       <div class="row gy-5">
-                        <div class="col-lg-4 menu-item" *ngFor="let data of StarterCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of StarterCards; let i = index">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
                           <p class="price text-success">
-                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartStarter(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartStarter(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
                         </div>
                       </div>
@@ -207,84 +207,6 @@
           
                 </div>
        
-
-
-
-
-
-
-
-              
-  
-                   <!-- Our Gallery -->
-
-                <!-- <section class="gallery">
-                  <div class="container">
-                    <div class="row justify-content-center">
-                      <div class="col-lg-8 text-center">
-                        <div class="section-title">
-                          <div class="divider mb-3"></div>
-                          <h2 class="text-light">Our gallery</h2>
-                          <p class="mt-4">We offer more than 35 group exercis, aerobic classes each week.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="container-fluid mt-5">
-                    <div class="row no-gutters portfolio-gallery">
-                      <div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-01.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-1.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-02.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-2.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-03.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-3.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-04.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-4.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-05.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-5.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-06.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-6.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-07.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-7.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-08.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-8.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </section>	 -->
-                 <!-- Our Gallery End -->
-    
-              
-                 <!-- famous Food -->
-
-                 <!-- <div class="Iam ">
-                  <b>
-                 <div class="innerIam " style="margin-left: 10%">
-                  Fashion should be a form of escapism<br /> 
-                  What you wear is how you present yourself to the world,<br />
-                  I don't do fashion.<br />
-                  make you remember what is beautiful about life<br />
-                  Fashion you can buy, but style you possess
-                </div>
-                  </b>
-                  </div> -->
-
 
 
                 <section class="section course bg-gray">

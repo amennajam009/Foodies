@@ -29,7 +29,7 @@ export class ShopComponent implements OnInit {
   this.GetFoodCardApi();
   this.GetBreakFastApi();
   this.GetLunchFoodApi();
-  this.GetpopularFoodAPI();
+  this.GetPopularFoodAPI();
   }
 
 
@@ -56,7 +56,7 @@ GetLunchFoodApi(){
 }
 
 //Get Popular Food
-GetpopularFoodAPI(){
+GetPopularFoodAPI(){
   this._menuService.GetpopularApi().subscribe((res:any)=>{
     this.PopularFoodCards=res.Result;
   })
@@ -66,11 +66,9 @@ GetpopularFoodAPI(){
 
 
 // Add to Cart Function 
-addToCartStarter(_id: any) {
-  this.MakeMyIdPublic = _id; 
-  this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res: any) => {
+addToCartStarter(index:number) {
+  const product = this.StarterCards[index] 
     this.Toaster.success('Item Is Added To Cart 🛒');
-    const product = res.Result;
     const cartItems = localStorage.getItem('cartItems') ?? '';
     const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
     parsedCartItems.push(product);
@@ -82,7 +80,6 @@ addToCartStarter(_id: any) {
     totalPrice += parseFloat(product.Price);
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
-  });
 }
 
 
