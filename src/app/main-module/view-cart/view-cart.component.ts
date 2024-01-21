@@ -8,7 +8,6 @@ declare var paypal: any;
   styleUrls: ['./view-cart.component.css']
 })
 export class ViewCartComponent implements OnInit {
-
   threeCardsById: any =[];
   AllFourCards : any = []
   MakeMyIdPublic: any;
@@ -16,9 +15,12 @@ export class ViewCartComponent implements OnInit {
   ThreeHomeCards: any ;
   selectedItemId: any;
   cartItems: any[] = [];
-   @ViewChild('paymentRef',{static: true}) paymentRef!:ElementRef
+  quantity: number = 1;
+  @ViewChild('paymentRef',{static: true}) paymentRef!:ElementRef;
+
+
   constructor(private _General:GeneralService,
-            private router: Router) {}
+              private router: Router) {}
   totalPrice!: number;
   ngOnInit(): void {
     this.getCartItems();
@@ -54,13 +56,15 @@ export class ViewCartComponent implements OnInit {
     console.log(paypal)
   }
 
+
+  
   getCartItems(): void {
     const cartItems = localStorage.getItem('cartItems');
+    console.log('cartItemnssss',cartItems)
     this.cartItems = cartItems ? JSON.parse(cartItems) : [];
     const storedTotalPrice = localStorage.getItem('totalPrice');
     this.totalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
   }
-
 
 
   handleStorageChange(event: StorageEvent): void {
