@@ -26,9 +26,9 @@
         </td>
         <td class="text-center text-light">{{data.imageHeading}}  {{data.cardName}} {{data.FoodName}}</td>
         <td class="text-center text-light">
-          <button class="btn btn-sm text-light">-</button>
+          <button class="btn btn-sm text-light" (click)="decreaseQuantity(data._id)">-</button>
           {{ quantity }}
-          <button class="btn btn-sm text-light">+</button>
+          <button class="btn btn-sm text-light" (click)="increaseQuantity(data._id)">+</button>
         </td>
         <!-- <td class="text-center text-light">1</td> -->
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}} {{data.FoodPrice}} </td>
@@ -40,7 +40,8 @@
   </table>  
 <div class="float-right text-right">
     <h4>Subtotal:</h4>
-    <h1>${{totalPrice}}</h1>
+    <h1 *ngIf="totalPrice !== undefined">${{ totalPrice }}</h1>
+    <h1 *ngIf="totalPrice === undefined">0</h1>
 </div>
 
 <div class="container mt-5">
