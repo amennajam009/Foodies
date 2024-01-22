@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { GeneralService } from 'src/app/shared/service/general.service';
+import { LocalStorageService } from 'src/app/shared/service/local-storage.service';
 declare var paypal: any; 
 @Component({
   selector: 'app-view-cart',
@@ -20,6 +21,7 @@ export class ViewCartComponent implements OnInit {
 
 
   constructor(private _General:GeneralService,
+              private localStorageService:LocalStorageService,
               private router: Router) {}
   totalPrice!: number;
   ngOnInit(): void {
@@ -83,6 +85,7 @@ export class ViewCartComponent implements OnInit {
     if (cartItems) {
       let parsedCartItems = JSON.parse(cartItems);
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
+      console.log('itemmmmmmmmmmmmm',itemIndex)
       if (itemIndex !== -1) {
         // Double the Price and update total price
         parsedCartItems[itemIndex].Price *= 2; // Double the Price
@@ -95,6 +98,7 @@ export class ViewCartComponent implements OnInit {
         let totalPrice = this.calculateTotalPrice(parsedCartItems);
         localStorage.setItem('totalPrice', totalPrice.toString());
         this.totalPrice = totalPrice;
+        this.quantity += 1;
       }
     }
   }
@@ -117,6 +121,7 @@ export class ViewCartComponent implements OnInit {
           let totalPrice = this.calculateTotalPrice(parsedCartItems);
           localStorage.setItem('totalPrice', totalPrice.toString());
           this.totalPrice = totalPrice;
+        this.quantity -= 1;
         }
       }
     }
