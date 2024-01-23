@@ -99,8 +99,10 @@ export class ViewCartComponent implements OnInit {
   decreaseQuantity(_id: any): void {
       let StoredCartItems = this.cartItems
       const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
-          StoredCartItems[itemIndex].Price /= 2;
-          StoredCartItems[itemIndex].quantity = (StoredCartItems[itemIndex].quantity || 1) - 1
+        if (StoredCartItems[itemIndex].quantity > 1) {
+        StoredCartItems[itemIndex].Price /= 2;
+           }
+          StoredCartItems[itemIndex].quantity = Math.max((StoredCartItems[itemIndex].quantity || 1) - 1,1)
           localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
           this.updateCart()
   }
