@@ -78,44 +78,37 @@ export class ViewCartComponent implements OnInit {
     }
   }
 
+
+  // increment the quantity 
   increaseQuantity(_id: any): void {
-    const cartItems = localStorage.getItem('cartItems');
-    if (cartItems) {
-      let parsedCartItems = JSON.parse(cartItems);
-      const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
-      if (itemIndex !== -1) {
-        parsedCartItems[itemIndex].Price *= 2;
-        localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
-        this.cartItems = parsedCartItems;
+      let StoredCartItems = this.cartItems
+      const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
+        StoredCartItems[itemIndex].Price *= 2;
+        localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
+        this.cartItems = StoredCartItems;
         this.updateCart()
         this.quantity += 1;
-      }
-    }
   }
 
+
+  // decrement the quantity
   decreaseQuantity(_id: any): void {
-    const cartItems = localStorage.getItem('cartItems');
-    if (cartItems) {
-      let parsedCartItems = JSON.parse(cartItems);
-      const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
-      if (itemIndex !== -1) {
-        if (parsedCartItems[itemIndex].Price > 1) {
-          parsedCartItems[itemIndex].Price /= 2;
-          localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
-  
-          this.cartItems = parsedCartItems;
+      let StoredCartItems = this.cartItems
+      const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
+        if (StoredCartItems[itemIndex].Price > 1) {
+          StoredCartItems[itemIndex].Price /= 2;
+          localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
+          this.cartItems = StoredCartItems;
           this.updateCart()
           this.quantity -= 1;
         }
-      }
-    }
   }
 
- 
+
+
+ //remove Cart Item
   removeCartItemById(_id: any): void {
-    const cartItems = localStorage.getItem('cartItems');
-    if (cartItems) {
-      let parsedCartItems = JSON.parse(cartItems);
+      let parsedCartItems = this.cartItems
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
       if (itemIndex !== -1) {
         parsedCartItems.splice(itemIndex, 1);
@@ -123,9 +116,10 @@ export class ViewCartComponent implements OnInit {
         this.cartItems = parsedCartItems;
         this.updateCart();
       }
-    }
   }
   
+
+  // calculate SubTotal Price
   calculateTotalPrice(cartItems: any[]): number {
     let totalPrice = 0;
     for (let data of cartItems) {
@@ -134,6 +128,8 @@ export class ViewCartComponent implements OnInit {
     return totalPrice;
   }
 
+
+  //update Cart 
    updateCart(){
     const itemCount = this.cartItems.length;
     this._General.updateCartItemsCount(itemCount);
@@ -141,4 +137,5 @@ export class ViewCartComponent implements OnInit {
     this.localStorageService.setTotalPrice(totalPrice);
     this.totalPrice = totalPrice;
   }
+
 }
