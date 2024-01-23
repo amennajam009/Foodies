@@ -85,11 +85,8 @@ export class ViewCartComponent implements OnInit {
 
 
   // increment the quantity 
-  increaseQuantity(_id: any , index:number): void {
-    console.log('gdfgdfgdf',index)
+  increaseQuantity(index:number): void {
       let StoredCartItems = this.cartItems
-      const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
-      console.log(itemIndex)
         StoredCartItems[index].Price *= 2;
         StoredCartItems[index].quantity = (StoredCartItems[index].quantity || 1) + 1
         localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
@@ -98,13 +95,12 @@ export class ViewCartComponent implements OnInit {
 
 
   // decrement the quantity
-  decreaseQuantity(_id: any): void {
+  decreaseQuantity(index:number): void {
       let StoredCartItems = this.cartItems
-      const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
-        if (StoredCartItems[itemIndex].quantity > 1) {
-        StoredCartItems[itemIndex].Price /= 2;
+        if (StoredCartItems[index].quantity > 1) {
+        StoredCartItems[index].Price /= 2;
            }
-          StoredCartItems[itemIndex].quantity = Math.max((StoredCartItems[itemIndex].quantity || 1) - 1,1)
+          StoredCartItems[index].quantity = Math.max((StoredCartItems[index].quantity || 1) - 1,1)
           localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
           this.updateCart()
   }

@@ -25,9 +25,9 @@
         </td>
         <td class="text-center text-light">{{data.imageHeading}}  {{data.cardName}} {{data.FoodName}}</td>
         <td class="text-center text-light">
-          <button class="btn btn-sm text-danger" (click)="decreaseQuantity(data._id)">-</button>
+          <button class="btn btn-sm text-danger" (click)="decreaseQuantity(i)">-</button>
           {{ data.quantity || 1 }}
-          <button class="btn btn-sm text-success" (click)="increaseQuantity(data._id , i)">+</button>
+          <button class="btn btn-sm text-success" (click)="increaseQuantity(i)">+</button>
         </td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}} {{data.FoodPrice}} </td>
 
