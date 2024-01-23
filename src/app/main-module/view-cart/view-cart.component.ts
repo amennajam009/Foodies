@@ -17,6 +17,7 @@ export class ViewCartComponent implements OnInit {
   selectedItemId: any;
   cartItems: any[] = [];
   quantity: number = 1;
+  showPaymentRef: boolean = false;
   @ViewChild('paymentRef',{static: true}) paymentRef!:ElementRef;
 
 
@@ -72,6 +73,10 @@ export class ViewCartComponent implements OnInit {
     }).render(this.paymentRef.nativeElement)
   }
 
+  togglePaymentRef() {
+    this.paypalPaymentGateway()
+    this.showPaymentRef = !this.showPaymentRef;
+  }
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
       const cartItems = event.newValue ? JSON.parse(event.newValue) : [];
