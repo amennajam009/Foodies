@@ -57,7 +57,6 @@ export class ViewCartComponent implements OnInit {
       },
       onApprove: (data: any, actions: any) => {
         return actions.order.capture().then((details: any) => {
-          console.log(details)
           if (details.status === 'COMPLETED') {
             localStorage.removeItem('cartItems')
             localStorage.removeItem('cartItemsCount')
@@ -86,13 +85,13 @@ export class ViewCartComponent implements OnInit {
 
   // increment the quantity 
   increaseQuantity(_id: any): void {
+    console.log(_id)
       let StoredCartItems = this.cartItems
       const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
         StoredCartItems[itemIndex].Price *= 2;
+        StoredCartItems[itemIndex].quantity = (StoredCartItems[itemIndex].quantity || 1) + 1
         localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
-        this.cartItems = StoredCartItems;
         this.updateCart()
-        this.quantity += 1;
   }
 
 
@@ -100,13 +99,10 @@ export class ViewCartComponent implements OnInit {
   decreaseQuantity(_id: any): void {
       let StoredCartItems = this.cartItems
       const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
-        if (StoredCartItems[itemIndex].Price > 1) {
           StoredCartItems[itemIndex].Price /= 2;
+          StoredCartItems[itemIndex].quantity = (StoredCartItems[itemIndex].quantity || 1) - 1
           localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
-          this.cartItems = StoredCartItems;
           this.updateCart()
-          this.quantity -= 1;
-        }
   }
 
 
@@ -115,12 +111,9 @@ export class ViewCartComponent implements OnInit {
   removeCartItemById(_id: any): void {
       let parsedCartItems = this.cartItems
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
-      if (itemIndex !== -1) {
         parsedCartItems.splice(itemIndex, 1);
         localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
-        this.cartItems = parsedCartItems;
         this.updateCart();
-      }
   }
   
 

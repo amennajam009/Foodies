@@ -27,10 +27,9 @@
         <td class="text-center text-light">{{data.imageHeading}}  {{data.cardName}} {{data.FoodName}}</td>
         <td class="text-center text-light">
           <button class="btn btn-sm text-light" (click)="decreaseQuantity(data._id)">-</button>
-          {{ quantity }}
+          {{ data.quantity || 1 }}
           <button class="btn btn-sm text-light" (click)="increaseQuantity(data._id)">+</button>
         </td>
-        <!-- <td class="text-center text-light">1</td> -->
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}} {{data.FoodPrice}} </td>
 
         <td><button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Remove Item</button></td>
