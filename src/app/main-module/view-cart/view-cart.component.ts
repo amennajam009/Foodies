@@ -85,7 +85,6 @@ export class ViewCartComponent implements OnInit {
 
   // increment the quantity 
   increaseQuantity(_id: any): void {
-    console.log(_id)
       let StoredCartItems = this.cartItems
       const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
         StoredCartItems[itemIndex].Price *= 2;
