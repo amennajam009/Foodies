@@ -85,11 +85,13 @@ export class ViewCartComponent implements OnInit {
 
 
   // increment the quantity 
-  increaseQuantity(_id: any): void {
+  increaseQuantity(_id: any , index:number): void {
+    console.log('gdfgdfgdf',index)
       let StoredCartItems = this.cartItems
       const itemIndex = StoredCartItems.findIndex((item: any) => item._id === _id);
-        StoredCartItems[itemIndex].Price *= 2;
-        StoredCartItems[itemIndex].quantity = (StoredCartItems[itemIndex].quantity || 1) + 1
+      console.log(itemIndex)
+        StoredCartItems[index].Price *= 2;
+        StoredCartItems[index].quantity = (StoredCartItems[index].quantity || 1) + 1
         localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
         this.updateCart()
   }
