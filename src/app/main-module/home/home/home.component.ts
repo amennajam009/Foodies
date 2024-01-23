@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
  GetFourCards(){
   this._General.GetFourCardApi().subscribe((res:any)=>{
     this.AllFourCards = res.Result; 
-    console.log('allfourcardss',this.AllFourCards)
   });
  }
 
