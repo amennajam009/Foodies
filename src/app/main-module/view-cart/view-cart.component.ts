@@ -99,9 +99,8 @@ export class ViewCartComponent implements OnInit {
       let parsedCartItems = JSON.parse(cartItems);
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
       if (itemIndex !== -1) {
-        // Decrease quantity and update total price
         if (parsedCartItems[itemIndex].Price > 1) {
-          parsedCartItems[itemIndex].Price /= 2; // Halve the Price
+          parsedCartItems[itemIndex].Price /= 2;
           localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
   
           this.cartItems = parsedCartItems;
