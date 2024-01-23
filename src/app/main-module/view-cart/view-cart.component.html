@@ -31,7 +31,9 @@
         </td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}} {{data.FoodPrice}} </td>
 
-        <td><button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Remove Item</button></td>
+        <td>
+          <i class="fas fa-trash remove_item" (click)="removeCartItemById(data._id)"></i>
+          <!-- <button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Remove Item</button></td> -->
         <td></td>
       </tr>
     </tbody>
