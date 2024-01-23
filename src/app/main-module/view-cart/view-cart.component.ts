@@ -26,9 +26,21 @@ export class ViewCartComponent implements OnInit {
   totalPrice!: number;
   ngOnInit(): void {
     this.getCartItems();
-
+    this.paypalPaymentGateway()
     // Listen for changes in the localStorage
     window.addEventListener('storage', this.handleStorageChange.bind(this));
+  }
+
+
+  // get Cart Items
+  getCartItems(){
+    this.cartItems = this.localStorageService.getCartItems()
+    this.totalPrice = this.localStorageService.getTotalPrice()
+  }
+  
+
+  //paypal Payment Gateway
+  paypalPaymentGateway(){
     paypal.Buttons({
       createOrder: (data: any, actions: any) => {
         return actions.order.create({
@@ -60,13 +72,6 @@ export class ViewCartComponent implements OnInit {
       }
     }).render(this.paymentRef.nativeElement)
   }
-
-
-  getCartItems(){
-    this.cartItems = this.localStorageService.getCartItems()
-    this.totalPrice = this.localStorageService.getTotalPrice()
-  }
-  
 
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
