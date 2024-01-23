@@ -50,6 +50,7 @@ export class ViewCartComponent implements OnInit {
             localStorage.removeItem('cartItems')
             localStorage.removeItem('cartItemsCount')
             localStorage.removeItem('totalPrice')
+            localStorage.removeItem('cartItemsCount')
             this.router.navigate(['/Main-module/confirm'])
           }
         });
@@ -61,14 +62,11 @@ export class ViewCartComponent implements OnInit {
   }
 
 
-  
-  getCartItems(): void {
-    const cartItems = localStorage.getItem('cartItems');
-    this.cartItems = cartItems ? JSON.parse(cartItems) : [];
-    const storedTotalPrice = localStorage.getItem('totalPrice');
-    this.totalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
+  getCartItems(){
+    this.cartItems = this.localStorageService.getCartItems()
+    this.totalPrice = this.localStorageService.getTotalPrice()
   }
-
+  
 
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
@@ -85,19 +83,11 @@ export class ViewCartComponent implements OnInit {
     if (cartItems) {
       let parsedCartItems = JSON.parse(cartItems);
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
-      console.log('itemmmmmmmmmmmmm',itemIndex)
       if (itemIndex !== -1) {
-        // Double the Price and update total price
-        parsedCartItems[itemIndex].Price *= 2; // Double the Price
+        parsedCartItems[itemIndex].Price *= 2;
         localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
-
         this.cartItems = parsedCartItems;
-        const itemCount = this.cartItems.length;
-        this._General.updateCartItemsCount(itemCount);
-
-        let totalPrice = this.calculateTotalPrice(parsedCartItems);
-        localStorage.setItem('totalPrice', totalPrice.toString());
-        this.totalPrice = totalPrice;
+        this.updateCart()
         this.quantity += 1;
       }
     }
@@ -115,13 +105,8 @@ export class ViewCartComponent implements OnInit {
           localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
   
           this.cartItems = parsedCartItems;
-          const itemCount = this.cartItems.length;
-          this._General.updateCartItemsCount(itemCount);
-  
-          let totalPrice = this.calculateTotalPrice(parsedCartItems);
-          localStorage.setItem('totalPrice', totalPrice.toString());
-          this.totalPrice = totalPrice;
-        this.quantity -= 1;
+          this.updateCart()
+          this.quantity -= 1;
         }
       }
     }
@@ -137,11 +122,7 @@ export class ViewCartComponent implements OnInit {
         parsedCartItems.splice(itemIndex, 1);
         localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
         this.cartItems = parsedCartItems;
-        const itemCount = this.cartItems.length;
-        this._General.updateCartItemsCount(itemCount);
-        let totalPrice = this.calculateTotalPrice(parsedCartItems);
-        localStorage.setItem('totalPrice', totalPrice.toString());
-        this.totalPrice = totalPrice;
+        this.updateCart();
       }
     }
   }
@@ -152,5 +133,13 @@ export class ViewCartComponent implements OnInit {
       totalPrice += parseFloat(data.Price);
     }
     return totalPrice;
+  }
+
+   updateCart(){
+    const itemCount = this.cartItems.length;
+    this._General.updateCartItemsCount(itemCount);
+    const totalPrice = this.calculateTotalPrice(this.cartItems);
+    this.localStorageService.setTotalPrice(totalPrice);
+    this.totalPrice = totalPrice;
   }
 }

@@ -64,7 +64,6 @@ GetPopularFoodAPI(){
 
 
 
-
 // Add to Cart Function 
 addToCartStarter(index:number) {
   const product = this.StarterCards[index] 

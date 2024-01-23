@@ -20,5 +20,23 @@ export class LocalStorageService {
     this.cartItemsCountSubject.next(count);
     localStorage.setItem('cartItemsCount', count.toString());
   }
+
+
+  //get Cart Items
+  getCartItems(){
+    const cartItems = localStorage.getItem('cartItems');
+    return cartItems ? JSON.parse(cartItems) : [];
+  }
+
+  //get Total Price
+  getTotalPrice(){
+    const storedTotalPrice = localStorage.getItem('totalPrice');
+    return storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
+  }
+
+  //set Total Price
+  setTotalPrice(totalPrice: number): void {
+    localStorage.setItem('totalPrice', totalPrice.toString());
+  }
   
 }
