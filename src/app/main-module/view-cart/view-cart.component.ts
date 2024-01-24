@@ -27,15 +27,15 @@ export class ViewCartComponent implements OnInit {
   ngOnInit(): void {
     this.getCartItems();
     this.paypalPaymentGateway()
-    // Listen for changes in the localStorage
+        // Listen for changes in the localStorage
     window.addEventListener('storage', this.handleStorageChange.bind(this));
   }
 
 
   // get Cart Items
   getCartItems(){
-    this.cartItems = this.localStorageService.getCartItems()
-    this.totalPrice = this.localStorageService.getTotalPrice()
+  this.cartItems = this.localStorageService.getCartItems()
+  this.totalPrice = this.localStorageService.getTotalPrice()
   }
   
 

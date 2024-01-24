@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
 
 
   addToCartFourcard(index: number) {
-    const product = this.AllFourCards[index];
+        const product = this.AllFourCards[index];
     this.Toaster.success('Item Is Added To Cart 🛒');
       const cartItems = localStorage.getItem('cartItems') ?? '';
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
   }
   
   addToCart(index:number) {
-     const product = this.ThreehomeImage[index]
+          const product = this.ThreehomeImage[index]
       this.Toaster.success('Item Is Added To Cart 🛒');
       const cartItems = localStorage.getItem('cartItems') ?? '';
       const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
