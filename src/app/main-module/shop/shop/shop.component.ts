@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../../../shared/service/local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder ,Validators ,FormControl,FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -16,13 +17,15 @@ export class ShopComponent implements OnInit {
   StarterCards:any=[];
   BreakfastCards:any=[];
   PopularFoodCards:any=[];
-  MakeMyIdPublic:any
+  MakeMyIdPublic:any;
+  cartItems: any[] = [];
   Url='http://localhost:4040/';
 
 
   constructor(private _menuService:MenuService,
               private _General:GeneralService,
-              private Toaster:ToastrService) { 
+              private Toaster:ToastrService,
+             ) { 
   }
 
   ngOnInit(): void { 
@@ -63,7 +66,6 @@ GetPopularFoodAPI(){
 }
 
 
-
 // Add to Cart Function 
 addToCartStarter(index:number) {
   const product = this.StarterCards[index] 
@@ -80,7 +82,6 @@ addToCartStarter(index:number) {
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
 }
-
 
 
 addToCartBreakfast(index:number) {
@@ -117,10 +118,21 @@ addToCartLunch(index:number) {
 }
 
 
-
-
-
-
+addToCartDrinks(index:number){
+  const product = this.PopularFoodCards[index]
+    this.Toaster.success('Item Is Added To Cart 🛒');
+    const cartItems = localStorage.getItem('cartItems') ?? '';
+    const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
+    parsedCartItems.push(product);
+    localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+    // This will Update My cart Item Counting
+    this._General.updateCartItemsCount(parsedCartItems.length);
+    // Calculate the total price
+    let totalPrice = parseFloat(localStorage.getItem('totalPrice') ?? '0');
+    totalPrice += parseFloat(product.Price);
+    // Store the total price in localStorage
+    localStorage.setItem('totalPrice', totalPrice.toString());
+}
 
 
 

@@ -23,7 +23,7 @@
             <img [src]="Url + data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;">
           </ng-template>
         </td>
-        <td class="text-center text-light">{{data.imageHeading}}  {{data.cardName}} {{data.FoodName}}</td>
+        <td class="text-center text-light">{{data.imageHeading}}  {{data.cardName}} {{data.FoodName}} {{data.CardHeading}}</td>
         <td class="text-center text-light">
           <button class="btn btn-sm text-danger" (click)="decreaseQuantity(i)">-</button>
           {{ data.quantity || 1 }}

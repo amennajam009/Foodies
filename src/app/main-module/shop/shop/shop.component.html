@@ -222,7 +222,7 @@
                     </div>
                 
                     <div class="row mt-5">
-                      <div class="col-lg-3 col-md-6 mt-5" *ngFor="let data of PopularFoodCards">
+                      <div class="col-lg-3 col-md-6 mt-5" *ngFor="let data of PopularFoodCards ; let i = index">
                         <div class="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
                           <img [src]="Url+data.imageDetails[0].imageUrl" alt="" class="img-fluid fixed-image-size w-100">
                           <div class="card-body">
@@ -237,7 +237,7 @@
                             </div>
                             <p style="color: green;"><b><span><del class="text-danger">$320</del>&nbsp;&nbsp;</span>${{data.Price}}</b></p>
                           </div>
-                          <button class="btn btn-warning">Add To Cart</button>
+                          <button class="btn btn-warning" (click)="addToCartDrinks(i)" >Add To Cart</button>
                         </div>
                       </div>
                     </div>
