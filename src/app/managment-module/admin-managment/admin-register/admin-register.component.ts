@@ -11,7 +11,9 @@ import { ToastrService } from 'ngx-toastr';
 export class AdminRegisterComponent implements OnInit {
   AdminRegister:FormGroup | any;
   
-  constructor(private FormBuilder:FormBuilder , private AdminRegisterLoginService:RegisterLoginService , private Toaster:ToastrService) { }
+  constructor(private FormBuilder:FormBuilder ,
+              private AdminRegisterLoginService:RegisterLoginService ,
+              private Toaster:ToastrService) { }
 
   ngOnInit(): void {
     this.AdminRegisterModel()

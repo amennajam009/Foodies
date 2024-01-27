@@ -8,11 +8,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h1 class="display-4" style="color: white;font-weight: bold;">ADVENTURE AWAITS</h1>
-            <h4 class="display-6" style="color: white;font-weight: bold;">What Are You Waiting For?</h4>
+            <h1 class="display-4" style="color: white;font-weight: bold;">CONTACT US TODAY</h1>
+            <h4 class="display-6" style="color: white;font-weight: bold;">Your Next Connection Awaits!</h4>
             <div class="d-flex justify-content-center mt-4">
               <button type="button" class="btn btn-lg btn-outline-light mx-2">GET STARTED</button>
-              <button type="button" class="btn btn-lg btn-light mx-2">WATCH TRAILER</button>
+              <button type="button" class="btn btn-lg btn-light mx-2">SHOP NOW</button>
             </div>
           </div>
         </div>
@@ -26,12 +26,12 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header text-center mt-5">
-          <h2 class="text-light">Book A Table</h2>
-          <p>Book <span>Your Stay</span> With Us</p>
+          <h2 class="text-light">Book Membership Card </h2>
+          <p>Membership <span>To Stay</span> With Us</p>
         </div>
 
         <div class="row g-0 mt-5">
-          <div class="col-lg-4 reservation-img" style="background-image: url(../../../../assets/pic/tableord.jpg); height: 250px;" data-aos="zoom-out" data-aos-delay="200"></div>
+          <div class="col-lg-4 reservation-img" style="background-image: url(../../../../assets/pic/download.jpg); height: 250px;" data-aos="zoom-out" data-aos-delay="200"></div>
 
           <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
             <form  [formGroup]="OrderTable" (ngSubmit)="SubmitOrderTableform()"  action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
@@ -65,12 +65,8 @@
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" formControlName="Message"></textarea>
                 <div class="validate"></div>
               </div>
-              <!-- <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-              </div> -->
-              <div class="text-center mt-4"><button type="submit" class="btn btn-warning">Book a Table</button></div>
+
+              <div class="text-center mt-4"><button type="submit" class="btn btn-success">Submit</button></div>
             </form>
           </div><!-- End Reservation Form -->
 
@@ -163,13 +159,8 @@
           <div class="form-group">
             <textarea class="form-control" name="message" rows="5" placeholder="Message" required formControlName="Message"></textarea>
           </div>
-          <!-- <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div> -->
-       <div class="text-center"><button class="btn btn-warning">Submit</button></div>
-          <!-- <div class="text-center"><button type="submit" class="btn btn-success">Send Message</button></div> -->
+
+       <div class="text-center"><button class="btn btn-success">Submit</button></div>
         </form>
         <!--End Contact Form -->
 <div class="whatsapp-icon-container">

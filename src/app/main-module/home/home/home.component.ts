@@ -11,7 +11,12 @@ import { GeneralService } from 'src/app/shared/service/general.service';
 export class HomeComponent implements OnInit {
   data: any=[];
   AllFourCards:any=[];
+<<<<<<< HEAD
+  // AnotherImageUrl: any = [];
+  Url='http://localhost:3000/';
+=======
   Url='http://localhost:4040/';
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
   HeroImage:any=[];
   TwoCards:any=[];
   GetFreq:any=[]

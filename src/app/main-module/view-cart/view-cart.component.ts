@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+=======
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
 import { GeneralService } from 'src/app/shared/service/general.service';
 import { LocalStorageService } from 'src/app/shared/service/local-storage.service';
 declare var paypal: any; 
@@ -9,6 +15,22 @@ declare var paypal: any;
   styleUrls: ['./view-cart.component.css']
 })
 export class ViewCartComponent implements OnInit {
+<<<<<<< HEAD
+  PlaceOrder:FormGroup | any ;
+  particualarproductofthreehomecards: any =[];
+  AllFourCards : any = []
+  MakeMyIdPublic: any;
+  Url = 'http://localhost:3000/';
+  ThreeHomeCards: any ;
+  selectedItemId: any;
+  cartItems: any[] = [];
+ 
+  constructor(private _General:GeneralService,
+             private _FormBuilder:FormBuilder,
+             private _toaster:ToastrService) {
+              this.OrderFormModel()
+             }
+=======
   threeCardsById: any =[];
   AllFourCards : any = []
   MakeMyIdPublic: any;
@@ -23,6 +45,7 @@ export class ViewCartComponent implements OnInit {
   constructor(private _General:GeneralService,
               private localStorageService:LocalStorageService,
               private router: Router) {}
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
   totalPrice!: number;
   ngOnInit(): void {
     this.getCartItems();
@@ -72,7 +95,39 @@ export class ViewCartComponent implements OnInit {
     }).render(this.paymentRef.nativeElement)
   }
 
+<<<<<<< HEAD
+  OrderFormModel(){
+    this.PlaceOrder=this._FormBuilder.group({
+      FirstName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      LastName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      PhoneNumber: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      Email: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      DeliveryAddress: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      StreetNumber: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    })
+   }
+
+   SubmitOrder(){
+    const payload = this.PlaceOrder.value;
+    this._General.orderPlace(payload).subscribe((res:any)=>{
+      res;
+      if(res.data === false){
+        this._toaster.error(res.message)
+      }
+
+      else{
+        this._toaster.success('Placed Your Successfully!! 😊') 
+        localStorage.removeItem('cartItems')
+        localStorage.removeItem('totalPrice')
+        localStorage.removeItem('cartItemsCount')
+      }
+      
+      this.PlaceOrder.reset();
+    })
+   }
+=======
   
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
       const cartItems = event.newValue ? JSON.parse(event.newValue) : [];

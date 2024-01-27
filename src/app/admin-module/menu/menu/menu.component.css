@@ -6,7 +6,7 @@
   }
   
   .card {
-    background-image: url('../../../../assets/pic/cardi2.png');
+    /* background-image: url('../../../../assets/pic/cardi2.png'); */
     max-width: 400px;
     width: 100%;
     border: 1px solid #ccc;
@@ -18,7 +18,7 @@ h3{
 }
 
 .card2{
-  background-image: url('../../../../assets/pic/cardi2.png');
+  /* background-image: url('../../../../assets/pic/cardi2.png'); */
   max-width: 400px;
   width: 100%;
   border: 1px solid #ccc;

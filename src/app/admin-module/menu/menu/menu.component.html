@@ -1,7 +1,7 @@
-<h2 class="text-center mt-3">Our Menu</h2>
+<h2 class="text-center mt-3">Our Shop List</h2>
 <div class="container d-flex justify-content-center mt-5 ">
     <div class="card p-3">
-      <h3>StarterFood-Cards</h3>
+      <h3>Daily Products</h3>
       <form [formGroup]="foodcards" (ngSubmit)="Submitmyfoodform()">
         <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="FoodName" required>
         <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="FoodDescription" required>
@@ -12,7 +12,7 @@
     </div>
   
     <div class="card p-3">
-      <h3>BreakFastFood-Cards</h3>
+      <h3>Fruits Category</h3>
       <form [formGroup]="breakfastfoodcards" (ngSubmit)="SubmitmyBreakfastform()">
         <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="FoodName" required>
         <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="FoodDescription" required>
@@ -22,7 +22,7 @@
       </form>
     </div>
     <div class="card p-3">
-        <h3>LunchFood-Cards</h3>
+        <h3>Recent Products</h3>
         <form [formGroup]="Lunchfoodcards" (ngSubmit)="Submitmylunchfoodform()">
           <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="FoodName" required>
           <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="FoodDescription" required>
@@ -35,8 +35,8 @@
 
   <hr>
 
-  <div class="card2 p-3 ">
-    <h3>PopularFood-Cards</h3>
+  <div class="card2 p-3 " style="margin-left: 11%;">
+    <h3>PERSONAL CARE</h3>
     <form [formGroup]="populafoodcard" (ngSubmit)="submitpopularFood()">
       <input type="text" class="mb-3 form-control" placeholder="Enter Your Heading" formControlName="CardHeading" required>
       <input type="text" class="mb-3 form-control" placeholder="Enter Your Description" formControlName="CardDescription" required>

@@ -1,5 +1,5 @@
-<h1 class="text-center mt-4">foodies-Analytics !</h1>
-<h4 class="text-center mt-4">Banner-<span style="color:#FFB000 ;">Image</span>-Analytics</h4>
+<h1 class="text-center mt-4">Grocery-Analytics !</h1>
+<h4 class="text-center mt-4">Banner-<span style="color:#2E8B57 ;">Image</span>-Analytics</h4>
 <table class="table table-striped table-hover table-sm">
     <thead class="text-light">
       <tr>
@@ -56,7 +56,7 @@
   
 
    <!-- ThreeHomecards -->
-   <h4 class="text-center mt-5">Three-<span style="color:#FFB000 ;">Cards</span>-Analytics</h4>
+   <h4 class="text-center mt-5">Three-<span style="color:#2E8B57 ;">Cards</span>-Analytics</h4>
    <table class="table table-striped table-hover table-sm mt-5">
        <thead class="text-light">
          <tr>
@@ -119,7 +119,7 @@
 
 
   <!-- fourcards -->
-  <h4 class="text-center mt-5">Four-<span style="color:#FFB000 ;">Cards</span>-Analytics</h4>
+  <h4 class="text-center mt-5">Four-<span style="color:#2E8B57 ;">Cards</span>-Analytics</h4>
 <table class="table table-striped table-hover table-sm mt-5">
     <thead class="text-light">
       <tr>
@@ -134,7 +134,7 @@
     <tbody>
       <tr *ngFor="let data of FourCards ; let i=index">
         <th class="text-center text-light">{{i+1}}</th>
-        <td class="text-center"><img [src]="Url+data.imageDetails.imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
+        <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
         <td class="text-center text-light">{{data.cardName}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
@@ -184,7 +184,7 @@
 
 
     <!-- Twocards -->
-    <h4 class="text-center-light mt-5">Two-<span style="color:#FFB000 ;">Cards</span>-Analytics</h4>
+    <h4 class="text-center-light mt-5">Two-<span style="color:#2E8B57 ;">Cards</span>-Analytics</h4>
     <table class="table table-striped table-hover table-sm mt-5">
         <thead class="text-light">
           <tr>
@@ -242,7 +242,7 @@
 
 
    <!-- frequently question -->
-   <h4 class="text-center mt-5">Frequently&nbsp;<span style="color:#FFB000 ;">ask-Questions</span>-Analytics</h4>
+   <h4 class="text-center mt-5">Frequently&nbsp;<span style="color:#2E8B57 ;">ask-Questions</span>-Analytics</h4>
    <table class="table table-striped table-hover table-sm mt-5">
        <thead class="text-light">
          <tr>
@@ -327,8 +327,8 @@
      <!-- two-model -->
 
 <hr>
-     <h1 class="text-center mt-4">Menu-Analytics !</h1>
-     <h4 class="text-center mt-4">Starters-<span style="color:#FFB000 ;">Menu</span>-Analytics</h4>
+     <h1 class="text-center mt-4">Shop-Analytics !</h1>
+     <h4 class="text-center mt-4">Daily Products-<span style="color:#2E8B57 ;">Menu</span>-Analytics</h4>
      <table class="table table-striped table-hover table-sm mt-5">
       <thead class="text-light">
         <tr>
@@ -348,7 +348,7 @@
           <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
           <td class="text-center text-light">{{data.FoodName}}</td>
           <td class="text-center text-light">{{data.FoodDescription}}</td>
-          <td class="text-center text-light ">{{data.FoodPrice}}</td>
+          <td class="text-center text-light ">{{data.Price}}</td>
           <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
           <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
           <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal6" (click)="StarterById(data._id)" ></i></td>
@@ -397,7 +397,7 @@
 
 
 <!-- breakfast -->
-    <h4 class="text-center mt-4">BreakFasts-<span style="color:#FFB000 ;">Menu</span>-Analytics</h4>
+    <h4 class="text-center mt-4">Fruits Category-<span style="color:#2E8B57 ;">Menu</span>-Analytics</h4>
      <table class="table table-striped table-hover table-sm mt-5">
       <thead class="text-light">
         <tr>
@@ -417,7 +417,7 @@
           <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
           <td class="text-center text-light">{{data.FoodName}}</td>
           <td class="text-center text-light">{{data.FoodDescription}}</td>
-          <td class="text-center text-light">{{data.FoodPrice}}</td>
+          <td class="text-center text-light">{{data.Price}}</td>
           <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
           <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
           <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal7" (click)="GetBreakfastById(data._id)" ></i></td>
@@ -467,7 +467,7 @@
 
 
 <!-- Lunch -->
-    <h4 class="text-center mt-4">Lunch-<span style="color:#FFB000 ;">Menu</span>-Analytics</h4>
+    <h4 class="text-center mt-4">Recent Products-<span style="color:#2E8B57 ;">Menu</span>-Analytics</h4>
     <table class="table table-striped table-hover table-sm mt-5">
      <thead class="text-light">
        <tr>
@@ -487,7 +487,7 @@
          <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
          <td class="text-center text-light">{{data.FoodName}}</td>
          <td class="text-center text-light">{{data.FoodDescription}}</td>
-         <td class="text-center text-light">{{data.FoodPrice}}</td>
+         <td class="text-center text-light">{{data.Price}}</td>
          <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
          <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
          <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal8" (click)="GetlunchCardById(data._id)" ></i></td>
@@ -538,7 +538,7 @@
 
 
    <!-- PopularFoodCard -->
-   <h4 class="text-center mt-4">Popular-<span style="color:#FFB000 ;">Food</span>-Analytics</h4>
+   <h4 class="text-center mt-4">Personal -<span style="color:#2E8B57 ;">Care</span>-Analytics</h4>
    <table class="table table-striped table-hover table-sm mt-5">
     <thead class="text-light">
       <tr>

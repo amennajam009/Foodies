@@ -11,7 +11,11 @@ export class HeaderComponent implements OnInit {
   isNavbarExpanded = false;
   constructor(private _General:GeneralService) { }
   MakeMyIdPublic: any;
+<<<<<<< HEAD
+  Url = 'http://localhost:3000/';
+=======
   Url = 'http://localhost:4040/';
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
   ThreeHomeCards: any;
   selectedItemId: any;
   cartItemsCount: number = 1;
