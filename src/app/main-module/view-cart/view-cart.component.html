@@ -2,13 +2,13 @@
 <br><br><br><br>
 <h1 class="text-center mt-5 text-light">Shopping Cart</h1>
 <p class="mb-5 text-center">
-  <i class="text-warning font-weight-bold">items in your cart</i></p>
+  <i class="text-success font-weight-bold">items in your cart</i></p>
  <table class="table table-striped table-hover table-sm mt-5">
     <thead class="text-light">
       <tr>
         <th class="text-center">#</th>
         <th class="text-center">Image</th>
-        <th class="text-center">FoodName</th>
+        <th class="text-center">FoodName/ProductName</th>
         <th class="text-center">Price</th>
         <th class="text-center"></th>
         <th></th>
@@ -18,16 +18,81 @@
       <tr *ngFor="let data of cartItems ; let i=index">
         <th class="text-center text-light">{{i+1}}</th>
         <td class="text-center"><img [src]="Url+data.imageDetails[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
-        <td class="text-center text-light">{{data.imageHeading}}  {{data.cardName}} {{data.FoodName}}</td>
+        <td class="text-center text-light">{{data.imageHeading}} {{data.CardHeading}} {{data.cardName}} {{data.FoodName}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">${{data.Price}} {{data.FoodPrice}} </td>
         <td><button class="btn" (click)="removeCartItemById(data._id)" style="background-color: #FFB000;">Remove Item</button></td>
         <td></td>
       </tr>
     </tbody>
   </table>  
-<div class="float-right text-right">
+<div class="float-right text-right" style="margin-left: 54%;">
     <h4>Subtotal:</h4>
-    <h1>${{totalPrice}}</h1>
+    <h3>${{totalPrice}}</h3>
+</div>
+
+<button class="btn btn-light w-100 mt-4" id="orderButton" data-bs-toggle="modal" data-bs-target="#myModal">Order Now</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form [formGroup]="PlaceOrder" (ngSubmit)="SubmitOrder()">
+  <div class="modal-dialog" #autoClose>
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title text-dark" id="exampleModalLabel">Order Confirmation  😊</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <h1 class="text-dark mt-4 mb-4">Place Your Order Here</h1>
+          <!-- <form [formGroup]="PlaceOrder" (ngSubmit)="SubmitOrder()"> -->
+            <div class="mb-3">
+              <h6 for="fullName" class="text-dark">First Name</h6>
+              <input type="text" class="form-control" id="fullName" placeholder="First Name" formControlName="FirstName" required>
+            </div>
+      
+            <div class="mb-3">
+              <h6 for="fullName" class="text-dark">Last Name</h6>
+              <input type="text" class="form-control" id="fullName" placeholder="Last Name" formControlName="LastName" required>
+            </div>
+
+            <div class="mb-3">
+              <h6 for="text" class="text-dark">Phone Number</h6>
+              <input type="text" class="form-control" id="email" placeholder="(000) 000-0000" formControlName="PhoneNumber" required>
+            </div>
+
+            <div class="mb-3">
+              <h6 for="email" class="text-dark">Email</h6>
+              <input type="email" class="form-control" id="email" placeholder="Email@example.com" formControlName="Email" required>
+            </div>
+      
+            <div class="mb-3">
+              <h6 for="address" class="text-dark">Delivery Address</h6>
+              <textarea class="form-control" id="address" rows="4" placeholder="123 Main Street" formControlName="DeliveryAddress" required></textarea>
+            </div>
+      
+            <div class="mb-3">
+              <h6 for="text" class="text-dark">Street Number</h6>
+              <input type="text" class="form-control" id="email" placeholder="Street No" formControlName="StreetNumber" required>
+            </div>
+            <h6 class="text-dark">Total items</h6>
+            <div class="mb-3" style="position: relative;">
+              <input type="text" class="form-control" id="email" disabled required>
+              <h6 for="text" class="text-dark" style="position: absolute; top: 8px; left: 10px;">{{ cartItems.length }}</h6>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="agree">
+              <label class="form-check-label text-dark" for="agree">I agree to the terms and conditions</label>
+            </div>
+          <!-- </form> -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+        <button type="button" class="btn btn-success" type="submit" click="autoClose.close">Place Order</button>
+      </div>
+    </div>
+  </div>
+  </form>
 </div>
 
 

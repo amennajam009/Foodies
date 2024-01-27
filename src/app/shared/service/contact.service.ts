@@ -10,9 +10,9 @@ export class ContactService {
 
 
   UserBookedTable(payLoad:any){
-   return this.HttpClient.post('http://localhost:7070/Contact/OrderTableApi',payLoad)
+   return this.HttpClient.post('http://localhost:3000/Contact/OrderTableApi',payLoad)
   }
   ContactUsApi(payLoad:any){
- return this.HttpClient.post('http://localhost:7070/Contact/ContactUsApi',payLoad)
+ return this.HttpClient.post('http://localhost:3000/Contact/ContactUsApi',payLoad)
   }
 }

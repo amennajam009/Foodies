@@ -31,7 +31,7 @@
 
 .header_change{
   /* position: fixed; */
-  background:rgba(27, 17, 13, 0.973);
+  background:rgb(21, 10, 10);
   width: 100%;
   z-index: 1;
   top:0;

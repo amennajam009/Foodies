@@ -1,7 +1,7 @@
 
 <div style="position: relative;">
   <video autoplay loop muted plays-inline class="w-100" >
-    <source src="../../../../assets/pic/video3.mp4" type="video/mp4">
+    <source src="../../../../assets/pic/shop2.mp4" type="video/mp4">
   </video>
   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
     <div class="video-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
@@ -12,7 +12,7 @@
             <h4 class="display-6" style="color: white; font-weight: bold;">What Are You Waiting For?</h4>
             <div class="d-flex justify-content-center mt-4">
               <button type="button" class="btn btn-lg btn-outline-light mx-2">GET STARTED</button>
-              <button type="button" class="btn btn-lg btn-light mx-2">WATCH TRAILER</button>
+              <button type="button" class="btn btn-lg btn-light mx-2">SHOP NOW</button>
             </div>
           </div>
         </div>
@@ -27,34 +27,29 @@
                 <div class="container" data-aos="fade-up">
           
                   <div class="section-header text-center mt-1">
-                    <h2 class="text-light">OUR MENU</h2>
-                    <p>Check Our <span>Yummy Menu</span></p>
+                    <h2 class="text-light">OUR SHOP LIST</h2>
+                    <p>Check Our <span>Shop List</span></p>
                   </div>
           
                   <ul class="nav nav-tabs d-flex justify-content-center mt-3" data-aos="fade-up" data-aos-delay="200">
           
                     <li class="nav-item">
                       <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
-                        <h4>Starters</h4>
+                        <h4>Daily Products</h4>
                       </a>
                     </li><!-- End tab nav item -->
           
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
-                        <h4>Breakfast</h4>
+                        <h4>Fruits Category</h4>
                       </a><!-- End tab nav item -->
           
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-                        <h4>Lunch</h4>
+                        <h4>Our Recent Products </h4>
                       </a>
                     </li><!-- End tab nav item -->
           
-                    <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
-                        <h4>Dinner</h4>
-                      </a>
-                    </li><!-- End tab nav item -->
           
                   </ul>
           
@@ -63,7 +58,7 @@
                     <div class="tab-pane fade active show" id="menu-starters">
                       <div class="tab-header text-center">
                         <p>Menu</p>
-                        <h3>Starters</h3>
+                        <h3>Daily Products</h3>
                       </div>
                       <div class="row gy-5">
                         <div class="col-lg-4 menu-item" *ngFor="let data of AllstarterCards">
@@ -72,8 +67,8 @@
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
-                          <p class="price text-success">
-                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartStarter(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                          <p class="price text-white">
+                           <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-success ms-3" (click)="addToCartStarter(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
                         </div>
                       </div>
@@ -83,7 +78,7 @@
                     <div class="tab-pane fade" id="menu-breakfast">
                       <div class="tab-header text-center">
                         <p>Menu</p>
-                        <h3>Breakfast</h3>
+                        <h3>Fruits Category</h3>
                       </div>
             
                       <div class="row gy-5">
@@ -93,8 +88,8 @@
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
-                          <p class="price text-success">
-                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartBreakfast(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                          <p class="price text-white">
+                         <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-success ms-3" (click)="addToCartBreakfast(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
                         </div><!-- Menu Item -->
                       </div>
@@ -105,7 +100,7 @@
                     <div class="tab-pane fade" id="menu-lunch">
                       <div class="tab-header text-center">
                         <p>Menu</p>
-                        <h3>Lunch</h3>
+                        <h3>Our Recent Products</h3>
                       </div>
                       <div class="row gy-5">
           
@@ -115,8 +110,8 @@
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
-                          <p class="price text-success">
-                            ${{data.Price}} <button type="button" class="btn btn-warning ms-3" (click)="addToCartLuch(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                          <p class="price text-white">
+                          <span class="text-success">$</span>{{data.Price}} <button type="button" class="btn btn-success ms-3" (click)="addToCartLuch(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                          
                           </p>
                           <!-- <button type="button" class="btn btn-warning">Add To Cart</button> -->
@@ -124,177 +119,16 @@
           
                       </div> 
                     </div><!-- End Lunch Menu Content -->
-          
-                    <div class="tab-pane fade" id="menu-dinner">
-          
-                      <div class="tab-header text-center">
-                        <p>Menu</p>
-                        <h3>Dinner</h3>
-                      </div>
-          
-                      <div class="row gy-5">
-          
-                        <div class="col-lg-4 menu-item">
-                          <a href="../../../../assets/pic/menu-item-1.png" class="glightbox"><img src="../../../../assets/pic/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                          <h4>Magnam Tiste</h4>
-                          <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                          </p>
-                          <p class="price">
-                            $5.95
-                          </p>
-                        </div><!-- Menu Item -->
-          
-                        <div class="col-lg-4 menu-item">
-                          <a href="../../../../assets/pic/menu-item-2.png" class="glightbox"><img src="../../../../assets/pic/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                          <h4>Aut Luia</h4>
-                          <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                          </p>
-                          <p class="price">
-                            $14.95
-                          </p>
-                        </div><!-- Menu Item -->
-          
-                        <div class="col-lg-4 menu-item">
-                          <a href="../../../../assets/pic/menu-item-3.png" class="glightbox"><img src="../../../../assets/pic/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                          <h4>Est Eligendi</h4>
-                          <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                          </p>
-                          <p class="price">
-                            $8.95
-                          </p>
-                        </div><!-- Menu Item -->
-          
-                        <div class="col-lg-4 menu-item">
-                          <a href="../../../../assets/pic/menu-item-4.png" class="glightbox"><img src="../../../../assets/pic/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                          <h4>Eos Luibusdam</h4>
-                          <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                          </p>
-                          <p class="price">
-                            $12.95
-                          </p>
-                        </div><!-- Menu Item -->
-          
-                        <div class="col-lg-4 menu-item">
-                          <a href="../../../../assets/pic/menu-item-5.png" class="glightbox"><img src="../../../../assets/pic/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                          <h4>Eos Luibusdam</h4>
-                          <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                          </p>
-                          <p class="price text-success">
-                            $12.95
-                          </p>
-                        </div><!-- Menu Item -->
-          
-                        <div class="col-lg-4 menu-item">
-                          <a href="../../../../assets/pic/menu-item-6.png" class="glightbox"><img src="../../../../assets/pic/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                          <h4>Laboriosam Direva</h4>
-                          <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                          </p>
-                          <p class="price">
-                            $9.95
-                          </p>
-                        </div><!-- Menu Item -->
-          
-                      </div>
-                    </div><!-- End Dinner Menu Content -->
-          
                   </div>
-          
                 </div>
-       
-
-
-
-
-
-
-
-              
-  
-                   <!-- Our Gallery -->
-
-                <!-- <section class="gallery">
-                  <div class="container">
-                    <div class="row justify-content-center">
-                      <div class="col-lg-8 text-center">
-                        <div class="section-title">
-                          <div class="divider mb-3"></div>
-                          <h2 class="text-light">Our gallery</h2>
-                          <p class="mt-4">We offer more than 35 group exercis, aerobic classes each week.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="container-fluid mt-5">
-                    <div class="row no-gutters portfolio-gallery">
-                      <div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-01.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-1.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-02.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-2.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-03.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-3.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-04.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-4.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-05.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-5.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-06.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-6.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-07.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-7.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div><div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="images/gallery/gallery-08.jpg" class="popup-gallery">
-                          <img src="../../../../assets/pic/gallery-8.jpg" alt="" class="img-fluid">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </section>	 -->
-                 <!-- Our Gallery End -->
-    
-              
-                 <!-- famous Food -->
-
-                 <!-- <div class="Iam ">
-                  <b>
-                 <div class="innerIam " style="margin-left: 10%">
-                  Fashion should be a form of escapism<br /> 
-                  What you wear is how you present yourself to the world,<br />
-                  I don't do fashion.<br />
-                  make you remember what is beautiful about life<br />
-                  Fashion you can buy, but style you possess
-                </div>
-                  </b>
-                  </div> -->
-
-
-
                 <section class="section course bg-gray">
                   <div class="container">
                     <div class="row justify-content-center">
                       <div class="col-lg-8 text-center">
                         <div class="section-title">
                           <div class="divider mb-3"></div>
-                          <h2 class="text-light">ENERGY DRINKS</h2>
-                          <p class="mt-4">HEALTH & WELLNESS RESOLUTION</p>
+                          <h2 class="text-light">BEAUTY & PERSONAL CARE</h2>
+                          <p class="mt-4">Unlock the secrets to timeless beauty</p>
                         </div>
                       </div>
                     </div>
@@ -315,16 +149,13 @@
                             </div>
                             <p style="color: green;"><b><span><del class="text-danger">$320</del>&nbsp;&nbsp;</span>${{data.Price}}</b></p>
                           </div>
-                          <button class="btn btn-warning">Add To Cart</button>
+                          <button class="btn btn-success" (click)="addToCartPersonalCare(data._id)">Add To Cart</button>
                         </div>
                       </div>
                     </div>
                     <!-- popular Food end -->
 
                   <!-- Popular food down button -->
-                  <div class="round text-center mt-4">
-                      <a class="button text-center" href="#">Button</a>
-                  </div>
                   <!-- button end -->
                   
                

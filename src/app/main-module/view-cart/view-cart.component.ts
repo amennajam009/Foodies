@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { GeneralService } from 'src/app/shared/service/general.service';
 
 @Component({
@@ -7,16 +9,20 @@ import { GeneralService } from 'src/app/shared/service/general.service';
   styleUrls: ['./view-cart.component.css']
 })
 export class ViewCartComponent implements OnInit {
-
+  PlaceOrder:FormGroup | any ;
   particualarproductofthreehomecards: any =[];
   AllFourCards : any = []
   MakeMyIdPublic: any;
-  Url = 'http://localhost:7070/';
+  Url = 'http://localhost:3000/';
   ThreeHomeCards: any ;
   selectedItemId: any;
   cartItems: any[] = [];
  
-  constructor(private _General:GeneralService) {}
+  constructor(private _General:GeneralService,
+             private _FormBuilder:FormBuilder,
+             private _toaster:ToastrService) {
+              this.OrderFormModel()
+             }
   totalPrice!: number;
   ngOnInit(): void {
     this.getCartItems();
@@ -32,8 +38,35 @@ export class ViewCartComponent implements OnInit {
     this.totalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
   }
 
+  OrderFormModel(){
+    this.PlaceOrder=this._FormBuilder.group({
+      FirstName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      LastName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      PhoneNumber: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      Email: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      DeliveryAddress: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+      StreetNumber: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
+    })
+   }
 
+   SubmitOrder(){
+    const payload = this.PlaceOrder.value;
+    this._General.orderPlace(payload).subscribe((res:any)=>{
+      res;
+      if(res.data === false){
+        this._toaster.error(res.message)
+      }
 
+      else{
+        this._toaster.success('Placed Your Successfully!! 😊') 
+        localStorage.removeItem('cartItems')
+        localStorage.removeItem('totalPrice')
+        localStorage.removeItem('cartItemsCount')
+      }
+      
+      this.PlaceOrder.reset();
+    })
+   }
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
       const cartItems = event.newValue ? JSON.parse(event.newValue) : [];
