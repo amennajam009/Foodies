@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../../../shared/service/local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder ,Validators ,FormControl,FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -11,8 +12,8 @@ import { WhatsappService } from 'src/app/shared/service/whatsapp.service';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-
   data: any=[];
+<<<<<<< HEAD
   AllLunchCards:any=[];
   AllstarterCards:any=[];
   AllbreakfastCards:any=[];
@@ -20,51 +21,65 @@ export class ShopComponent implements OnInit {
   MakeMyIdPublic:any
   Url='http://localhost:3000/';
   constructor(private _menuService:MenuService ,private _General:GeneralService , private Toaster:ToastrService) { 
+=======
+  LunchCards:any=[];
+  StarterCards:any=[];
+  BreakfastCards:any=[];
+  PopularFoodCards:any=[];
+  MakeMyIdPublic:any;
+  cartItems: any[] = [];
+  Url='http://localhost:4040/';
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
 
+
+  constructor(private _menuService:MenuService,
+              private _General:GeneralService,
+              private Toaster:ToastrService,
+             ) { 
   }
 
   ngOnInit(): void { 
   this.GetFoodCardApi();
   this.GetBreakFastApi();
   this.GetLunchFoodApi();
-  this.GetpopularFoodAPI();
+  this.GetPopularFoodAPI();
   }
 
-public GetFoodCardApi(){
+
+
+//Get Food Card
+ GetFoodCardApi(){
   this._menuService.GetAllDataStarterFoodCardApi().subscribe((res:any)=>{
-    this.AllstarterCards=res.Result;
+    this.StarterCards=res.Result;
   })
 }
-public GetBreakFastApi(){
+
+//Get BreakFast Food
+GetBreakFastApi(){
   this._menuService.GetAllDataOfBreakfastFoodApi().subscribe((res:any)=>{
-    this.AllbreakfastCards=res.Result;
+    this.BreakfastCards=res.Result;
   })
 }
 
-public GetLunchFoodApi(){
+//Get Lunch Food
+GetLunchFoodApi(){
   this._menuService.GetAlldataOflunchApi().subscribe((res:any)=>{
-    this.AllLunchCards=res.Result;
+    this.LunchCards=res.Result;
   })
 }
-public GetpopularFoodAPI(){
+
+//Get Popular Food
+GetPopularFoodAPI(){
   this._menuService.GetpopularApi().subscribe((res:any)=>{
-    this.AllpopularFoodcards=res.Result;
+    this.PopularFoodCards=res.Result;
   })
 }
-
-
-
-
 
 
 // Add to Cart Function 
-
-
-addToCartStarter(_id: any) {
-  this.MakeMyIdPublic = _id; 
-  this._menuService.GetDataOfStarterFoodCardApiById(_id).subscribe((res: any) => {
+addToCartStarter(index:number) {
+  const product = this.StarterCards[index] 
     this.Toaster.success('Item Is Added To Cart 🛒');
-    const product = res.Result;
     const cartItems = localStorage.getItem('cartItems') ?? '';
     const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
     parsedCartItems.push(product);
@@ -76,16 +91,12 @@ addToCartStarter(_id: any) {
     totalPrice += parseFloat(product.Price);
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
-  });
 }
 
 
-
-addToCartBreakfast(_id: any) {
-  this.MakeMyIdPublic = _id; 
-  this._menuService.GetBreakfastFoodApiById(_id).subscribe((res: any) => {
+addToCartBreakfast(index:number) {
+  const product = this.BreakfastCards[index]
     this.Toaster.success('Item Is Added To Cart 🛒');
-    const product = res.Result;
     const cartItems = localStorage.getItem('cartItems') ?? '';
     const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
     parsedCartItems.push(product);
@@ -97,15 +108,12 @@ addToCartBreakfast(_id: any) {
     totalPrice += parseFloat(product.Price);
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
-  });
 }
 
 
-addToCartLuch(_id: any) {
-  this.MakeMyIdPublic = _id; 
-  this._menuService.GetApiOfLuchApiById(_id).subscribe((res: any) => {
+addToCartLunch(index:number) {
+  const product = this.LunchCards[index]
     this.Toaster.success('Item Is Added To Cart 🛒');
-    const product = res.Result;
     const cartItems = localStorage.getItem('cartItems') ?? '';
     const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
     parsedCartItems.push(product);
@@ -117,7 +125,23 @@ addToCartLuch(_id: any) {
     totalPrice += parseFloat(product.Price);
     // Store the total price in localStorage
     localStorage.setItem('totalPrice', totalPrice.toString());
-  });
+}
+
+
+addToCartDrinks(index:number){
+  const product = this.PopularFoodCards[index]
+    this.Toaster.success('Item Is Added To Cart 🛒');
+    const cartItems = localStorage.getItem('cartItems') ?? '';
+    const parsedCartItems = cartItems ? JSON.parse(cartItems) : [];
+    parsedCartItems.push(product);
+    localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+    // This will Update My cart Item Counting
+    this._General.updateCartItemsCount(parsedCartItems.length);
+    // Calculate the total price
+    let totalPrice = parseFloat(localStorage.getItem('totalPrice') ?? '0');
+    totalPrice += parseFloat(product.Price);
+    // Store the total price in localStorage
+    localStorage.setItem('totalPrice', totalPrice.toString());
 }
 
 addToCartPersonalCare(_id: any) {
@@ -138,12 +162,6 @@ addToCartPersonalCare(_id: any) {
     localStorage.setItem('totalPrice', totalPrice.toString());
   });
 }
-
-
-
-
-
-
 
 
 

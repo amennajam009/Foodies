@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewCartComponent } from './view-cart/view-cart.component';
 import { BookingComponent } from './booking/booking/booking.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BookingComponent } from './booking/booking/booking.component';
     FooterComponent,
     ViewCartComponent,
     BookingComponent,
+    ConfirmationComponent,
 
   ],
   imports: [

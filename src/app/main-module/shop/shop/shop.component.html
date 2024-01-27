@@ -61,14 +61,19 @@
                         <h3>Daily Products</h3>
                       </div>
                       <div class="row gy-5">
-                        <div class="col-lg-4 menu-item" *ngFor="let data of AllstarterCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of StarterCards; let i = index">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
+<<<<<<< HEAD
                           <p class="price text-white">
                            <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-success ms-3" (click)="addToCartStarter(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+=======
+                          <p class="price text-success">
+                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartStarter(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
                           </p>
                         </div>
                       </div>
@@ -82,14 +87,19 @@
                       </div>
             
                       <div class="row gy-5">
-                        <div class="col-lg-4 menu-item" *ngFor="let data of AllbreakfastCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of BreakfastCards; let i = index">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
+<<<<<<< HEAD
                           <p class="price text-white">
                          <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-success ms-3" (click)="addToCartBreakfast(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+=======
+                          <p class="price text-success">
+                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartBreakfast(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
                           </p>
                         </div><!-- Menu Item -->
                       </div>
@@ -104,14 +114,19 @@
                       </div>
                       <div class="row gy-5">
           
-                        <div class="col-lg-4 menu-item" *ngFor="let data of AllLunchCards">
+                        <div class="col-lg-4 menu-item" *ngFor="let data of LunchCards ; let i = index">
                           <a  class="glightbox"><img [src]="Url+data.imageDetails[0].imageUrl" class="menu-img img-fluid" alt=""></a>
                           <h4>{{data.FoodName}}</h4>
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
+<<<<<<< HEAD
                           <p class="price text-white">
                           <span class="text-success">$</span>{{data.Price}} <button type="button" class="btn btn-success ms-3" (click)="addToCartLuch(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+=======
+                          <p class="price text-success">
+                            ${{data.Price}} <button type="button" class="btn btn-warning ms-3" (click)="addToCartLunch(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
                          
                           </p>
                           <!-- <button type="button" class="btn btn-warning">Add To Cart</button> -->
@@ -121,6 +136,12 @@
                     </div><!-- End Lunch Menu Content -->
                   </div>
                 </div>
+<<<<<<< HEAD
+=======
+       
+
+
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
                 <section class="section course bg-gray">
                   <div class="container">
                     <div class="row justify-content-center">
@@ -134,7 +155,7 @@
                     </div>
                 
                     <div class="row mt-5">
-                      <div class="col-lg-3 col-md-6 mt-5" *ngFor="let data of AllpopularFoodcards">
+                      <div class="col-lg-3 col-md-6 mt-5" *ngFor="let data of PopularFoodCards ; let i = index">
                         <div class="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
                           <img [src]="Url+data.imageDetails[0].imageUrl" alt="" class="img-fluid fixed-image-size w-100">
                           <div class="card-body">
@@ -149,7 +170,11 @@
                             </div>
                             <p style="color: green;"><b><span><del class="text-danger">$320</del>&nbsp;&nbsp;</span>${{data.Price}}</b></p>
                           </div>
+<<<<<<< HEAD
                           <button class="btn btn-success" (click)="addToCartPersonalCare(data._id)">Add To Cart</button>
+=======
+                          <button class="btn btn-warning" (click)="addToCartDrinks(i)" >Add To Cart</button>
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
                         </div>
                       </div>
                     </div>

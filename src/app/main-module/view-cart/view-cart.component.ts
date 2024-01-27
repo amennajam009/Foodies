@@ -1,14 +1,21 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+=======
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
 import { GeneralService } from 'src/app/shared/service/general.service';
-
+import { LocalStorageService } from 'src/app/shared/service/local-storage.service';
+declare var paypal: any; 
 @Component({
   selector: 'app-view-cart',
   templateUrl: './view-cart.component.html',
   styleUrls: ['./view-cart.component.css']
 })
 export class ViewCartComponent implements OnInit {
+<<<<<<< HEAD
   PlaceOrder:FormGroup | any ;
   particualarproductofthreehomecards: any =[];
   AllFourCards : any = []
@@ -23,21 +30,72 @@ export class ViewCartComponent implements OnInit {
              private _toaster:ToastrService) {
               this.OrderFormModel()
              }
+=======
+  threeCardsById: any =[];
+  AllFourCards : any = []
+  MakeMyIdPublic: any;
+  Url = 'http://localhost:4040/';
+  ThreeHomeCards: any ;
+  selectedItemId: any;
+  cartItems: any[] = [];
+  quantity: number = 1;
+  @ViewChild('paymentRef',{static: true}) paymentRef!:ElementRef;
+
+
+  constructor(private _General:GeneralService,
+              private localStorageService:LocalStorageService,
+              private router: Router) {}
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
   totalPrice!: number;
   ngOnInit(): void {
     this.getCartItems();
-
-    // Listen for changes in the localStorage
+    this.paypalPaymentGateway()
+        // Listen for changes in the localStorage
     window.addEventListener('storage', this.handleStorageChange.bind(this));
   }
 
-  getCartItems(): void {
-    const cartItems = localStorage.getItem('cartItems');
-    this.cartItems = cartItems ? JSON.parse(cartItems) : [];
-    const storedTotalPrice = localStorage.getItem('totalPrice');
-    this.totalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
+
+  // get Cart Items
+  getCartItems(){
+  this.cartItems = this.localStorageService.getCartItems()
+  this.totalPrice = this.localStorageService.getTotalPrice()
+  }
+  
+
+  //paypal Payment Gateway
+  paypalPaymentGateway(){
+    paypal.Buttons({
+      createOrder: (data: any, actions: any) => {
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                value: this.totalPrice,
+                currency_code: 'USD',
+                quantity: 7,
+              },
+            }
+          ]
+        });
+      },
+      onApprove: (data: any, actions: any) => {
+        return actions.order.capture().then((details: any) => {
+          if (details.status === 'COMPLETED') {
+            localStorage.removeItem('cartItems')
+            localStorage.removeItem('cartItemsCount')
+            localStorage.removeItem('totalPrice')
+            localStorage.removeItem('cartItemsCount')
+            this.router.navigate(['/Main-module/confirm'])
+          }
+        });
+      },
+      onError: (error: any) => {
+        console.log(error);
+      }
+    }).render(this.paymentRef.nativeElement)
   }
 
+<<<<<<< HEAD
   OrderFormModel(){
     this.PlaceOrder=this._FormBuilder.group({
       FirstName: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)]),
@@ -67,6 +125,9 @@ export class ViewCartComponent implements OnInit {
       this.PlaceOrder.reset();
     })
    }
+=======
+  
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
   handleStorageChange(event: StorageEvent): void {
     if (event.key === 'cartItems') {
       const cartItems = event.newValue ? JSON.parse(event.newValue) : [];
@@ -77,48 +138,41 @@ export class ViewCartComponent implements OnInit {
     }
   }
 
-  GetFourCardbyId(_id:any){
-    this.MakeMyIdPublic = _id;
-    this._General.GetFourcardsById(_id).subscribe((res:any)=>{
-      this.AllFourCards = res.Result;
-      // this.particualarproductofthreehomecards = res.Result;
-    })
-  }
 
-  GetThreeCardById(_id: any) {
-    this.MakeMyIdPublic = _id;
-    this._General.ThreehomecardsById(_id).subscribe((res: any) => {
-      this.particualarproductofthreehomecards = res.Result;
-    });
+  // increment the quantity 
+  increaseQuantity(index:number): void {
+      let StoredCartItems = this.cartItems
+        StoredCartItems[index].Price *= 2;
+        StoredCartItems[index].quantity = (StoredCartItems[index].quantity || 1) + 1
+        localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
+        this.updateCart()
   }
 
 
- 
+  // decrement the quantity
+  decreaseQuantity(index:number): void {
+      let StoredCartItems = this.cartItems
+        if (StoredCartItems[index].quantity > 1) {
+        StoredCartItems[index].Price /= 2;
+           }
+          StoredCartItems[index].quantity = Math.max((StoredCartItems[index].quantity || 1) - 1,1)
+          localStorage.setItem('cartItems', JSON.stringify(StoredCartItems));
+          this.updateCart()
+  }
+
+
+
+ //remove Cart Item
   removeCartItemById(_id: any): void {
-    const cartItems = localStorage.getItem('cartItems');
-    if (cartItems) {
-      let parsedCartItems = JSON.parse(cartItems);
-      // Find the index of the item to be removed
+      let parsedCartItems = this.cartItems
       const itemIndex = parsedCartItems.findIndex((item: any) => item._id === _id);
-      if (itemIndex !== -1) {
-        // Remove the item from the cartItems array
         parsedCartItems.splice(itemIndex, 1);
-        // Update the localStorage with the modified cartItems
         localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
-        // Update the cartItems array in the component
-        this.cartItems = parsedCartItems;
-        const itemCount = this.cartItems.length;
-        this._General.updateCartItemsCount(itemCount);
-        // Recalculate the total price
-        let totalPrice = this.calculateTotalPrice(parsedCartItems);
-        // Store the total price in localStorage
-        localStorage.setItem('totalPrice', totalPrice.toString());
-        // Update the totalPrice in the component
-        this.totalPrice = totalPrice;
-      }
-    }
+        this.updateCart();
   }
   
+
+  // calculate SubTotal Price
   calculateTotalPrice(cartItems: any[]): number {
     let totalPrice = 0;
     for (let data of cartItems) {
@@ -126,27 +180,15 @@ export class ViewCartComponent implements OnInit {
     }
     return totalPrice;
   }
+
+
+  //update Cart 
+   updateCart(){
+    const itemCount = this.cartItems.length;
+    this._General.updateCartItemsCount(itemCount);
+    const totalPrice = this.calculateTotalPrice(this.cartItems);
+    this.localStorageService.setTotalPrice(totalPrice);
+    this.totalPrice = totalPrice;
+  }
+
 }
-
-
-
-//save for later use 
-
-// removeCartItemById(_id: any): void {
-//   const cartItems = localStorage.getItem('cartItems');
-//   if (cartItems) {
-//     const parsedCartItems = JSON.parse(cartItems);
-//     const updatedCartItems = parsedCartItems.filter((item: any) => item._id !== _id);
-//     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-//     this.cartItems = updatedCartItems;
-//     const itemCount = updatedCartItems.length;
-//     this._General.updateCartItemsCount(itemCount);
-//     const totalPrice = this.calculateTotalPrice(updatedCartItems);
-//     localStorage.setItem('totalPrice', totalPrice.toString());
-//     this.totalPrice = totalPrice;
-//   }
-// }
-
-// calculateTotalPrice(cartItems: any[]): number {
-//   return cartItems.reduce((total: number, item: any) => total + parseFloat(item.Price), 0);
-// }

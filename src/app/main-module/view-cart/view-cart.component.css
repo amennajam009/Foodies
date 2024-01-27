@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.remove_item{
+  color: red;
+  cursor: pointer;
+}

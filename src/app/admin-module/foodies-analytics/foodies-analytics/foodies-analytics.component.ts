@@ -33,7 +33,11 @@ export class FoodiesAnalyticsComponent implements OnInit {
   // imageDetailsArray: any[] = [];
  
   // ProductArray:any = []
+<<<<<<< HEAD
   Url='http://localhost:3000/'
+=======
+  Url='http://localhost:4040/'
+>>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
   constructor(private _General:GeneralService , private _menuService:MenuService, private Toaster:ToastrService) { }
 
   ngOnInit(): void {
