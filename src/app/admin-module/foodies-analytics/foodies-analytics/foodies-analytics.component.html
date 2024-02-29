@@ -16,7 +16,7 @@
         <td class="text-center"><img [src]="Url+data.imageDetail[0].imageUrl" class="img rounded-circle" style="width: 60px; height: 60px;"></td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status}}</td>
         <td class="text-center" [ngClass]="data.status === 1 ? 'text-success' : 'text-danger'">{{data.status ===1? 'Active' : 'Not Active'}}</td>
-        <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="GetHeroImagebyId(data._id)"></i></td>
+        <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="GetHeroImagebyId(data._id)"></i></td>
         <!-- <td class="text-center"><i class="fa fa-pencil" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal1"  ></i></td>
         <td class="text-center"><button class="btn btn-outline-danger" (click)="deleteparticularDataById(data._id)"> Soft delete</button></td> -->
         <td></td>
@@ -78,6 +78,7 @@
            <td class="text-center"><i class="fa-solid fa-eye text-info" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal9" (click)="GetThreeCardById(data._id)"></i></td>
            <td></td>
            <td class="text-center"><button class="btn btn-outline-danger"  (click)="HardDeleteThreehomeCardsById(data._id)">Hard Delete</button></td>
+           <td class="text-center"><button class="btn btn-outline-info" [routerLink]="'/detail_page/' + data._id" >Detail Page</button></td>
          </tr>
        </tbody>
      </table>

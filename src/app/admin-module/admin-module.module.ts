@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { GeneralSettingComponent } from './general-setting/general-setting/general-setting.component';
 import { FoodiesAnalyticsComponent } from './foodies-analytics/foodies-analytics/foodies-analytics.component';
 import { MenuComponent } from './menu/menu/menu.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 
 @NgModule({
@@ -15,13 +16,15 @@ import { MenuComponent } from './menu/menu/menu.component';
     DashboardComponent,
     GeneralSettingComponent,
     FoodiesAnalyticsComponent,
-    MenuComponent
+    MenuComponent,
+    DetailPageComponent
   ],
   imports: [
-    CommonModule,
     AdminModuleRoutingModule,
+    CommonModule,
     ReactiveFormsModule,
     FormsModule
-  ]
+  ],
+  exports:[AdminModuleRoutingModule]
 })
 export class AdminModuleModule { }

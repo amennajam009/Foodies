@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { GeneralService } from 'src/app/shared/service/general.service';
 import { MenuService } from 'src/app/shared/service/menu.service';
@@ -33,12 +34,8 @@ export class FoodiesAnalyticsComponent implements OnInit {
   // imageDetailsArray: any[] = [];
  
   // ProductArray:any = []
-<<<<<<< HEAD
-  Url='http://localhost:3000/'
-=======
   Url='http://localhost:4040/'
->>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
-  constructor(private _General:GeneralService , private _menuService:MenuService, private Toaster:ToastrService) { }
+  constructor(private _General:GeneralService , private _menuService:MenuService, private Toaster:ToastrService,private route:Router) { }
 
   ngOnInit(): void {
     //populate-Array to remove data 
@@ -84,6 +81,9 @@ public GetpopularFoodApi(){
   })
 }
 
+redirect(){
+this.route.navigate(['/detail_page'])
+}
 
 
 public GetThreeCardHomeData(){

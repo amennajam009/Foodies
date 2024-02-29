@@ -1,7 +1,7 @@
 
 <div style="position: relative;">
-  <video autoplay loop muted plays-inline class="w-100" >
-    <source src="../../../../assets/pic/shop2.mp4" type="video/mp4">
+  <video autoplay loop muted plays-inline class="w-100 blur-video" >
+    <source src="../../../../assets/pic/food/video (2160p) (1).mp4" type="video/mp4">
   </video>
   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
     <div class="video-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
@@ -35,22 +35,26 @@
           
                     <li class="nav-item">
                       <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
-                        <h4>Daily Products</h4>
+                        <h4>Starter</h4>
                       </a>
                     </li><!-- End tab nav item -->
           
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
-                        <h4>Fruits Category</h4>
+                        <h4>Breakfast</h4>
                       </a><!-- End tab nav item -->
           
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-                        <h4>Our Recent Products </h4>
+                        <h4>Lunch </h4>
                       </a>
                     </li><!-- End tab nav item -->
           
-          
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
+                        <h4>Dinner</h4>
+                      </a>
+                    </li><!-- End tab nav item -->
                   </ul>
           
                   <div class="tab-content mt-5" data-aos="fade-up" data-aos-delay="300">
@@ -68,7 +72,7 @@
                             {{data.FoodDescription}}
                           </p>
                           <p class="price text-white">
-                           <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-success ms-3" (click)="addToCartStarter(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
+                           <!-- <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-success ms-3" (click)="addToCartStarter(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button> -->
                           <p class="price text-success">
                             ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartStarter(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
@@ -90,13 +94,8 @@
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
-<<<<<<< HEAD
-                          <p class="price text-white">
-                         <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-success ms-3" (click)="addToCartBreakfast(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
-=======
                           <p class="price text-success">
-                            ${{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartBreakfast(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
->>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
+                         <span class="text-success">$</span>{{data.Price}}  <button type="button" class="btn btn-warning ms-3" (click)="addToCartBreakfast(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                           </p>
                         </div><!-- Menu Item -->
                       </div>
@@ -117,13 +116,8 @@
                           <p class="ingredients">
                             {{data.FoodDescription}}
                           </p>
-<<<<<<< HEAD
-                          <p class="price text-white">
-                          <span class="text-success">$</span>{{data.Price}} <button type="button" class="btn btn-success ms-3" (click)="addToCartLuch(data._id)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
-=======
                           <p class="price text-success">
-                            ${{data.Price}} <button type="button" class="btn btn-warning ms-3" (click)="addToCartLunch(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
->>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
+                          <span class="text-success">$</span>{{data.Price}} <button type="button" class="btn btn-warning ms-3" (click)="addToCartLunch(i)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button>
                          
                           </p>
                           <!-- <button type="button" class="btn btn-warning">Add To Cart</button> -->
@@ -133,12 +127,6 @@
                     </div><!-- End Lunch Menu Content -->
                   </div>
                 </div>
-<<<<<<< HEAD
-=======
-       
-
-
->>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
                 <section class="section course bg-gray">
                   <div class="container">
                     <div class="row justify-content-center">
@@ -167,11 +155,7 @@
                             </div>
                             <p style="color: green;"><b><span><del class="text-danger">$320</del>&nbsp;&nbsp;</span>${{data.Price}}</b></p>
                           </div>
-<<<<<<< HEAD
-                          <button class="btn btn-success" (click)="addToCartPersonalCare(data._id)">Add To Cart</button>
-=======
-                          <button class="btn btn-warning" (click)="addToCartDrinks(i)" >Add To Cart</button>
->>>>>>> e20c41dcbc5bae1b3f8176ff5e3d8f526ce1d2c3
+                          <button class="btn btn-warning" (click)="addToCartDrinks(i)">Add To Cart</button>
                         </div>
                       </div>
                     </div>

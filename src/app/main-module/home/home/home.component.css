@@ -677,7 +677,7 @@
   }
   
   .faq .faq-list a.collapsed:hover {
-    color: #2E8B57;
+    color: #ffc107;
   }
   
   .faq .faq-list a.collapsed .icon-show {
@@ -713,7 +713,7 @@
   .delay {
     opacity: 0;
     animation: show 3s 1.5s infinite;
-    color:#2E8B57;
+    color:#ffc107;
   }
   @-webkit-keyframes show {
     0% {opacity: 0;}
@@ -888,7 +888,7 @@
     transition: 0.5s;
     margin: 10px 0 0 0;
     color: #fff;
-    background: #2E8B57;
+    background: #ffc107;
     text-decoration: none;
   }
   
@@ -908,7 +908,7 @@
     margin: 10px 0 0 0;
     color: #fff;
     background: transparent;
-    border: 2px solid #2E8B57; /* Add a yellow border */
+    border: 2px solid #ffc107; /* Add a yellow border */
     text-decoration: none;
   }
   
@@ -1062,10 +1062,10 @@
   }
 
   .cta {
-    background: url("../../../../assets/pic/vegcart.jpg") fixed 50% 50% no-repeat;
+    background: url("../../../../assets/pic/food/hero_1.jpg") fixed 50% 50% no-repeat;
     background-size: cover;
     margin-top: 6%;
-    
+    /* filter: blur(); */
   }
 
 

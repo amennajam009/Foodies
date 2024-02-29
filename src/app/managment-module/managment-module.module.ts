@@ -10,6 +10,8 @@ import { AdminRegisterComponent } from './admin-managment/admin-register/admin-r
 import { UserLoginComponent } from './user-managment/user-login/user-login.component';
 import { UserRegisterComponent } from './user-managment/user-register/user-register.component';
 import { ReactiveFormsModule ,FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorInterceptor } from '../Guards/auth-interceptor.interceptor';
 
 
 @NgModule({

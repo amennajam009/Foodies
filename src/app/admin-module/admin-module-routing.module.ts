@@ -6,6 +6,7 @@ import { GeneralSettingComponent } from './general-setting/general-setting/gener
 import { ReactiveFormsModule } from '@angular/forms';
 import { FoodiesAnalyticsComponent } from './foodies-analytics/foodies-analytics/foodies-analytics.component';
 import { MenuComponent } from './menu/menu/menu.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 const routes: Routes = [{ path: '', component: AdminModuleComponent,
 children:[
@@ -13,7 +14,7 @@ children:[
   {path:'general-setting',component:GeneralSettingComponent},
   {path:'Menu' , component:MenuComponent},
   {path:'foodies-analytics',component:FoodiesAnalyticsComponent},
-
+  {path: 'detail_page/:id',component:DetailPageComponent}
 ] }];
 
 @NgModule({
